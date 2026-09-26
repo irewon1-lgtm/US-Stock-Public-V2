@@ -44,11 +44,21 @@ public class MainActivity extends Activity {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                Uri uri = request.getUrl();
-                String host = uri.getHost() == null ? "" : uri.getHost().toLowerCase();
-                if (host.endsWith("github.io") || host.endsWith("tradingview.com")) {
+                // Never intercept iframe/subframe navigation. TradingView uses its own
+                // embedded frame hosts; blocking those makes the chart appear failed.
+                if (!request.isForMainFrame()) {
                     return false;
                 }
+
+                Uri uri = request.getUrl();
+                String host = uri.getHost() == null ? "" : uri.getHost().toLowerCase();
+
+                if (host.endsWith("github.io")
+                        || host.endsWith("tradingview.com")
+                        || host.endsWith("tradingview-widget.com")) {
+                    return false;
+                }
+
                 if ("http".equals(uri.getScheme()) || "https".equals(uri.getScheme())) {
                     try {
                         startActivity(new Intent(Intent.ACTION_VIEW, uri));
