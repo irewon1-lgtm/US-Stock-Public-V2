@@ -428,7 +428,7 @@ function renderDetail(r){
 
     <div class="chart-card">
       <iframe class="chart-frame" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-        src="./chart.html?embed=1&ticker=${ticker}&exchange=${exchange}"
+        src="./chart.html?tvwidgetsymbol=${encodeURIComponent((r.exchange||"NASDAQ")+":"+r.ticker)}"
         title="${esc(r.ticker)} 확인용 차트"></iframe>
       <div class="chart-note"><span>확인용 일봉 차트</span><span>TradingView · 지연 가능</span></div>
     </div>
