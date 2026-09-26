@@ -29,7 +29,7 @@ body{
 }
 button,input,select{font:inherit}
 button{cursor:pointer}
-.app-shell{min-height:100dvh;padding-bottom:84px}
+.app-shell{min-height:100dvh;padding-bottom:calc(104px + max(env(safe-area-inset-bottom),0px))}
 .topbar{
   position:sticky;top:0;z-index:30;
   display:flex;justify-content:space-between;align-items:center;
@@ -113,7 +113,9 @@ button{cursor:pointer}
 .rank-no.top{color:var(--amber)}
 .stock-main{min-width:0}
 .ticker{font-size:16px;font-weight:850;letter-spacing:.015em}
-.company{margin-top:3px;color:#8292a6;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.company-line{display:flex;align-items:center;gap:7px;min-width:0;margin-top:3px}
+.company{margin:0;color:#8292a6;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.sector-tag{flex:0 0 auto;padding:3px 6px;border-radius:6px;border:1px solid #244665;background:#0d2235;color:#75bfff;font-size:9px;font-weight:750;white-space:nowrap}
 .metric-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
 .metric-chip{padding:4px 7px;border-radius:7px;background:#12263a;color:#9fb1c5;font-size:10px;border:1px solid #1b344d}
 .score-box{text-align:center;padding:9px 5px;border-radius:10px;background:rgba(28,199,128,.12);color:#47e2a0;font-weight:850;font-size:17px;border:1px solid rgba(46,216,145,.18)}
@@ -197,9 +199,9 @@ button{cursor:pointer}
 .data-refresh-row span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
 
 .bottom-nav{
-  position:fixed;left:0;right:0;bottom:0;z-index:40;height:74px;
+  position:fixed;left:0;right:0;bottom:0;z-index:40;min-height:82px;height:calc(82px + max(env(safe-area-inset-bottom),0px));
   display:grid;grid-template-columns:repeat(4,1fr);
-  padding:7px max(12px,env(safe-area-inset-left)) max(7px,env(safe-area-inset-bottom));
+  padding:8px max(12px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-bottom));
   border-top:1px solid rgba(49,81,113,.62);
   background:rgba(5,11,18,.96);backdrop-filter:blur(22px)
 }
@@ -209,7 +211,7 @@ button{cursor:pointer}
 .bottom-nav button.active{color:#43a5ff}
 .nav-icon{font-size:21px;line-height:1}
 .toast{
-  position:fixed;left:50%;bottom:92px;z-index:80;transform:translateX(-50%);
+  position:fixed;left:50%;bottom:calc(106px + max(env(safe-area-inset-bottom),0px));z-index:80;transform:translateX(-50%);
   max-width:calc(100% - 36px);padding:10px 14px;border-radius:12px;
   color:#dcecff;background:#102034;border:1px solid #28527b;box-shadow:var(--shadow);
   font-size:12px;opacity:0;pointer-events:none;transition:.18s
@@ -217,7 +219,7 @@ button{cursor:pointer}
 .toast.show{opacity:1}
 
 @media(min-width:700px){
-  .app-shell{padding-bottom:92px}
+  .app-shell{padding-bottom:calc(120px + max(env(safe-area-inset-bottom),0px))}
   .topbar{min-height:108px;padding:22px 34px 18px}
   .topbar h1{font-size:34px}
   .subline{font-size:13px}
@@ -236,7 +238,7 @@ button{cursor:pointer}
   .select,.input{height:47px}
   .metric-grid{gap:11px}.metric-card{padding:16px;min-height:112px}.metric-card b{font-size:21px}
   .chart-frame{height:500px}
-  .bottom-nav{height:82px}
+  .bottom-nav{min-height:88px;height:calc(88px + max(env(safe-area-inset-bottom),0px))}
   .bottom-nav button{font-size:11px}.nav-icon{font-size:23px}
 }
 @media(max-width:520px){
