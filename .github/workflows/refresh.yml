@@ -1,0 +1,117 @@
+name: Public V2 9-metric refresh
+
+on:
+  schedule:
+    # KST 00:10 / 06:10 / 12:10 / 18:10
+    - cron: '10 3,9,15,21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: public-v2-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate fixed seed and code
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/refresh-batch.py scripts/validate-state.py server/public_site_fundamentals.py
+          python scripts/validate-state.py data/state-v2.json data/universe-3700.json config/metrics-v2.json
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Load current state
+        id: state
+        shell: bash
+        env:
+          LIVE_BASE: ${{ steps.pages.outputs.base_url }}
+        run: |
+          set -euo pipefail
+          BASE="${LIVE_BASE%/}"
+          OUT="$RUNNER_TEMP/current.json"
+
+          set +e
+          CODE=$(curl -L -sS --connect-timeout 10 --max-time 90 --retry 2 --retry-delay 2 \
+            -H 'Cache-Control: no-cache' \
+            -o "$OUT" -w '%{http_code}' \
+            "$BASE/state-v2.json?cb=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}")
+          RC=$?
+          set -e
+
+          if [ "$RC" -ne 0 ]; then
+            echo "NETWORK_ERROR" >&2
+            exit 41
+          fi
+
+          if [ "$CODE" = "200" ]; then
+            python scripts/validate-state.py "$OUT" data/universe-3700.json config/metrics-v2.json
+            echo "base=$OUT" >> "$GITHUB_OUTPUT"
+          elif [ "$CODE" = "404" ]; then
+            cp data/state-v2.json "$OUT"
+            echo "base=$OUT" >> "$GITHUB_OUTPUT"
+          else
+            echo "HTTP_$CODE" >&2
+            exit 42
+          fi
+
+      - name: Refresh oldest 1000
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp "${{ steps.state.outputs.base }}" "$RUNNER_TEMP/state-v2.json"
+          python scripts/refresh-batch.py \
+            --universe data/universe-3700.json \
+            --config config/metrics-v2.json \
+            --state "$RUNNER_TEMP/state-v2.json" \
+            --seed "${{ steps.state.outputs.base }}" \
+            --status "$RUNNER_TEMP/last-refresh.json" \
+            --count 1000 \
+            --workers 3
+
+      - name: Validate refreshed state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate-state.py "$RUNNER_TEMP/state-v2.json" data/universe-3700.json config/metrics-v2.json
+
+      - name: Build Pages package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/site"
+          cp "$RUNNER_TEMP/state-v2.json" "$RUNNER_TEMP/site/state-v2.json"
+          cp "$RUNNER_TEMP/last-refresh.json" "$RUNNER_TEMP/site/last-refresh.json"
+          printf '%s\n' '<!doctype html><meta charset="utf-8"><title>US Stock Public V2</title><p>US Stock Public V2 data endpoint.</p>' > "$RUNNER_TEMP/site/index.html"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/site
+          retention-days: 1
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
