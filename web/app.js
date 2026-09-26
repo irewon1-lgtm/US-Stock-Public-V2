@@ -389,6 +389,8 @@ function renderFavorites(){
   wireRows(views.favorites);
 }
 function wireRows(root){
+  if(root.dataset.rowsWired==="1") return;
+  root.dataset.rowsWired="1";
   root.addEventListener("click",e=>{
     const fav=e.target.closest("[data-fav]");
     if(fav){
@@ -399,7 +401,7 @@ function wireRows(root){
     }
     const hit=e.target.closest("[data-open]");
     if(hit) openDetail(hit.dataset.open);
-  },{once:true});
+  });
 }
 function toggleFavorite(ticker){
   if(app.favorites.has(ticker)){app.favorites.delete(ticker);toast(`${ticker} 관심종목 해제`);}
