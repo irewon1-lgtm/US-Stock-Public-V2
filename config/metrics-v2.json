@@ -1,0 +1,127 @@
+{
+  "schema": "US_PUBLIC_V2_NINE_METRICS_V1",
+  "version": "Public V2",
+  "metricCount": 9,
+  "removedMetric": {
+    "key": "TTM_PER",
+    "label": "TTM PER",
+    "state": "REMOVED_FROM_V2"
+  },
+  "eligibility": {
+    "universeRecordCount": 3700,
+    "minimumConnectedMetrics": 8,
+    "preferredConnectedMetrics": 9,
+    "note": "The original universe had >=9/10 connected metrics. After removing TTM PER, some records are naturally 8/9."
+  },
+  "metrics": [
+    {
+      "key": "Revenue_TTM_YoY_Pct",
+      "label": "매출 YoY",
+      "source": "Finviz",
+      "unit": "%",
+      "defaultFilter": {
+        "operator": ">=",
+        "value": 15
+      }
+    },
+    {
+      "key": "Gross_Margin_TTM_Pct",
+      "label": "Gross Margin",
+      "source": "Finviz",
+      "unit": "%",
+      "defaultFilter": {
+        "operator": ">=",
+        "value": 40
+      }
+    },
+    {
+      "key": "Operating_Margin_TTM_Pct",
+      "label": "영업이익률",
+      "source": "Finviz",
+      "unit": "%",
+      "defaultFilter": {
+        "operator": ">=",
+        "value": 15
+      }
+    },
+    {
+      "key": "Net_Margin_TTM_Pct",
+      "label": "순이익률",
+      "source": "Finviz",
+      "unit": "%",
+      "defaultFilter": {
+        "operator": ">=",
+        "value": 10
+      }
+    },
+    {
+      "key": "ROA_TTM_Pct",
+      "label": "ROA",
+      "source": "Finviz",
+      "unit": "%",
+      "defaultFilter": {
+        "operator": ">=",
+        "value": 8
+      }
+    },
+    {
+      "key": "FCF_Yield_TTM_Pct",
+      "label": "FCF Yield",
+      "source": "StockAnalysis",
+      "unit": "%",
+      "defaultFilter": {
+        "operator": ">=",
+        "value": 5
+      }
+    },
+    {
+      "key": "Price_Sales_TTM",
+      "label": "P/S",
+      "source": "Finviz",
+      "unit": "x",
+      "defaultFilter": {
+        "operator": "<=",
+        "value": 4
+      }
+    },
+    {
+      "key": "Shares_Change_YoY_Pct",
+      "label": "주식수 YoY",
+      "source": "StockAnalysis",
+      "unit": "%",
+      "defaultFilter": {
+        "operator": "<=",
+        "value": 5
+      }
+    },
+    {
+      "key": "Drawdown_52W_Pct",
+      "label": "52주 낙폭",
+      "source": "Finviz",
+      "unit": "%",
+      "defaultFilter": {
+        "operator": "range",
+        "min": 15,
+        "max": 60
+      }
+    }
+  ],
+  "weighting": {
+    "userAdjustable": true,
+    "requiredTotalPct": 100,
+    "defaultMode": "equal",
+    "defaultWeightPct": 11.1111111111
+  },
+  "updateMetadata": {
+    "perMetricUpdatedAt": true,
+    "perTickerUpdatedAt": true,
+    "keepPreviousGoodValueOnFetchFailure": true,
+    "compactMetricCell": true,
+    "cellFields": [
+      "value",
+      "status",
+      "source",
+      "updatedAt"
+    ]
+  }
+}
