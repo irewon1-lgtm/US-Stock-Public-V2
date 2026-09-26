@@ -1,0 +1,25 @@
+name: Remove temporary transfer branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/cleanup-transfer.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete temporary branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin --delete transfer-seed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
