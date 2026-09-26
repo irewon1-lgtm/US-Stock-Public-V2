@@ -31,6 +31,36 @@ const UI_DEFAULT_WEIGHTS = Object.freeze({
   Drawdown_52W_Pct: 10,
 });
 
+const SECTOR_ORDER = Object.freeze([
+  "기술","헬스케어","금융","경기소비재","필수소비재","산업재",
+  "커뮤니케이션","에너지","소재","부동산","유틸리티","기타"
+]);
+
+function normalizedSector(record){
+  const raw=String(record?.sector || record?.category || "").trim();
+  if(!raw) return "기타";
+  const s=raw.toLowerCase();
+
+  const rules=[
+    ["기술",["technology","information technology","tech","software","semiconductor","computer","electronic technology","technology services","하드웨어","소프트웨어","반도체","기술"]],
+    ["헬스케어",["healthcare","health care","medical","biotechnology","biotech","pharmaceutical","drug","헬스케어","의료","바이오","제약"]],
+    ["금융",["financial","finance","bank","insurance","capital markets","asset management","금융","은행","보험"]],
+    ["경기소비재",["consumer cyclical","consumer discretionary","retail","automotive","auto","travel","leisure","restaurant","경기소비재"]],
+    ["필수소비재",["consumer defensive","consumer staples","food","beverage","household","tobacco","필수소비재"]],
+    ["산업재",["industrials","industrial","aerospace","defense","machinery","transportation","business services","산업재"]],
+    ["커뮤니케이션",["communication services","communication","telecom","media","entertainment","internet content","커뮤니케이션","통신","미디어"]],
+    ["에너지",["energy","oil","gas","coal","에너지"]],
+    ["소재",["basic materials","materials","chemicals","steel","metals","mining","paper","소재"]],
+    ["부동산",["real estate","reit","부동산"]],
+    ["유틸리티",["utilities","utility","electric","water","regulated gas","유틸리티"]]
+  ];
+
+  for(const [label,keywords] of rules){
+    if(keywords.some(k=>s.includes(k))) return label;
+  }
+  return "기타";
+}
+
 const app = {
   records: [],
   recordMap: new Map(),
@@ -177,12 +207,45 @@ function openDetail(ticker){
   if(!r) return;
   app.previousTab=app.tab;
   app.detailTicker=r.ticker;
+
+  // One same-document history entry makes Android back return to the
+  // exact list tab instead of closing the WebView activity.
+  history.pushState(
+    {usv2:"detail",ticker:r.ticker,from:app.previousTab},
+    "",
+    "#detail="+encodeURIComponent(r.ticker)
+  );
+
   hideAll();
   views.detail.classList.remove("hidden");
   setNav("");
   renderDetail(r);
   window.scrollTo({top:0,behavior:"smooth"});
 }
+
+function closeDetail(){
+  const target=app.previousTab || "ranking";
+  if(app.detailTicker && history.state?.usv2==="detail"){
+    history.back();
+    return true;
+  }
+  if(app.detailTicker){
+    showTab(target,true);
+    return true;
+  }
+  return false;
+}
+
+// Called first by the Android wrapper on the physical/gesture Back action.
+window.USV2_NATIVE_BACK=()=>closeDetail();
+
+window.addEventListener("popstate",()=>{
+  if(!app.loaded) return;
+  if(app.detailTicker){
+    const target=app.previousTab || "ranking";
+    showTab(target,true);
+  }
+});
 
 function activeBaseRecords(){
   let rows=app.records;
@@ -193,7 +256,7 @@ function activeBaseRecords(){
       String(r.company||"").toLowerCase().includes(q)
     );
   }
-  if(app.sector!=="ALL") rows=rows.filter(r=>String(r.sector||"기타")===app.sector);
+  if(app.sector!=="ALL") rows=rows.filter(r=>normalizedSector(r)===app.sector);
   if(app.connected==="9") rows=rows.filter(r=>Number(r.numericCount)===9);
   return rows;
 }
@@ -224,7 +287,7 @@ function stockRow(r,index,withRank=true){
       ${rank}
       <div class="stock-main">
         <div class="ticker">${esc(r.ticker)}</div>
-        <div class="company">${esc(r.company || r.ticker)}</div>
+        <div class="company-line"><span class="company">${esc(r.company || r.ticker)}</span><span class="sector-tag">${esc(normalizedSector(r))}</span></div>
         <div class="metric-chips">
           ${metricChip(r,"Revenue_TTM_YoY_Pct")}
           ${metricChip(r,"Price_Sales_TTM")}
@@ -238,7 +301,8 @@ function stockRow(r,index,withRank=true){
 function renderRanking(){
   const view=currentView();
   const rows=view.rows.slice(0,app.visibleRows);
-  const sectors=[...new Set(app.records.map(r=>String(r.sector||"기타")).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"ko"));
+  const presentSectors=new Set(app.records.map(normalizedSector));
+  const sectors=SECTOR_ORDER.filter(s=>presentSectors.has(s));
   const n9=app.records.filter(r=>Number(r.numericCount)===9).length;
   const filterOn=Object.values(app.appliedFilters).filter(f=>f.enabled).length;
 
@@ -421,7 +485,7 @@ function renderDetail(r){
       <div class="detail-id">
         <h2>${esc(r.ticker)}</h2>
         <div class="company">${esc(r.company||r.ticker)}</div>
-        <div class="detail-meta">${esc(r.exchange||"")} ${r.sector?"· "+esc(r.sector):""} ${r.industry?"· "+esc(r.industry):""}</div>
+        <div class="detail-meta">${esc(r.exchange||"")} · ${esc(normalizedSector(r))} ${r.industry?"· "+esc(r.industry):""}</div>
       </div>
       <button id="detailStar" class="detail-star ${fav?"on":""}" type="button">${fav?"★":"☆"}</button>
     </div>
@@ -450,12 +514,12 @@ function renderDetail(r){
       <b>${esc(r.company||r.ticker)}</b><br>
       티커 ${esc(r.ticker)}
       ${r.exchange?` · 거래소 ${esc(r.exchange)}`:""}
-      ${r.sector?` · 섹터 ${esc(r.sector)}`:""}
+       · 섹터 ${esc(normalizedSector(r))}
       ${r.industry?`<br>산업 ${esc(r.industry)}`:""}
       <br>정량 데이터와 차트는 서로 독립적으로 동작합니다. 차트 로딩이 실패해도 9지표·랭킹·필터에는 영향을 주지 않습니다.
     </div>`;
 
-  $("#detailBack",views.detail).addEventListener("click",()=>showTab(app.previousTab||"ranking"));
+  $("#detailBack",views.detail).addEventListener("click",()=>closeDetail());
   $("#detailStar",views.detail).addEventListener("click",()=>{
     toggleFavorite(r.ticker);renderDetail(r);
   });
@@ -501,5 +565,9 @@ nav.addEventListener("click",e=>{
 });
 $("#dataReloadTop").addEventListener("click",()=>loadData(true));
 $("#retryButton").addEventListener("click",()=>loadData(true));
+
+if(!history.state?.usv2){
+  history.replaceState({usv2:"tab",tab:"ranking"},"",location.pathname+location.search);
+}
 
 loadData();
