@@ -1,6 +1,9 @@
 name: Public V2 9-metric refresh
 
 on:
+  push:
+    paths:
+      - 'scripts/build-analysis-csv.py'
   schedule:
     # KST 00:10 / 06:10 / 12:10 / 18:10
     - cron: '10 3,9,15,21 * * *'
@@ -36,7 +39,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m py_compile scripts/refresh-batch.py scripts/validate-state.py server/public_site_fundamentals.py
+          python -m py_compile scripts/refresh-batch.py scripts/validate-state.py scripts/build-analysis-csv.py server/public_site_fundamentals.py
           python scripts/validate-state.py data/state-v2.json data/universe-3700.json config/metrics-v2.json
 
       - name: Configure Pages
@@ -97,6 +100,14 @@ jobs:
           set -euo pipefail
           python scripts/validate-state.py "$RUNNER_TEMP/state-v2.json" data/universe-3700.json config/metrics-v2.json
 
+      - name: Build analysis CSV
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build-analysis-csv.py \
+            --state "$RUNNER_TEMP/state-v2.json" \
+            --out "$RUNNER_TEMP/US3700_ANALYSIS.csv"
+
       - name: Build Pages package
         shell: bash
         run: |
@@ -104,6 +115,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/site"
           cp "$RUNNER_TEMP/state-v2.json" "$RUNNER_TEMP/site/state-v2.json"
           cp "$RUNNER_TEMP/last-refresh.json" "$RUNNER_TEMP/site/last-refresh.json"
+          cp "$RUNNER_TEMP/US3700_ANALYSIS.csv" "$RUNNER_TEMP/site/US3700_ANALYSIS.csv"
           cp config/metrics-v2.json "$RUNNER_TEMP/site/metrics-v2.json"
           cp engine/rank-filter-engine.mjs "$RUNNER_TEMP/site/rank-filter-engine.mjs"
           cp chart.html "$RUNNER_TEMP/site/chart.html"
