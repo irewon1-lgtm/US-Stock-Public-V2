@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07101c">
+<meta name="color-scheme" content="dark">
+<title>미국주식 V2</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app" class="app-shell">
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">U.S. STOCKS</div>
+      <h1>미국주식 <span>V2</span></h1>
+      <div id="headerSub" class="subline">3,700종목 · 9지표 · Public V2</div>
+    </div>
+    <button id="dataReloadTop" class="icon-btn" type="button" aria-label="데이터 다시 불러오기">↻</button>
+  </header>
+
+  <main id="main" class="main">
+    <section id="loadingView" class="center-state">
+      <div class="spinner"></div>
+      <strong>3,700종목 불러오는 중</strong>
+      <span>Public V2 데이터를 읽고 있습니다.</span>
+    </section>
+
+    <section id="errorView" class="center-state hidden">
+      <strong>데이터를 불러오지 못했습니다.</strong>
+      <span id="errorMessage">네트워크 연결을 확인해주세요.</span>
+      <button id="retryButton" class="primary-btn" type="button">다시 시도</button>
+    </section>
+
+    <section id="rankingView" class="view hidden"></section>
+    <section id="filterView" class="view hidden"></section>
+    <section id="favoritesView" class="view hidden"></section>
+    <section id="dataView" class="view hidden"></section>
+    <section id="detailView" class="view hidden"></section>
+  </main>
+
+  <nav id="bottomNav" class="bottom-nav" aria-label="주요 메뉴">
+    <button type="button" data-tab="ranking" class="active"><span class="nav-icon">▥</span><span>랭킹</span></button>
+    <button type="button" data-tab="filter"><span class="nav-icon">▽</span><span>필터</span></button>
+    <button type="button" data-tab="favorites"><span class="nav-icon">☆</span><span>관심</span></button>
+    <button type="button" data-tab="data"><span class="nav-icon">◉</span><span>데이터</span></button>
+  </nav>
+</div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
