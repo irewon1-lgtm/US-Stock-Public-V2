@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowInsets;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -26,6 +28,20 @@ public class MainActivity extends Activity {
         webView = new WebView(this);
         webView.setBackgroundColor(Color.parseColor("#060B13"));
         webView.setOverScrollMode(View.OVER_SCROLL_NEVER);
+
+        // Android 15/16 can draw app content behind the system navigation bar.
+        // Apply the real system-bar insets to the WebView so the bottom app tabs
+        // always stay above the Galaxy navigation/home area.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            webView.setOnApplyWindowInsetsListener((v, insets) -> {
+                android.graphics.Insets bars =
+                        insets.getInsets(WindowInsets.Type.systemBars());
+                v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+                return insets;
+            });
+        } else {
+            webView.setFitsSystemWindows(true);
+        }
 
         WebSettings s = webView.getSettings();
         s.setJavaScriptEnabled(true);
@@ -95,8 +111,20 @@ public class MainActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (webView != null && webView.canGoBack()) webView.goBack();
-        else super.onBackPressed();
+        if (webView == null) {
+            super.onBackPressed();
+            return;
+        }
+
+        // Let the SPA close a stock-detail screen first. This prevents the
+        // activity from exiting when the user presses Back after opening a chart.
+        webView.evaluateJavascript(
+                "(function(){try{return !!(window.USV2_NATIVE_BACK&&window.USV2_NATIVE_BACK());}catch(e){return false;}})()",
+                value -> {
+                    if ("true".equals(value)) return;
+                    if (webView.canGoBack()) webView.goBack();
+                    else MainActivity.super.onBackPressed();
+                });
     }
 
     @Override
