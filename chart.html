@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>US Stock V2 Chart</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;width:100%;height:100%;background:#070b12;color:#f5f7fb;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  body{display:flex;flex-direction:column;overflow:hidden}
+  .head{flex:0 0 auto;padding:14px 16px 10px;background:#0b111b;border-bottom:1px solid #1d2633}
+  .row{display:flex;align-items:baseline;gap:10px;min-width:0}
+  .ticker{font-size:22px;font-weight:800;letter-spacing:.2px}
+  .market{font-size:12px;color:#8592a6;white-space:nowrap}
+  .note{margin-top:5px;font-size:12px;color:#7f8ca0}
+  .chart{position:relative;flex:1 1 auto;min-height:280px;background:#070b12}
+  .tradingview-widget-container,.tradingview-widget-container__widget{height:100%;width:100%}
+  .loading,.error{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;background:#070b12;color:#8996a9;font-size:14px;z-index:2}
+  .error{display:none;flex-direction:column;gap:12px}
+  button{border:1px solid #2c3a4e;background:#111a27;color:#eaf1fb;border-radius:10px;padding:9px 14px;font-weight:700}
+  .copyright{position:absolute;right:10px;bottom:5px;z-index:3;font-size:10px;color:#64748b}
+  .copyright a{color:#7aa2ff;text-decoration:none}
+</style>
+</head>
+<body>
+  <header class="head">
+    <div class="row"><div id="ticker" class="ticker">—</div><div id="market" class="market"></div></div>
+    <div class="note">확인용 일봉 차트 · TradingView 데이터 기준 · 지연 가능</div>
+  </header>
+
+  <main class="chart">
+    <div id="loading" class="loading">차트 불러오는 중…</div>
+    <div id="error" class="error">
+      <div>차트를 불러오지 못했습니다.</div>
+      <button type="button" onclick="location.reload()">다시 시도</button>
+    </div>
+    <div id="tv" class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+    </div>
+    <div class="copyright"><a id="tvLink" href="https://www.tradingview.com/" target="_blank" rel="noopener nofollow">TradingView</a></div>
+  </main>
+
+<script>
+(() => {
+  const p = new URLSearchParams(location.search);
+  const cleanTicker = v => String(v || "").trim().toUpperCase().replace(/[^A-Z0-9.\-]/g,"").slice(0,15);
+  const cleanExchange = v => String(v || "").trim().toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,24);
+  const cleanFull = v => String(v || "").trim().toUpperCase().replace(/[^A-Z0-9:.\-]/g,"").slice(0,40);
+
+  const aliases = {
+    NASDAQGS:"NASDAQ", NASDAQGM:"NASDAQ", NASDAQCM:"NASDAQ", NASDAQ:"NASDAQ",
+    NYSE:"NYSE", NYSEMKT:"AMEX", NYSEAMERICAN:"AMEX", AMEX:"AMEX"
+  };
+
+  const ticker = cleanTicker(p.get("ticker")) || "AAPL";
+  const requestedExchange = cleanExchange(p.get("exchange"));
+  const exchange = aliases[requestedExchange] || requestedExchange || "NASDAQ";
+  const requestedSymbol = cleanFull(p.get("symbol"));
+  const symbol = requestedSymbol.includes(":") ? requestedSymbol : exchange + ":" + ticker;
+
+  document.getElementById("ticker").textContent = ticker;
+  document.getElementById("market").textContent = exchange;
+  document.title = ticker + " · US Stock V2";
+  document.getElementById("tvLink").href =
+    "https://www.tradingview.com/symbols/" + encodeURIComponent(symbol.replace(":","-")) + "/";
+
+  const loading = document.getElementById("loading");
+  const error = document.getElementById("error");
+  const widget = document.querySelector(".tradingview-widget-container__widget");
+
+  const fail = () => {
+    loading.style.display = "none";
+    error.style.display = "flex";
+  };
+
+  const observer = new MutationObserver(() => {
+    if (widget.querySelector("iframe")) {
+      loading.style.display = "none";
+      error.style.display = "none";
+      observer.disconnect();
+    }
+  });
+  observer.observe(widget,{childList:true,subtree:true});
+
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.async = true;
+  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+  script.onerror = fail;
+  script.textContent = JSON.stringify({
+    autosize:true,
+    symbol:symbol,
+    interval:"D",
+    timezone:"exchange",
+    theme:"dark",
+    style:"3",
+    locale:"ko",
+    backgroundColor:"#070b12",
+    gridColor:"rgba(255,255,255,0.06)",
+    hide_side_toolbar:true,
+    hide_top_toolbar:false,
+    hide_legend:true,
+    hide_volume:true,
+    withdateranges:true,
+    allow_symbol_change:false,
+    save_image:false,
+    details:false,
+    hotlist:false,
+    calendar:false,
+    support_host:"https://www.tradingview.com"
+  });
+  document.getElementById("tv").appendChild(script);
+
+  setTimeout(() => {
+    if (!widget.querySelector("iframe")) fail();
+  }, 15000);
+})();
+</script>
+</body>
+</html>
