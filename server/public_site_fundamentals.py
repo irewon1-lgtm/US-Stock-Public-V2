@@ -4,7 +4,7 @@ No login, API key, proxy, captcha bypass, or anti-bot circumvention is used.
 If a public page refuses access, callers keep the prior verified observation.
 """
 from __future__ import annotations
-import random,re,time,urllib.error,urllib.parse,urllib.request
+import html,random,re,time,urllib.error,urllib.parse,urllib.request
 from html.parser import HTMLParser
 
 UA='Mozilla/5.0 (compatible; AIRankerPublicFundamentals/1.0; +https://github.com/irewon1-lgtm/Ai-rank-android)'
@@ -25,7 +25,30 @@ class _Cells(HTMLParser):
         t=' '.join(data.split())
         if t:self.text.append(t)
         if self.in_td and t:self.buf.append(t)
+class _Links(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True);self.href=None;self.buf=[];self.links=[]
+    def handle_starttag(self,tag,attrs):
+        if tag.lower()=='a':
+            self.href=dict(attrs).get('href') or '';self.buf=[]
+    def handle_data(self,data):
+        if self.href is not None:
+            t=' '.join(data.split())
+            if t:self.buf.append(t)
+    def handle_endtag(self,tag):
+        if tag.lower()=='a' and self.href is not None:
+            label=' '.join(' '.join(self.buf).split())
+            if label:self.links.append((html.unescape(self.href),label))
+            self.href=None;self.buf=[]
 def _tokens(page): p=_Cells();p.feed(page);return p.cells,p.text
+def _finviz_identity(page):
+    p=_Links();p.feed(page);sector='';industry=''
+    for href,label in p.links:
+        h=href.lower()
+        if not sector and re.search(r'(?:[?&]|&amp;)f=sec_',h):sector=label
+        if not industry and re.search(r'(?:[?&]|&amp;)f=ind_',h):industry=label
+        if sector and industry:break
+    return sector,industry
 def _number(s):
     if s is None:return None
     s=str(s).strip().replace(',','').replace('−','-')
@@ -46,6 +69,7 @@ def _value_after(tokens,label,max_gap=5):
     return None
 def parse_finviz(page):
     cells,text=_tokens(page);tokens=cells or text
+    sector,industry=_finviz_identity(page)
     labels={'Revenue_TTM_YoY_Pct':'Sales Y/Y TTM','Gross_Margin_TTM_Pct':'Gross Margin','Operating_Margin_TTM_Pct':'Oper. Margin','Net_Margin_TTM_Pct':'Profit Margin','ROA_TTM_Pct':'ROA','TTM_PER':'P/E','Price_Sales_TTM':'P/S','Drawdown_52W_Pct':'52W High'}
     out={}
     for key,label in labels.items():
@@ -55,6 +79,7 @@ def parse_finviz(page):
         else:v=_number(raw)
         out[key]={'raw':raw,'value':v}
     epsraw=_value_after(tokens,'EPS (ttm)') or _value_after(tokens,'EPS TTM');out['_eps_ttm']={'raw':epsraw,'value':_number(epsraw)}
+    out['_sector']={'raw':sector or None,'value':sector or None};out['_industry']={'raw':industry or None,'value':industry or None}
     if not any(v['raw'] is not None for k,v in out.items() if not k.startswith('_')):raise PublicSourceError('FINVIZ_FIELDS_NOT_FOUND')
     return out
 def parse_stockanalysis(page):
@@ -127,6 +152,12 @@ def collect_ticker(identity,as_of,previous=None,fetchers=None):
     ff,ss=(fetchers or {}).get('finviz',fetch_finviz),(fetchers or {}).get('stockanalysis',fetch_stockanalysis)
     try:
         fu,f=ff(ticker)
+        finviz_sector=str((f.get('_sector') or {}).get('value') or '').strip()
+        finviz_industry=str((f.get('_industry') or {}).get('value') or '').strip()
+        if finviz_sector or finviz_industry:
+            identity=dict(identity)
+            if finviz_sector:identity['sector']=finviz_sector;sector=finviz_sector
+            if finviz_industry:identity['industry']=finviz_industry
         for key in ['Revenue_TTM_YoY_Pct','Gross_Margin_TTM_Pct','Operating_Margin_TTM_Pct','Net_Margin_TTM_Pct','ROA_TTM_Pct','Price_Sales_TTM','Drawdown_52W_Pct']:
             row=f.get(key,{}) ;v=row.get('value');raw=row.get('raw')
             if v is not None:metrics[key]=_cell(v,fu,as_of)
