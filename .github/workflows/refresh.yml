@@ -1,9 +1,6 @@
 name: Public V2 9-metric refresh
 
 on:
-  push:
-    paths:
-      - '.github/SECTOR_REFRESH_TRIGGER'
   schedule:
     # KST 00:10 / 06:10 / 12:10 / 18:10
     - cron: '10 3,9,15,21 * * *'
