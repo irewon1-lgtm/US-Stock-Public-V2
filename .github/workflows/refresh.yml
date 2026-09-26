@@ -104,6 +104,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/site"
           cp "$RUNNER_TEMP/state-v2.json" "$RUNNER_TEMP/site/state-v2.json"
           cp "$RUNNER_TEMP/last-refresh.json" "$RUNNER_TEMP/site/last-refresh.json"
+          cp chart.html "$RUNNER_TEMP/site/chart.html"
           printf '%s\n' '<!doctype html><meta charset="utf-8"><title>US Stock Public V2</title><p>US Stock Public V2 data endpoint.</p>' > "$RUNNER_TEMP/site/index.html"
 
       - name: Upload Pages artifact
