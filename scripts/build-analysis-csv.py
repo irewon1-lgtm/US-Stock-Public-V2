@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Canonical rolling analysis snapshot builder.
 from __future__ import annotations
 import argparse,csv,json,math
 from datetime import datetime,timezone
