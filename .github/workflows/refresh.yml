@@ -104,8 +104,12 @@ jobs:
           mkdir -p "$RUNNER_TEMP/site"
           cp "$RUNNER_TEMP/state-v2.json" "$RUNNER_TEMP/site/state-v2.json"
           cp "$RUNNER_TEMP/last-refresh.json" "$RUNNER_TEMP/site/last-refresh.json"
+          cp config/metrics-v2.json "$RUNNER_TEMP/site/metrics-v2.json"
+          cp engine/rank-filter-engine.mjs "$RUNNER_TEMP/site/rank-filter-engine.mjs"
           cp chart.html "$RUNNER_TEMP/site/chart.html"
-          printf '%s\n' '<!doctype html><meta charset="utf-8"><title>US Stock Public V2</title><p>US Stock Public V2 data endpoint.</p>' > "$RUNNER_TEMP/site/index.html"
+          cp web/index.html "$RUNNER_TEMP/site/index.html"
+          cp web/styles.css "$RUNNER_TEMP/site/styles.css"
+          cp web/app.js "$RUNNER_TEMP/site/app.js"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
