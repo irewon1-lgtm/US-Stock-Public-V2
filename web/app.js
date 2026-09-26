@@ -360,8 +360,9 @@ function renderFilter(){
     renderFilter();
   });
   $("#defaultFilters",views.filter).addEventListener("click",()=>{
+    const enabled=Object.fromEntries(METRIC_KEYS.map(k=>[k,Boolean(app.draftFilters[k]?.enabled)]));
     app.draftFilters=makeFilters();
-    app.config.metrics.forEach(m=>app.draftFilters[m.key].enabled=true);
+    METRIC_KEYS.forEach(k=>{app.draftFilters[k].enabled=enabled[k];});
     app.draftWeights={...UI_DEFAULT_WEIGHTS};
     renderFilter();
   });
