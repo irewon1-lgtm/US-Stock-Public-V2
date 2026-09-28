@@ -1,0 +1,21 @@
+name: V4 Pack SEC Cover Shares
+on:
+  push:
+    paths:
+      - 'v4-pack-sec-cover-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-sec-cover-shares
+          path: |
+            v4-sec-cover-output/dei_cover_share_facts.csv
+            v4-sec-cover-output/sec_cover_fetch_audit.csv
+            v4-sec-cover-output/summary.json
+          retention-days: 30
