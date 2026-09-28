@@ -1,0 +1,110 @@
+{
+  "schema": "V4_EULERPOOL_SPLIT_CORRECTED_MASK_V1",
+  "purpose": "Outcome-free eligibility only.",
+  "adjustment_rule": "Eulerpool OHLCV is split-adjusted. Reconstruct as-traded close by multiplying by product(toFactor/fromFactor) for split events strictly after snapshot date. Dollar volume is invariant under this price/volume split adjustment.",
+  "recovered_ok_rows_input": 2874,
+  "split_history_resolved_rows": 2874,
+  "split_history_unresolved_rows": 0,
+  "corrected_pass_rows": 1538,
+  "corrected_price_fail_rows": 271,
+  "corrected_liquidity_fail_rows": 1065,
+  "remaining_unknown_rows": 10927,
+  "by_snapshot": [
+    {
+      "snapshot_date": "2020-03-31",
+      "rows": 3406,
+      "pass_price_liquidity": 1301,
+      "unknown": 1005,
+      "price_fail": 334,
+      "liquidity_fail": 766
+    },
+    {
+      "snapshot_date": "2020-06-30",
+      "rows": 3420,
+      "pass_price_liquidity": 1347,
+      "unknown": 992,
+      "price_fail": 236,
+      "liquidity_fail": 845
+    },
+    {
+      "snapshot_date": "2020-09-30",
+      "rows": 3456,
+      "pass_price_liquidity": 1317,
+      "unknown": 1008,
+      "price_fail": 221,
+      "liquidity_fail": 910
+    },
+    {
+      "snapshot_date": "2020-12-31",
+      "rows": 3470,
+      "pass_price_liquidity": 1389,
+      "unknown": 975,
+      "price_fail": 160,
+      "liquidity_fail": 946
+    },
+    {
+      "snapshot_date": "2021-03-31",
+      "rows": 3474,
+      "pass_price_liquidity": 1600,
+      "unknown": 931,
+      "price_fail": 104,
+      "liquidity_fail": 839
+    },
+    {
+      "snapshot_date": "2021-06-30",
+      "rows": 3503,
+      "pass_price_liquidity": 1528,
+      "unknown": 930,
+      "price_fail": 97,
+      "liquidity_fail": 948
+    },
+    {
+      "snapshot_date": "2021-09-30",
+      "rows": 3543,
+      "pass_price_liquidity": 1474,
+      "unknown": 917,
+      "price_fail": 111,
+      "liquidity_fail": 1041
+    },
+    {
+      "snapshot_date": "2021-12-31",
+      "rows": 3568,
+      "pass_price_liquidity": 1511,
+      "unknown": 894,
+      "price_fail": 152,
+      "liquidity_fail": 1011
+    },
+    {
+      "snapshot_date": "2022-03-31",
+      "rows": 3567,
+      "pass_price_liquidity": 1504,
+      "unknown": 857,
+      "price_fail": 182,
+      "liquidity_fail": 1024
+    },
+    {
+      "snapshot_date": "2022-06-30",
+      "rows": 3562,
+      "pass_price_liquidity": 1466,
+      "unknown": 841,
+      "price_fail": 285,
+      "liquidity_fail": 970
+    },
+    {
+      "snapshot_date": "2022-09-30",
+      "rows": 3541,
+      "pass_price_liquidity": 1415,
+      "unknown": 814,
+      "price_fail": 300,
+      "liquidity_fail": 1012
+    },
+    {
+      "snapshot_date": "2022-12-30",
+      "rows": 3504,
+      "pass_price_liquidity": 1405,
+      "unknown": 763,
+      "price_fail": 316,
+      "liquidity_fail": 1020
+    }
+  ]
+}
