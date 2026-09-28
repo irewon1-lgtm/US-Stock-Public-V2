@@ -1,0 +1,32 @@
+name: V3 Yahoo Historical Probe
+on:
+  push:
+    paths:
+      - 'v3-probe-historical-trigger.txt'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q requests
+      - name: Probe historical and preferred tickers
+        run: |
+          python - <<'PY'
+          import requests,time,json,urllib.parse
+          syms=['AAWW','ABMD','AAIC-P-B','AAM-P-A','CHNG 6','DTE 6.25','SO 6.75 08-01-22','XONE','ZAGG','ZYNE','BC/PA','ABR-P-A','C-P-J']
+          out=[]
+          for s in syms:
+              ys=s.replace('.','-').replace('/','-')
+              u=f'https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ys,safe="")}'
+              p={'period1':1546300800,'period2':1771113600,'interval':'1d'}
+              t=time.time()
+              try:
+                  r=requests.get(u,params=p,timeout=8,headers={'User-Agent':'Mozilla/5.0 V3-Probe'})
+                  out.append({'s':s,'ys':ys,'code':r.status_code,'sec':round(time.time()-t,3),'len':len(r.content),'head':r.text[:120]})
+              except Exception as e:
+                  out.append({'s':s,'ys':ys,'error':repr(e),'sec':round(time.time()-t,3)})
+          print(json.dumps(out,indent=2))
+          PY
