@@ -1,0 +1,558 @@
+{
+  "schema": "V4_EULERPOOL_MCAP_SHARES_PROBE_V1",
+  "purpose": "Outcome-free eligibility feasibility only.",
+  "results": [
+    {
+      "kind": "shares",
+      "ticker": "AAPL",
+      "path": "/equity/shares-outstanding/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 3840,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91177",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "list",
+      "row_count": 43,
+      "first": {
+        "year": 2025,
+        "period": "2025-09-30",
+        "sharesOutstanding": 14810.356,
+        "dilutedEPS": 7.562951
+      },
+      "last": {
+        "year": 1983,
+        "period": "1983-09-30",
+        "sharesOutstanding": 13410,
+        "dilutedEPS": 0.01
+      }
+    },
+    {
+      "kind": "mcap5y",
+      "ticker": "AAPL",
+      "path": "/equity/market-cap/{t}",
+      "params": {
+        "range": "5y"
+      },
+      "http_status": 200,
+      "bytes": 98143,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91176",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "data_count": 1538,
+      "data_first": {
+        "timestamp": 1632960000000,
+        "price": 141.5,
+        "marketCap": 2123165
+      },
+      "data_last": {
+        "timestamp": 1790602200000,
+        "price": 340.9949951171875,
+        "marketCap": 5116527
+      },
+      "dict_preview": "{'isin': 'US0378331005', 'currency': 'USD', 'sharesOutstanding': 15004.697, 'data': [{'timestamp': 1632960000000, 'price': 141.5, 'marketCap': 2123165}, {'timestamp': 1633046400000, 'price': 142.65, 'marketCap': 2140420}, {'timestamp': 1633305600000, 'price': 139.14, 'marketCap': 2087754}, {'timestamp': 1633392000000, 'price': 141.11, 'marketCap': 2117313}, {'timestamp': 1633478400000, 'price': 142, 'marketCap': 2130667}, {'timestamp': 1633564800000, 'price': 143.29, 'marketCap': 2150023}, {'timestamp': 1633651200000, 'price': 142.9, 'marketCap': 2144171}, {'timestamp': 1633910400000, 'price': 142.81, 'marketCap': 2142821}, {'timestamp': 1633996800000, 'price': 141.51, 'marketCap': 2123315}, {'timestamp': 1634083200000, 'price': 140.91, 'marketCap': 2114312}, {'timestamp': 1634169600000, 'price': 143.76, 'marketCap': 2157075}, {'timestamp': 1634256000000, 'price': 144.84, 'marketCap': 2173280}, {'timestamp': 1634515200000, 'price': 146.55, 'marketCap': 2198938}, {'timestamp': 1634601600000, 'price': 148.76, 'marketCap': 2232099}, {'timestamp': 1634688000000, 'price': 149.26, 'marketCap': 2239601}, {'timestamp': 1634774400000, 'price': 149.48, 'marketCap': 2242902}, {'timestamp': 1634860800000, 'price': 148.69, 'marketCap': 2231048}, {'timestamp': 1635120000000, 'price': 148.64, 'marketCap': 2230298}, {'timestamp': 1635206400000, 'price': 149.32, 'marketCap': 2240501}, {'timestamp': 1635292800000, 'price': 148.85, 'marketCap': 2233449}, {'timestamp': 1635379200000, 'price': 152.57, 'marketCap': 2289267}, {'timestamp': 1635465600000, 'price': 149.8, 'marketCap': 2247704}, {'t"
+    },
+    {
+      "kind": "mcap_vendor",
+      "ticker": "AAPL",
+      "path": "/equity/market-cap-history/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 1235732,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91175",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "as_of",
+        "data",
+        "ticker",
+        "updated_at"
+      ],
+      "data_count": 9304,
+      "data_first": {
+        "_id": "668beba3f188c2dfadcbd599",
+        "low": 9875930400,
+        "date": "1989-10-02",
+        "high": 10103486400,
+        "open": 10045333200,
+        "close": 10017520800
+      },
+      "data_last": {
+        "_id": "6a8e6e57e28881c8ba74be2c",
+        "low": 4546190579420,
+        "date": "2026-08-25",
+        "high": 4625399701160,
+        "open": 4586385152370,
+        "close": 4571118589800
+      },
+      "dict_preview": "{'ticker': 'AAPL', 'as_of': '2026-08-26', 'updated_at': '2026-08-26T12:33:38.786Z', 'data': [{'_id': '668beba3f188c2dfadcbd599', 'low': 9875930400, 'date': '1989-10-02', 'high': 10103486400, 'open': 10045333200, 'close': 10017520800}, {'_id': '668beba3f188c2dfadcbd59a', 'low': 9734340000, 'date': '1989-10-03', 'high': 10045333200, 'open': 9989708400, 'close': 9848118000}, {'_id': '668beba3f188c2dfadcbd59b', 'low': 9820305600, 'date': '1989-10-04', 'high': 10073145600, 'open': 9875930400, 'close': 9989708400}, {'_id': '668beba3f188c2dfadcbd59c', 'low': 9989708400, 'date': '1989-10-05', 'high': 10497916800, 'open': 10045333200, 'close': 10272889200}, {'_id': '668beba3f188c2dfadcbd59d', 'low': 10384138800, 'date': '1989-10-06', 'high': 10892347200, 'open': 10439763600, 'close': 10864534800}, {'_id': '668beba3f188c2dfadcbd59e', 'low': 10722944400, 'date': '1989-10-09', 'high': 11231152800, 'open': 10836722400, 'close': 11175528000}, {'_id': '668beba3f188c2dfadcbd59f', 'low': 10947972000, 'date': '1989-10-10', 'high': 11372743200, 'open': 11231152800, 'close': 11175528000}, {'_id': '668beba3f188c2dfadcbd5a0', 'low': 10836722400, 'date': '1989-10-11', 'high': 11117374800, 'open': 11006125200, 'close': 11033937600}, {'_id': '668beba3f188c2dfadcbd5a1', 'low': 10947972000, 'date': '1989-10-12', 'high': 11117374800, 'open': 11061750000, 'close': 11006125200}, {'_id': '668beba3f188c2dfadcbd5a2', 'low': 10159111200, 'date': '1989-10-13', 'high': 11175528000, 'open': 11006125200, 'close': 10328514000}, {'_id': '668beba3f188c2dfadcbd5a3', 'low': 9595278000, 'date': '1989-10-16', 'high': "
+    },
+    {
+      "kind": "shares",
+      "ticker": "AA",
+      "path": "/equity/shares-outstanding/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 1144,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91174",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "list",
+      "row_count": 13,
+      "first": {
+        "year": 2025,
+        "period": "2025-12-31",
+        "sharesOutstanding": 263.2996,
+        "dilutedEPS": 4.360052
+      },
+      "last": {
+        "year": 2013,
+        "period": "2013-12-31",
+        "sharesOutstanding": 181.7,
+        "dilutedEPS": -12.575674
+      }
+    },
+    {
+      "kind": "mcap5y",
+      "ticker": "AA",
+      "path": "/equity/market-cap/{t}",
+      "params": {
+        "range": "5y"
+      },
+      "http_status": 200,
+      "bytes": 106842,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91173",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "data_count": 1546,
+      "data_first": {
+        "timestamp": 1633008600000,
+        "price": 48.939998626708984,
+        "marketCap": 12783
+      },
+      "data_last": {
+        "timestamp": 1790602200000,
+        "price": 42.064998626708984,
+        "marketCap": 10987
+      },
+      "dict_preview": "{'isin': 'US0138721065', 'currency': 'USD', 'sharesOutstanding': 261.202, 'data': [{'timestamp': 1633008600000, 'price': 48.939998626708984, 'marketCap': 12783}, {'timestamp': 1633095000000, 'price': 49.77000045776367, 'marketCap': 13000}, {'timestamp': 1633354200000, 'price': 49.18000030517578, 'marketCap': 12846}, {'timestamp': 1633440600000, 'price': 49.04999923706055, 'marketCap': 12812}, {'timestamp': 1633527000000, 'price': 47.04999923706055, 'marketCap': 12290}, {'timestamp': 1633613400000, 'price': 47.04999923706055, 'marketCap': 12290}, {'timestamp': 1633699800000, 'price': 46.029998779296875, 'marketCap': 12023}, {'timestamp': 1633959000000, 'price': 47.290000915527344, 'marketCap': 12352}, {'timestamp': 1634045400000, 'price': 47.779998779296875, 'marketCap': 12480}, {'timestamp': 1634131800000, 'price': 48.400001525878906, 'marketCap': 12642}, {'timestamp': 1634218200000, 'price': 48.599998474121094, 'marketCap': 12694}, {'timestamp': 1634304600000, 'price': 56, 'marketCap': 14627}, {'timestamp': 1634563800000, 'price': 57.2400016784668, 'marketCap': 14951}, {'timestamp': 1634650200000, 'price': 53.68000030517578, 'marketCap': 14021}, {'timestamp': 1634736600000, 'price': 52.5099983215332, 'marketCap': 13716}, {'timestamp': 1634823000000, 'price': 49.9900016784668, 'marketCap': 13057}, {'timestamp': 1634909400000, 'price': 49.25, 'marketCap': 12864}, {'timestamp': 1635168600000, 'price': 51.16999816894531, 'marketCap': 13366}, {'timestamp': 1635255000000, 'price': 49.54999923706055, 'marketCap': 12943}, {'timestamp': 1635341400000, 'price': 45.88999938964844, 'm"
+    },
+    {
+      "kind": "mcap_vendor",
+      "ticker": "AA",
+      "path": "/equity/market-cap-history/{t}",
+      "params": {},
+      "http_status": 404,
+      "error_body_prefix": "{\"error\":\"Not found\"}",
+      "retry_after": null
+    },
+    {
+      "kind": "shares",
+      "ticker": "AEP",
+      "path": "/equity/shares-outstanding/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 3730,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91172",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "list",
+      "row_count": 43,
+      "first": {
+        "year": 2025,
+        "period": "2025-12-31",
+        "sharesOutstanding": 520.206,
+        "dilutedEPS": 6.881889
+      },
+      "last": {
+        "year": 1983,
+        "period": "1983-12-31",
+        "sharesOutstanding": 175,
+        "dilutedEPS": 2.44
+      }
+    },
+    {
+      "kind": "mcap5y",
+      "ticker": "AEP",
+      "path": "/equity/market-cap/{t}",
+      "params": {
+        "range": "5y"
+      },
+      "http_status": 200,
+      "bytes": 86587,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91171",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "data_count": 1413,
+      "data_first": {
+        "timestamp": 1632960000000,
+        "price": 81.18,
+        "marketCap": 43357
+      },
+      "data_last": {
+        "timestamp": 1790602200000,
+        "price": 117.45999908447266,
+        "marketCap": 62734
+      },
+      "dict_preview": "{'isin': 'US0255371017', 'currency': 'USD', 'sharesOutstanding': 534.09, 'data': [{'timestamp': 1632960000000, 'price': 81.18, 'marketCap': 43357}, {'timestamp': 1633046400000, 'price': 81.38, 'marketCap': 43464}, {'timestamp': 1633305600000, 'price': 83.04, 'marketCap': 44351}, {'timestamp': 1633392000000, 'price': 83.02, 'marketCap': 44340}, {'timestamp': 1633478400000, 'price': 84.56, 'marketCap': 45163}, {'timestamp': 1633564800000, 'price': 84.14, 'marketCap': 44938}, {'timestamp': 1633651200000, 'price': 83.58, 'marketCap': 44639}, {'timestamp': 1633910400000, 'price': 82.51, 'marketCap': 44068}, {'timestamp': 1633996800000, 'price': 82.55, 'marketCap': 44089}, {'timestamp': 1634083200000, 'price': 83.46, 'marketCap': 44575}, {'timestamp': 1634169600000, 'price': 84.05, 'marketCap': 44890}, {'timestamp': 1634256000000, 'price': 83.49, 'marketCap': 44591}, {'timestamp': 1634515200000, 'price': 82.99, 'marketCap': 44324}, {'timestamp': 1634601600000, 'price': 83.8, 'marketCap': 44757}, {'timestamp': 1634688000000, 'price': 84.9, 'marketCap': 45344}, {'timestamp': 1634774400000, 'price': 85.2, 'marketCap': 45504}, {'timestamp': 1634860800000, 'price': 85.58, 'marketCap': 45707}, {'timestamp': 1635120000000, 'price': 84.67, 'marketCap': 45221}, {'timestamp': 1635206400000, 'price': 84.42, 'marketCap': 45088}, {'timestamp': 1635292800000, 'price': 84.3, 'marketCap': 45024}, {'timestamp': 1635379200000, 'price': 84.71, 'marketCap': 45243}, {'timestamp': 1635465600000, 'price': 84.71, 'marketCap': 45243}, {'timestamp': 1635724800000, 'price': 85.13, 'marketCap': 45467}, {'ti"
+    },
+    {
+      "kind": "mcap_vendor",
+      "ticker": "AEP",
+      "path": "/equity/market-cap-history/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 2099783,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91170",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "as_of",
+        "data",
+        "ticker",
+        "updated_at"
+      ],
+      "data_count": 16282,
+      "data_first": {
+        "_id": "669be34db9cec7ad288afb27",
+        "low": 6576951375,
+        "date": "1962-01-02",
+        "high": 6732689750,
+        "open": 6576951375,
+        "close": 6576951375
+      },
+      "data_last": {
+        "_id": "6aa72499db88951c1fc0ec89",
+        "low": 67683206052,
+        "date": "2026-09-11",
+        "high": 68828457437.19,
+        "open": 68553198450,
+        "close": 67908963573
+      },
+      "dict_preview": "{'ticker': 'AEP', 'as_of': '2026-09-14', 'updated_at': '2026-09-14T11:47:20.378Z', 'data': [{'_id': '669be34db9cec7ad288afb27', 'low': 6576951375, 'date': '1962-01-02', 'high': 6732689750, 'open': 6576951375, 'close': 6576951375}, {'_id': '669be34db9cec7ad288afb28', 'low': 6529031875, 'date': '1962-01-03', 'high': 6660810500, 'open': 6564971500, 'close': 6564971500}, {'_id': '669be34db9cec7ad288afb29', 'low': 6469132500, 'date': '1962-01-04', 'high': 6576951375, 'open': 6469132500, 'close': 6469132500}, {'_id': '669be34db9cec7ad288afb2a', 'low': 6253494750, 'date': '1962-01-05', 'high': 6445172750, 'open': 6325374000, 'close': 6325374000}, {'_id': '669be34db9cec7ad288afb2b', 'low': 6133696000, 'date': '1962-01-08', 'high': 6361313625, 'open': 6277454500, 'close': 6277454500}, {'_id': '669be34db9cec7ad288afb2c', 'low': 6205575250, 'date': '1962-01-09', 'high': 6289434375, 'open': 6229535000, 'close': 6229535000}, {'_id': '669be34db9cec7ad288afb2d', 'low': 6253494750, 'date': '1962-01-10', 'high': 6325374000, 'open': 6325374000, 'close': 6325374000}, {'_id': '669be34db9cec7ad288afb2e', 'low': 6253494750, 'date': '1962-01-11', 'high': 6325374000, 'open': 6313394125, 'close': 6313394125}, {'_id': '669be34db9cec7ad288afb2f', 'low': 6325374000, 'date': '1962-01-12', 'high': 6409233125, 'open': 6409233125, 'close': 6409233125}, {'_id': '669be34db9cec7ad288afb30', 'low': 6325374000, 'date': '1962-01-15', 'high': 6373293500, 'open': 6325374000, 'close': 6325374000}, {'_id': '669be34db9cec7ad288afb31', 'low': 6277454500, 'date': '1962-01-16', 'high': 6325374000, 'open': 6301414250, '"
+    },
+    {
+      "kind": "shares",
+      "ticker": "TXN",
+      "path": "/equity/shares-outstanding/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 3681,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91177",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "list",
+      "row_count": 43,
+      "first": {
+        "year": 2025,
+        "period": "2025-12-31",
+        "sharesOutstanding": 913,
+        "dilutedEPS": 5.4775467
+      },
+      "last": {
+        "year": 1983,
+        "period": "1983-12-31",
+        "sharesOutstanding": 1145,
+        "dilutedEPS": -0.13
+      }
+    },
+    {
+      "kind": "mcap5y",
+      "ticker": "TXN",
+      "path": "/equity/market-cap/{t}",
+      "params": {
+        "range": "5y"
+      },
+      "http_status": 200,
+      "bytes": 109533,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91167",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "data_count": 1547,
+      "data_first": {
+        "timestamp": 1633008600000,
+        "price": 192.2100067138672,
+        "marketCap": 175488
+      },
+      "data_last": {
+        "timestamp": 1790602200000,
+        "price": 275.7349853515625,
+        "marketCap": 251746
+      },
+      "dict_preview": "{'isin': 'US8825081040', 'currency': 'USD', 'sharesOutstanding': 913, 'data': [{'timestamp': 1633008600000, 'price': 192.2100067138672, 'marketCap': 175488}, {'timestamp': 1633095000000, 'price': 193.7899932861328, 'marketCap': 176930}, {'timestamp': 1633354200000, 'price': 190.39999389648438, 'marketCap': 173835}, {'timestamp': 1633440600000, 'price': 193.8800048828125, 'marketCap': 177012}, {'timestamp': 1633527000000, 'price': 194.38999938964844, 'marketCap': 177478}, {'timestamp': 1633613400000, 'price': 195.30999755859375, 'marketCap': 178318}, {'timestamp': 1633699800000, 'price': 195.24000549316406, 'marketCap': 178254}, {'timestamp': 1633959000000, 'price': 193.3699951171875, 'marketCap': 176547}, {'timestamp': 1634045400000, 'price': 188.47999572753906, 'marketCap': 172082}, {'timestamp': 1634131800000, 'price': 187.10000610351562, 'marketCap': 170822}, {'timestamp': 1634218200000, 'price': 192.49000549316406, 'marketCap': 175743}, {'timestamp': 1634304600000, 'price': 194.4499969482422, 'marketCap': 177533}, {'timestamp': 1634563800000, 'price': 194.91000366210938, 'marketCap': 177953}, {'timestamp': 1634650200000, 'price': 198.22999572753906, 'marketCap': 180984}, {'timestamp': 1634736600000, 'price': 199.3800048828125, 'marketCap': 182034}, {'timestamp': 1634823000000, 'price': 201.2899932861328, 'marketCap': 183778}, {'timestamp': 1634909400000, 'price': 199.07000732421875, 'marketCap': 181751}, {'timestamp': 1635168600000, 'price': 200.1999969482422, 'marketCap': 182783}, {'timestamp': 1635255000000, 'price': 196.97999572753906, 'marketCap': 179843}, {'timesta"
+    },
+    {
+      "kind": "mcap_vendor",
+      "ticker": "TXN",
+      "path": "/equity/market-cap-history/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 1815149,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91166",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "as_of",
+        "data",
+        "ticker",
+        "updated_at"
+      ],
+      "data_count": 13679,
+      "data_first": {
+        "_id": "669fb4448d17f4acbad6194d",
+        "low": 97556141491.2,
+        "date": "1972-06-01",
+        "high": 98381567692.8,
+        "open": 98231490201.6,
+        "close": 98231490201.6
+      },
+      "data_last": {
+        "low": 235055400000,
+        "date": "2026-09-04",
+        "high": 240138400000,
+        "open": 236035200000,
+        "close": 237764800000,
+        "value": 237764800000
+      },
+      "dict_preview": "{'ticker': 'TXN', 'as_of': '2026-09-06', 'updated_at': '2026-09-06T11:45:20.833Z', 'data': [{'_id': '669fb4448d17f4acbad6194d', 'low': 97556141491.2, 'date': '1972-06-01', 'high': 98381567692.8, 'open': 98231490201.6, 'close': 98231490201.6}, {'_id': '669fb4448d17f4acbad6194e', 'low': 99287804851.2, 'date': '1972-06-02', 'high': 100263308544, 'open': 99287804851.2, 'close': 100038192307.2}, {'_id': '669fb4448d17f4acbad6194f', 'low': 99813076070.4, 'date': '1972-06-05', 'high': 101163773491.2, 'open': 100038192307.2, 'close': 100188269798.4}, {'_id': '669fb4448d17f4acbad61950', 'low': 95980327833.6, 'date': '1972-06-06', 'high': 100413386035.2, 'open': 100188269798.4, 'close': 95980327833.6}, {'_id': '669fb4448d17f4acbad61951', 'low': 95605134105.6, 'date': '1972-06-07', 'high': 96430560307.2, 'open': 95980327833.6, 'close': 95605134105.6}, {'_id': '669fb4448d17f4acbad61952', 'low': 95524323148.8, 'date': '1972-06-08', 'high': 96805754035.2, 'open': 95605134105.6, 'close': 95755211596.8}, {'_id': '669fb4448d17f4acbad61953', 'low': 94548819456, 'date': '1972-06-09', 'high': 95905289088, 'open': 95755211596.8, 'close': 95299206912}, {'_id': '669fb4448d17f4acbad61954', 'low': 95680172851.2, 'date': '1972-06-12', 'high': 95980327833.6, 'open': 95680172851.2, 'close': 95905289088}, {'_id': '669fb4448d17f4acbad61955', 'low': 96355521561.6, 'date': '1972-06-13', 'high': 99888114816, 'open': 96355521561.6, 'close': 99888114816}, {'_id': '669fb4448d17f4acbad61956', 'low': 100413386035.2, 'date': '1972-06-14', 'high': 102064238438.4, 'open': 100413386035.2, 'close': 101614005964.8}, {"
+    },
+    {
+      "kind": "shares",
+      "ticker": "YUM",
+      "path": "/equity/shares-outstanding/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 2642,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91165",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "list",
+      "row_count": 32,
+      "first": {
+        "year": 2025,
+        "period": "2025-12-31",
+        "sharesOutstanding": 278,
+        "dilutedEPS": 5.6079135
+      },
+      "last": {
+        "year": 1994,
+        "period": "1994-12-31",
+        "sharesOutstanding": 608,
+        "dilutedEPS": 0.2
+      }
+    },
+    {
+      "kind": "mcap5y",
+      "ticker": "YUM",
+      "path": "/equity/market-cap/{t}",
+      "params": {
+        "range": "5y"
+      },
+      "http_status": 200,
+      "bytes": 86980,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91164",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "data_count": 1408,
+      "data_first": {
+        "timestamp": 1632960000000,
+        "price": 122.31,
+        "marketCap": 34369
+      },
+      "data_last": {
+        "timestamp": 1790602200000,
+        "price": 138.23500061035156,
+        "marketCap": 38844
+      },
+      "dict_preview": "{'isin': 'US9884981013', 'currency': 'USD', 'sharesOutstanding': 281, 'data': [{'timestamp': 1632960000000, 'price': 122.31, 'marketCap': 34369}, {'timestamp': 1633046400000, 'price': 123.64, 'marketCap': 34743}, {'timestamp': 1633305600000, 'price': 123.04, 'marketCap': 34574}, {'timestamp': 1633392000000, 'price': 123.6, 'marketCap': 34732}, {'timestamp': 1633478400000, 'price': 123.66, 'marketCap': 34748}, {'timestamp': 1633564800000, 'price': 125.22, 'marketCap': 35187}, {'timestamp': 1633651200000, 'price': 123.39, 'marketCap': 34673}, {'timestamp': 1633910400000, 'price': 122, 'marketCap': 34282}, {'timestamp': 1633996800000, 'price': 122.36, 'marketCap': 34383}, {'timestamp': 1634083200000, 'price': 123.52, 'marketCap': 34709}, {'timestamp': 1634169600000, 'price': 125.05, 'marketCap': 35139}, {'timestamp': 1634256000000, 'price': 125.21, 'marketCap': 35184}, {'timestamp': 1634515200000, 'price': 126.45, 'marketCap': 35532}, {'timestamp': 1634601600000, 'price': 125.71, 'marketCap': 35325}, {'timestamp': 1634688000000, 'price': 125.88, 'marketCap': 35372}, {'timestamp': 1634774400000, 'price': 126.78, 'marketCap': 35625}, {'timestamp': 1634860800000, 'price': 126.57, 'marketCap': 35566}, {'timestamp': 1635120000000, 'price': 125.94, 'marketCap': 35389}, {'timestamp': 1635206400000, 'price': 126.18, 'marketCap': 35457}, {'timestamp': 1635292800000, 'price': 125.79, 'marketCap': 35347}, {'timestamp': 1635379200000, 'price': 125.88, 'marketCap': 35372}, {'timestamp': 1635465600000, 'price': 124.94, 'marketCap': 35108}, {'timestamp': 1635724800000, 'price': 126.53, 'mark"
+    },
+    {
+      "kind": "mcap_vendor",
+      "ticker": "YUM",
+      "path": "/equity/market-cap-history/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 1022628,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91163",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "as_of",
+        "data",
+        "ticker",
+        "updated_at"
+      ],
+      "data_count": 7296,
+      "data_first": {
+        "_id": "669fc32fb9cec7ad2882b744",
+        "low": 3266306398.275,
+        "date": "1997-09-17",
+        "high": 3436721495.327,
+        "open": 3266306398.275,
+        "close": 3308901653.487
+      },
+      "data_last": {
+        "low": 37458540000,
+        "date": "2026-09-18",
+        "high": 38591280000,
+        "open": 37803105000,
+        "close": 38499210000,
+        "value": 38499210000
+      },
+      "dict_preview": "{'ticker': 'YUM', 'as_of': '2026-09-19', 'updated_at': '2026-09-19T11:56:29.357Z', 'data': [{'_id': '669fc32fb9cec7ad2882b744', 'low': 3266306398.275, 'date': '1997-09-17', 'high': 3436721495.327, 'open': 3266306398.275, 'close': 3308901653.487}, {'_id': '669fc32fb9cec7ad2882b745', 'low': 3323122789.36, 'date': '1997-09-18', 'high': 3422534435.658, 'open': 3351530984.903, 'close': 3422534435.658}, {'_id': '669fc32fb9cec7ad2882b746', 'low': 3415423867.721, 'date': '1997-09-19', 'high': 3521912005.751, 'open': 3415423867.721, 'close': 3436721495.327}, {'_id': '669fc32fb9cec7ad2882b747', 'low': 3401202731.848, 'date': '1997-09-22', 'high': 3450908554.996, 'open': 3408313299.784, 'close': 3408313299.784}, {'_id': '669fc32fb9cec7ad2882b748', 'low': 3401202731.848, 'date': '1997-09-23', 'high': 3422534435.658, 'open': 3408313299.784, 'close': 3408313299.784}, {'_id': '669fc32fb9cec7ad2882b749', 'low': 3401202731.848, 'date': '1997-09-24', 'high': 3422534435.658, 'open': 3415423867.721, 'close': 3408313299.784}, {'_id': '669fc32fb9cec7ad2882b74a', 'low': 3408313299.784, 'date': '1997-09-25', 'high': 3458019122.933, 'open': 3408313299.784, 'close': 3458019122.933}, {'_id': '669fc32fb9cec7ad2882b74b', 'low': 3443832063.264, 'date': '1997-09-26', 'high': 3550320201.294, 'open': 3450908554.996, 'close': 3543243709.561}, {'_id': '669fc32fb9cec7ad2882b74c', 'low': 3550320201.294, 'date': '1997-09-29', 'high': 3592915456.506, 'open': 3550320201.294, 'close': 3592915456.506}, {'_id': '669fc32fb9cec7ad2882b74d', 'low': 3621323652.049, 'date': '1997-09-30', 'high': 3791750107.836, 'open': 3"
+    },
+    {
+      "kind": "shares",
+      "ticker": "ATVI",
+      "path": "/equity/shares-outstanding/{t}",
+      "params": {},
+      "http_status": 200,
+      "bytes": 3088,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91162",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "list",
+      "row_count": 36,
+      "first": {
+        "year": 2022,
+        "period": "2022-12-31",
+        "sharesOutstanding": 791,
+        "dilutedEPS": 1.9127686
+      },
+      "last": {
+        "year": 1987,
+        "period": "1987-03-31",
+        "sharesOutstanding": 1.5,
+        "dilutedEPS": 2.4
+      }
+    },
+    {
+      "kind": "mcap5y",
+      "ticker": "ATVI",
+      "path": "/equity/market-cap/{t}",
+      "params": {
+        "range": "5y"
+      },
+      "http_status": 200,
+      "bytes": 31064,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "91161",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "type": "dict",
+      "top_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "data_count": 518,
+      "data_first": {
+        "timestamp": 1632960000000,
+        "price": 77.39,
+        "marketCap": 61061
+      },
+      "data_last": {
+        "timestamp": 1697808600000,
+        "price": 94.42,
+        "marketCap": 74497
+      },
+      "dict_preview": "{'isin': 'US00507V1098', 'currency': 'USD', 'sharesOutstanding': 789, 'data': [{'timestamp': 1632960000000, 'price': 77.39, 'marketCap': 61061}, {'timestamp': 1633046400000, 'price': 78.53, 'marketCap': 61960}, {'timestamp': 1633305600000, 'price': 77.18, 'marketCap': 60895}, {'timestamp': 1633392000000, 'price': 76.8, 'marketCap': 60595}, {'timestamp': 1633478400000, 'price': 77.29, 'marketCap': 60982}, {'timestamp': 1633564800000, 'price': 77.36, 'marketCap': 61037}, {'timestamp': 1633651200000, 'price': 77.61, 'marketCap': 61234}, {'timestamp': 1633910400000, 'price': 76.32, 'marketCap': 60216}, {'timestamp': 1633996800000, 'price': 74.92, 'marketCap': 59112}, {'timestamp': 1634083200000, 'price': 75.25, 'marketCap': 59372}, {'timestamp': 1634169600000, 'price': 76.11, 'marketCap': 60051}, {'timestamp': 1634256000000, 'price': 76.4, 'marketCap': 60280}, {'timestamp': 1634515200000, 'price': 76.4, 'marketCap': 60280}, {'timestamp': 1634601600000, 'price': 77.18, 'marketCap': 60895}, {'timestamp': 1634688000000, 'price': 78.08, 'marketCap': 61605}, {'timestamp': 1634774400000, 'price': 78.7, 'marketCap': 62094}, {'timestamp': 1634860800000, 'price': 79.27, 'marketCap': 62544}, {'timestamp': 1635120000000, 'price': 81.19, 'marketCap': 64059}, {'timestamp': 1635206400000, 'price': 80.76, 'marketCap': 63720}, {'timestamp': 1635292800000, 'price': 78.65, 'marketCap': 62055}, {'timestamp': 1635379200000, 'price': 78.88, 'marketCap': 62236}, {'timestamp': 1635465600000, 'price': 78.19, 'marketCap': 61692}, {'timestamp': 1635724800000, 'price': 79.35, 'marketCap': 62607}, {'times"
+    },
+    {
+      "kind": "mcap_vendor",
+      "ticker": "ATVI",
+      "path": "/equity/market-cap-history/{t}",
+      "params": {},
+      "http_status": 404,
+      "error_body_prefix": "{\"error\":\"Not found\"}",
+      "retry_after": null
+    }
+  ]
+}
