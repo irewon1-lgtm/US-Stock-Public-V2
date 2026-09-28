@@ -16,7 +16,7 @@ jobs:
         run: |
           python - <<'PY'
           import requests,time,json,urllib.parse
-          syms=['AAWW','ABMD','AAIC-P-B','AAM-P-A','CHNG 6','DTE 6.25','SO 6.75 08-01-22','XONE','ZAGG','ZYNE','BC/PA','ABR-P-A','C-P-J']
+          syms=['AACI','AFBI','ALOT','ASRT','ATAI','AVB','BREW','BRKL','BWNB','CIR','CLIM','CRNX','CTAA','DHCNL','DICE','EA','ELSE','FBRX','GV','HLX','ITG','KALV','LBRDP','LEG','LMNX','LPRO','MCVT','MIC','NCSM','NFBK','OLPX','PS','RNA','ROC','RVI','SAT','SCA','SKYT','TALK','TWO','VIASP','WBS','WSR']
           out=[]
           for s in syms:
               ys=s.replace('.','-').replace('/','-')
