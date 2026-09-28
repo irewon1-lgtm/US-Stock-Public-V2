@@ -1,13 +1,70 @@
 {
-  "schema": "V4_EULERPOOL_UNADJUSTED_PROBE_V6",
+  "schema": "V4_EULERPOOL_SPLIT_PROBE_V7",
   "results": [
     {
-      "label": "default",
-      "params": {
-        "from": 1577836800,
-        "to": 1578700800,
-        "interval": "1d"
+      "identifier": "AAPL",
+      "http_status": 200,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "98049",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
       },
+      "response_type": "list",
+      "payload": [
+        {
+          "symbol": "AAPL",
+          "date": "2020-08-31",
+          "fromFactor": 1,
+          "toFactor": 4
+        },
+        {
+          "symbol": "AAPL",
+          "date": "2014-06-09",
+          "fromFactor": 1,
+          "toFactor": 7
+        },
+        {
+          "symbol": "AAPL",
+          "date": "2005-02-28",
+          "fromFactor": 1,
+          "toFactor": 2
+        },
+        {
+          "symbol": "AAPL",
+          "date": "2000-06-21",
+          "fromFactor": 1,
+          "toFactor": 2
+        }
+      ]
+    },
+    {
+      "identifier": "TSLA",
+      "http_status": 200,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "98048",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "response_type": "list",
+      "payload": [
+        {
+          "symbol": "TSLA",
+          "date": "2022-08-25",
+          "fromFactor": 1,
+          "toFactor": 3
+        },
+        {
+          "symbol": "TSLA",
+          "date": "2020-08-31",
+          "fromFactor": 1,
+          "toFactor": 5
+        }
+      ]
+    },
+    {
+      "identifier": "NVDA",
       "http_status": 200,
       "quota_headers": {
         "x-ratelimit-limit": "100000",
@@ -15,19 +72,48 @@
         "x-ratelimit-reset": "1790812800",
         "x-ratelimit-window": "month"
       },
-      "row_count": 7,
-      "first_t": 1577923200,
-      "first_close": 75.089996337891,
-      "first_volume": 135647456
+      "response_type": "list",
+      "payload": [
+        {
+          "symbol": "NVDA",
+          "date": "2024-06-10",
+          "fromFactor": 1,
+          "toFactor": 10
+        },
+        {
+          "symbol": "NVDA",
+          "date": "2021-07-20",
+          "fromFactor": 1,
+          "toFactor": 4
+        },
+        {
+          "symbol": "NVDA",
+          "date": "2007-09-11",
+          "fromFactor": 2,
+          "toFactor": 3
+        },
+        {
+          "symbol": "NVDA",
+          "date": "2006-04-07",
+          "fromFactor": 1,
+          "toFactor": 2
+        },
+        {
+          "symbol": "NVDA",
+          "date": "2001-09-12",
+          "fromFactor": 1,
+          "toFactor": 2
+        },
+        {
+          "symbol": "NVDA",
+          "date": "2000-06-27",
+          "fromFactor": 1,
+          "toFactor": 2
+        }
+      ]
     },
     {
-      "label": "adjusted_false",
-      "params": {
-        "from": 1577836800,
-        "to": 1578700800,
-        "interval": "1d",
-        "adjusted": "false"
-      },
+      "identifier": "CMG",
       "http_status": 200,
       "quota_headers": {
         "x-ratelimit-limit": "100000",
@@ -35,110 +121,58 @@
         "x-ratelimit-reset": "1790812800",
         "x-ratelimit-window": "month"
       },
-      "row_count": 7,
-      "first_t": 1577923200,
-      "first_close": 75.089996337891,
-      "first_volume": 135647456
+      "response_type": "list",
+      "payload": [
+        {
+          "symbol": "CMG",
+          "date": "2024-06-26",
+          "fromFactor": 1,
+          "toFactor": 50
+        }
+      ]
     },
     {
-      "label": "adjusted_zero",
-      "params": {
-        "from": 1577836800,
-        "to": 1578700800,
-        "interval": "1d",
-        "adjusted": "0"
-      },
+      "identifier": "GE",
       "http_status": 200,
       "quota_headers": {
         "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98047",
+        "x-ratelimit-remaining": "98045",
         "x-ratelimit-reset": "1790812800",
         "x-ratelimit-window": "month"
       },
-      "row_count": 7,
-      "first_t": 1577923200,
-      "first_close": 75.089996337891,
-      "first_volume": 135647456
-    },
-    {
-      "label": "adjust_false",
-      "params": {
-        "from": 1577836800,
-        "to": 1578700800,
-        "interval": "1d",
-        "adjust": "false"
-      },
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98044",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 7,
-      "first_t": 1577923200,
-      "first_close": 75.089996337891,
-      "first_volume": 135647456
-    },
-    {
-      "label": "unadjusted_true",
-      "params": {
-        "from": 1577836800,
-        "to": 1578700800,
-        "interval": "1d",
-        "unadjusted": "true"
-      },
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98043",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 7,
-      "first_t": 1577923200,
-      "first_close": 75.089996337891,
-      "first_volume": 135647456
-    },
-    {
-      "label": "adjustment_none",
-      "params": {
-        "from": 1577836800,
-        "to": 1578700800,
-        "interval": "1d",
-        "adjustment": "none"
-      },
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98042",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 7,
-      "first_t": 1577923200,
-      "first_close": 75.089996337891,
-      "first_volume": 135647456
-    },
-    {
-      "label": "adjustments_none",
-      "params": {
-        "from": 1577836800,
-        "to": 1578700800,
-        "interval": "1d",
-        "adjustments": "none"
-      },
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98041",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 7,
-      "first_t": 1577923200,
-      "first_close": 75.089996337891,
-      "first_volume": 135647456
+      "response_type": "list",
+      "payload": [
+        {
+          "symbol": "GE",
+          "date": "2023-01-04",
+          "fromFactor": 1000,
+          "toFactor": 1281
+        },
+        {
+          "symbol": "GE",
+          "date": "2021-08-02",
+          "fromFactor": 8,
+          "toFactor": 1
+        },
+        {
+          "symbol": "GE",
+          "date": "2000-05-08",
+          "fromFactor": 1,
+          "toFactor": 3
+        },
+        {
+          "symbol": "GE",
+          "date": "1997-05-12",
+          "fromFactor": 1,
+          "toFactor": 2
+        },
+        {
+          "symbol": "GE",
+          "date": "1994-05-16",
+          "fromFactor": 1,
+          "toFactor": 2
+        }
+      ]
     }
   ]
 }
