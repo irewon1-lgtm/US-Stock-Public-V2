@@ -1,0 +1,27 @@
+name: V4 Eulerpool Probe
+on:
+  push:
+    paths:
+      - 'v4-eulerpool-probe-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe Eulerpool historical OHLCV
+        env:
+          EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
+        run: python v4-eulerpool/eulerpool_probe.py
+      - name: Commit probe result
+        run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-eulerpool-output/probe.json
+          git commit -m 'Add V4 Eulerpool feasibility probe' || true
+          git push
