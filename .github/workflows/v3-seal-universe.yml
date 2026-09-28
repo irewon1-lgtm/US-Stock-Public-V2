@@ -1,0 +1,30 @@
+name: V3 Seal Universe Input
+
+on:
+  push:
+    paths:
+      - '.github/workflows/v3-seal-universe.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  seal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch and verify sealed universe
+        env:
+          UNIVERSE_URL: 'https://sdmntprwestus.oaiusercontent.com/files/00000000-bbec-8230-bd91-fe22b9e42903/raw?se=2026-09-28T09%3A59%3A16Z&sp=r&sv=2026-02-06&sr=b&scid=33fa0d4f-3f54-5021-81ec-5f64be4db6c5&skoid=456594af-533f-44ef-9bdc-35ea2f9daee5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T08%3A46%3A56Z&ske=2026-09-29T08%3A46%3A56Z&sks=b&skv=2026-02-06&sig=l8Idk2zinsLOzATMzxh%2Bf28bBvms82JKsTO%2BeRNbeKg%3D'
+        run: |
+          mkdir -p v3-fast
+          curl --fail --location --retry 3 "$UNIVERSE_URL" -o v3-fast/price_universe_resolved.csv.gz
+          echo '29e11d6e39428c56908c02b618ab0d32819ef0f7d274dfaadc3edab57e3b83fe  v3-fast/price_universe_resolved.csv.gz' | sha256sum -c -
+      - name: Commit sealed universe
+        run: |
+          git config user.name "v3-free-runner"
+          git config user.email "actions@users.noreply.github.com"
+          git add v3-fast/price_universe_resolved.csv.gz
+          git commit -m "seal V3 universe input in repository"
+          git push
