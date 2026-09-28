@@ -1,0 +1,28 @@
+{
+  "schema": "V4_NEXT1_F4_CUSTOM_NAMESPACE_SCAN_V1",
+  "target_ciks": 202,
+  "fetch_errors": 0,
+  "ciks_with_non_usgaap_share_candidates": 1,
+  "candidate_rows": 2,
+  "new_corp_action_lookup_calls": 0,
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "candidates": [
+    {
+      "cik": 1600620,
+      "namespace": "ifrs-full",
+      "tag": "WeightedAverageExercisePriceOfShareOptionsOutstandingInSharebasedPaymentArrangement",
+      "label": "",
+      "description": ""
+    },
+    {
+      "cik": 1600620,
+      "namespace": "ifrs-full",
+      "tag": "WeightedAverageRemainingContractualLifeOfOutstandingShareOptions",
+      "label": "",
+      "description": ""
+    }
+  ],
+  "errors": []
+}
