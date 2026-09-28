@@ -1,1 +1,1 @@
-NEXT1 SEC F34 tag discovery 2026-09-29
+NEXT1 SEC F34 companyfacts discovery 2026-09-29 retry-2
