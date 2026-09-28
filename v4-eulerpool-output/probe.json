@@ -1,61 +1,135 @@
 {
-  "schema": "V4_EULERPOOL_SPLIT_BASIS_PROBE_V1",
-  "rows": [
+  "schema": "V4_STOOQ_DELISTED_SPLIT_PROBE_V1",
+  "purpose": "Outcome-free OHLCV availability only.",
+  "results": [
     {
-      "t": 1598400000,
-      "o": 126.51999664307,
-      "h": 126.51999664307,
-      "l": 126.51999664307,
-      "c": 126.51999664307,
-      "v": 163022268
+      "ticker": "AAPL",
+      "symbol": "aapl.us",
+      "http_status": 200,
+      "bytes": 796,
+      "row_count": 2,
+      "fields": [
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex",
+        "nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"Zj-ahMb8OZ7xZEB_FtKmBw\">",
+        null
+      ],
+      "first_date": null,
+      "last_date": null,
+      "first_close": null,
+      "first_volume": null,
+      "split_window": []
     },
     {
-      "t": 1598486400,
-      "o": 125.01000213623,
-      "h": 125.01000213623,
-      "l": 125.01000213623,
-      "c": 125.01000213623,
-      "v": 155552384
+      "ticker": "ABMD",
+      "symbol": "abmd.us",
+      "http_status": 200,
+      "bytes": 796,
+      "row_count": 2,
+      "fields": [
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex",
+        "nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"LvQzm5nnt2VZH-C0ZwFATA\">",
+        null
+      ],
+      "first_date": null,
+      "last_date": null,
+      "first_close": null,
+      "first_volume": null
     },
     {
-      "t": 1598572800,
-      "o": 124.80999755859,
-      "h": 124.80999755859,
-      "l": 124.80999755859,
-      "c": 124.80999755859,
-      "v": 187629916
+      "ticker": "STMP",
+      "symbol": "stmp.us",
+      "http_status": 200,
+      "bytes": 796,
+      "row_count": 2,
+      "fields": [
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex",
+        "nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"QDucUkGkLtZk_kpqVqLgZA\">",
+        null
+      ],
+      "first_date": null,
+      "last_date": null,
+      "first_close": null,
+      "first_volume": null
     },
     {
-      "t": 1598832000,
-      "o": 129.03999328613,
-      "h": 129.03999328613,
-      "l": 129.03999328613,
-      "c": 129.03999328613,
-      "v": 225702688
+      "ticker": "AAWW",
+      "symbol": "aaww.us",
+      "http_status": 200,
+      "bytes": 796,
+      "row_count": 2,
+      "fields": [
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex",
+        "nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"OXlCNtNrd6NwnoD1g4wPzQ\">",
+        null
+      ],
+      "first_date": null,
+      "last_date": null,
+      "first_close": null,
+      "first_volume": null
     },
     {
-      "t": 1598918400,
-      "o": 134.17999267578,
-      "h": 134.17999267578,
-      "l": 134.17999267578,
-      "c": 134.17999267578,
-      "v": 152470142
+      "ticker": "AABA",
+      "symbol": "aaba.us",
+      "http_status": 200,
+      "bytes": 796,
+      "row_count": 2,
+      "fields": [
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex",
+        "nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"7jtcSNcyPNTIYwUK5Rpj_w\">",
+        null
+      ],
+      "first_date": null,
+      "last_date": null,
+      "first_close": null,
+      "first_volume": null
     },
     {
-      "t": 1599004800,
-      "o": 131.39999389648,
-      "h": 131.39999389648,
-      "l": 131.39999389648,
-      "c": 131.39999389648,
-      "v": 200118991
+      "ticker": "HANS",
+      "symbol": "hans.us",
+      "http_status": 200,
+      "bytes": 796,
+      "row_count": 2,
+      "fields": [
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex",
+        "nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"kM8BcHIvQv7f1WQ5RFE-fA\">",
+        null
+      ],
+      "first_date": null,
+      "last_date": null,
+      "first_close": null,
+      "first_volume": null
     },
     {
-      "t": 1599091200,
-      "o": 120.87999725342,
-      "h": 120.87999725342,
-      "l": 120.87999725342,
-      "c": 120.87999725342,
-      "v": 257599640
+      "ticker": "MNST",
+      "symbol": "mnst.us",
+      "http_status": 200,
+      "bytes": 796,
+      "row_count": 2,
+      "fields": [
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex",
+        "nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"PCRj4vqeQJEhrCDMyvPE7A\">",
+        null
+      ],
+      "first_date": null,
+      "last_date": null,
+      "first_close": null,
+      "first_volume": null
+    },
+    {
+      "ticker": "ABT",
+      "symbol": "abt.us",
+      "http_status": 200,
+      "bytes": 796,
+      "row_count": 2,
+      "fields": [
+        "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex",
+        "nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript and reload.</noscript><script nonce=\"MbjG-M1a_LDBsCiLfjhgIQ\">",
+        null
+      ],
+      "first_date": null,
+      "last_date": null,
+      "first_close": null,
+      "first_volume": null
     }
   ]
 }
