@@ -1,12 +1,9 @@
 {
-  "schema": "V4_EULERPOOL_RANGE_DISCOVERY_V3",
+  "schema": "V4_EULERPOOL_DELISTED_PROBE_V4",
+  "purpose": "Outcome-free availability only.",
   "results": [
     {
-      "params": {
-        "from": 1577836800,
-        "to": 1578700800,
-        "interval": "1d"
-      },
+      "ticker": "AAPL",
       "http_status": 200,
       "quota_headers": {
         "x-ratelimit-limit": "100000",
@@ -14,26 +11,15 @@
         "x-ratelimit-reset": "1790812800",
         "x-ratelimit-window": "month"
       },
-      "top_keys": [
-        "c",
-        "h",
-        "l",
-        "o",
-        "t",
-        "v"
-      ],
-      "row_count": 7,
-      "first_t": 1577923200,
-      "last_t": 1578614400,
-      "volume_count": 7,
-      "first_close": 75.089996337891
+      "row_count": 777,
+      "first_t": 1575244800,
+      "last_t": 1672358400,
+      "volume_count": 777,
+      "nonnull_volume": 777,
+      "nonnull_close": 777
     },
     {
-      "params": {
-        "from": 1577836800000,
-        "to": 1578700800000,
-        "interval": "1d"
-      },
+      "ticker": "ABMD",
       "http_status": 200,
       "quota_headers": {
         "x-ratelimit-limit": "100000",
@@ -41,19 +27,86 @@
         "x-ratelimit-reset": "1790812800",
         "x-ratelimit-window": "month"
       },
-      "top_keys": [
-        "c",
-        "h",
-        "l",
-        "o",
-        "t",
-        "v"
-      ],
       "row_count": 0,
       "first_t": null,
       "last_t": null,
       "volume_count": 0,
-      "first_close": null
+      "nonnull_volume": 0,
+      "nonnull_close": 0
+    },
+    {
+      "ticker": "STMP",
+      "http_status": 200,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "99988",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "row_count": 0,
+      "first_t": null,
+      "last_t": null,
+      "volume_count": 0,
+      "nonnull_volume": 0,
+      "nonnull_close": 0
+    },
+    {
+      "ticker": "AAWW",
+      "http_status": 200,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "99987",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "row_count": 0,
+      "first_t": null,
+      "last_t": null,
+      "volume_count": 0,
+      "nonnull_volume": 0,
+      "nonnull_close": 0
+    },
+    {
+      "ticker": "AABA",
+      "http_status": 404,
+      "error_body_prefix": "{\"error\":\"Security not found\"}"
+    },
+    {
+      "ticker": "HANS",
+      "http_status": 404,
+      "error_body_prefix": "{\"error\":\"Security not found\"}"
+    },
+    {
+      "ticker": "MNST",
+      "http_status": 200,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "99984",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "row_count": 777,
+      "first_t": 1575244800,
+      "last_t": 1672358400,
+      "volume_count": 777,
+      "nonnull_volume": 777,
+      "nonnull_close": 777
+    },
+    {
+      "ticker": "ABT",
+      "http_status": 200,
+      "quota_headers": {
+        "x-ratelimit-limit": "100000",
+        "x-ratelimit-remaining": "99983",
+        "x-ratelimit-reset": "1790812800",
+        "x-ratelimit-window": "month"
+      },
+      "row_count": 778,
+      "first_t": 1575244800,
+      "last_t": 1672358400,
+      "volume_count": 778,
+      "nonnull_volume": 778,
+      "nonnull_close": 778
     }
   ]
 }
