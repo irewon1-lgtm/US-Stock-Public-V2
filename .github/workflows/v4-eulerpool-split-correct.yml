@@ -20,8 +20,15 @@ jobs:
         env:
           EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
         run: python v4-eulerpool/split_correct_recovery.py
-      - name: Commit split-corrected results safely
-        run: |
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-eulerpool-split-corrected-bundle
+          path: |
+            v4-eulerpool-output/eulerpool_split_corrected_recovery.csv.gz
+            v4-eulerpool-output/liquidity_mask_split_corrected.json
+            v4-eulerpool-output/split_correction_summary.json
+          retention-days: 1
+      - run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
           git add v4-eulerpool-output/eulerpool_split_corrected_recovery.csv.gz
@@ -29,5 +36,4 @@ jobs:
           git add v4-eulerpool-output/liquidity_mask_split_corrected.json
           git add v4-eulerpool-output/split_correction_summary.json
           git commit -m 'Add V4 split-corrected Eulerpool recovery' || true
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git push
