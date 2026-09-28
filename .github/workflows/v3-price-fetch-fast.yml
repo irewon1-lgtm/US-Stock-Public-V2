@@ -1,0 +1,78 @@
+name: V3 Price Fetch Fast
+
+on:
+  push:
+    paths:
+      - 'v3-fast-trigger.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  shard:
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3]
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q pandas numpy requests exchange-calendars
+      - name: Download sealed universe input
+        env:
+          UNIVERSE_URL: 'https://sdmntprwestus.oaiusercontent.com/files/00000000-a170-8230-bd50-cd19e57af861/raw?se=2026-09-28T08%3A10%3A52Z&sp=r&sv=2026-02-06&sr=b&scid=8aa002da-2eec-507b-aaba-bb9509248f71&skoid=456594af-533f-44ef-9bdc-35ea2f9daee5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T06%3A15%3A11Z&ske=2026-09-29T06%3A15%3A11Z&sks=b&skv=2026-02-06&sig=frOxgFjLoM4nQed2jAmNJGIwwXrxEhI/wIgkWUU5VDQ%3D'
+        run: |
+          curl --fail --location --retry 4 --retry-delay 2 "$UNIVERSE_URL" -o price_universe_resolved.csv.gz
+          test -s price_universe_resolved.csv.gz
+      - name: Run shard
+        run: python v3-fast/price_shard.py --input price_universe_resolved.csv.gz --shard ${{ matrix.shard }} --nshards 4 --outdir shard-out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v3-price-shard-${{ matrix.shard }}
+          path: shard-out/*
+          retention-days: 1
+
+  merge:
+    needs: shard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q pandas
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v3-price-shard-*
+          path: shards
+          merge-multiple: true
+      - name: Merge outputs
+        run: |
+          python - <<'PY'
+          import glob,pandas as pd
+          rows=[pd.read_csv(x,dtype=str,keep_default_na=False) for x in glob.glob('shards/rows_*.csv.gz')]
+          audits=[pd.read_csv(x,dtype=str,keep_default_na=False) for x in glob.glob('shards/audit_*.csv')]
+          out=pd.concat(rows,ignore_index=True)
+          if '_row_id' in out.columns:
+              out['_row_id']=pd.to_numeric(out['_row_id'],errors='coerce')
+              out=out.sort_values('_row_id').drop(columns=['_row_id'])
+          aud=pd.concat(audits,ignore_index=True)
+          import os
+          os.makedirs('v3-price-fast-output',exist_ok=True)
+          out.to_csv('v3-price-fast-output/price_features_targets.csv.gz',index=False,compression='gzip')
+          aud.to_csv('v3-price-fast-output/price_fetch_audit.csv',index=False)
+          print('rows=',len(out))
+          print(aud['status'].value_counts(dropna=False).to_string())
+          PY
+      - name: Commit merged result
+        run: |
+          git config user.name "v3-free-runner"
+          git config user.email "actions@users.noreply.github.com"
+          git add v3-price-fast-output/price_features_targets.csv.gz v3-price-fast-output/price_fetch_audit.csv
+          git commit -m "V3 parallel price features result" || true
+          git push
