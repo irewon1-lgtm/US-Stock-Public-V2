@@ -1,0 +1,106 @@
+{
+  "schema": "V4_NEXT1_NONFIN_COVERAGE_ELIGIBILITY_BOUNDS_V1",
+  "population": "NONFIN_MAIN",
+  "interpretation": "Eligibility UNKNOWN is not excluded. Lower bound assigns factor-missing UNKNOWN rows to eligible and factor-usable UNKNOWN rows to ineligible; upper bound assigns the reverse.",
+  "existing_corp_action_excluded_tickers": [
+    "AAWW",
+    "ABMD",
+    "STMP"
+  ],
+  "new_corp_action_lookup_calls": 0,
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "F3_min_lower_pct": 41.67424931756142,
+  "F3_min_upper_pct": 81.95084485407065,
+  "F4_min_lower_pct": 71.57894736842105,
+  "F4_min_upper_pct": 95.20319786808794,
+  "F3_final_gate": "UNRESOLVED_ELIGIBILITY",
+  "F4_final_gate": "UNRESOLVED_ELIGIBILITY",
+  "rows": [
+    {
+      "snapshot_date": "2020-03-31",
+      "F3_lower_pct": 41.67424931756142,
+      "F3_upper_pct": 85.00837520938023,
+      "F4_lower_pct": 71.86400937866354,
+      "F4_upper_pct": 98.33333333333333
+    },
+    {
+      "snapshot_date": "2020-06-30",
+      "F3_lower_pct": 43.16797214969539,
+      "F3_upper_pct": 84.93827160493828,
+      "F4_lower_pct": 73.2662192393736,
+      "F4_upper_pct": 98.36734693877551
+    },
+    {
+      "snapshot_date": "2020-09-30",
+      "F3_lower_pct": 44.73455178416014,
+      "F3_upper_pct": 86.83774834437085,
+      "F4_lower_pct": 72.11646136618141,
+      "F4_upper_pct": 98.01912568306011
+    },
+    {
+      "snapshot_date": "2020-12-31",
+      "F3_lower_pct": 46.494156928213684,
+      "F3_upper_pct": 85.52215189873418,
+      "F4_lower_pct": 73.01255230125523,
+      "F4_upper_pct": 97.21115537848605
+    },
+    {
+      "snapshot_date": "2021-03-31",
+      "F3_lower_pct": 46.94980694980695,
+      "F3_upper_pct": 83.12816799420709,
+      "F4_lower_pct": 74.812734082397,
+      "F4_upper_pct": 97.38805970149254
+    },
+    {
+      "snapshot_date": "2021-06-30",
+      "F3_lower_pct": 47.36428009441384,
+      "F3_upper_pct": 83.19641523525019,
+      "F4_lower_pct": 73.90476190476191,
+      "F4_upper_pct": 96.73076923076923
+    },
+    {
+      "snapshot_date": "2021-09-30",
+      "F3_lower_pct": 46.73123486682809,
+      "F3_upper_pct": 83.22981366459628,
+      "F4_lower_pct": 72.2820763956905,
+      "F4_upper_pct": 96.21513944223108
+    },
+    {
+      "snapshot_date": "2021-12-31",
+      "F3_lower_pct": 47.025723472668815,
+      "F3_upper_pct": 81.95084485407065,
+      "F4_lower_pct": 71.57894736842105,
+      "F4_upper_pct": 95.20319786808794
+    },
+    {
+      "snapshot_date": "2022-03-31",
+      "F3_lower_pct": 48.88521882741536,
+      "F3_upper_pct": 84.16536661466458,
+      "F4_lower_pct": 74.08506429277942,
+      "F4_upper_pct": 96.89608636977059
+    },
+    {
+      "snapshot_date": "2022-06-30",
+      "F3_lower_pct": 50.95320623916811,
+      "F3_upper_pct": 85.2589641434263,
+      "F4_lower_pct": 79.93596584845251,
+      "F4_upper_pct": 98.36956521739131
+    },
+    {
+      "snapshot_date": "2022-09-30",
+      "F3_lower_pct": 50.91074681238615,
+      "F3_upper_pct": 85.57457212713936,
+      "F4_lower_pct": 81.05022831050228,
+      "F4_upper_pct": 98.20565907522429
+    },
+    {
+      "snapshot_date": "2022-12-30",
+      "F3_lower_pct": 52.30046948356808,
+      "F3_upper_pct": 85.667215815486,
+      "F4_lower_pct": 84.08551068883611,
+      "F4_upper_pct": 98.39944328462073
+    }
+  ]
+}
