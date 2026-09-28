@@ -1,112 +1,472 @@
 {
-  "schema": "V4_EULERPOOL_DELISTED_PROBE_V4",
-  "purpose": "Outcome-free availability only.",
+  "schema": "V4_EULERPOOL_IDENTIFIER_PROBE_V5",
+  "purpose": "Outcome-free identifier resolution and OHLCV availability only.",
   "results": [
     {
-      "ticker": "AAPL",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "99999",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 777,
-      "first_t": 1575244800,
-      "last_t": 1672358400,
-      "volume_count": 777,
-      "nonnull_volume": 777,
-      "nonnull_close": 777
+      "query": "ABMD",
+      "search_status": 200,
+      "matches": [
+        {
+          "name": "ABIOMED Inc",
+          "isin": "US0036541003",
+          "ticker": "ABMD",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 0,
+          "first_t": null,
+          "last_t": null,
+          "volume_count": 0
+        }
+      ],
+      "search_error": null
     },
     {
-      "ticker": "ABMD",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "99998",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 0,
-      "first_t": null,
-      "last_t": null,
-      "volume_count": 0,
-      "nonnull_volume": 0,
-      "nonnull_close": 0
+      "query": "STMP",
+      "search_status": 200,
+      "matches": [
+        {
+          "name": "Stamps.Com Inc",
+          "isin": "US8528572006",
+          "ticker": "STMP",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 0,
+          "first_t": null,
+          "last_t": null,
+          "volume_count": 0
+        },
+        {
+          "name": "Stamper Oil & Gas Corp",
+          "isin": "CA85284P3007",
+          "ticker": "STMP.V",
+          "type": "stock",
+          "currency": "CAD",
+          "history_status": 200,
+          "row_count": 773,
+          "first_t": 1575297000,
+          "last_t": 1672410600,
+          "volume_count": 773
+        },
+        {
+          "name": "STMicroelectronics NV",
+          "isin": "NL0000226223",
+          "ticker": "STMPA.PA",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 772,
+          "first_t": 1577952000,
+          "last_t": 1672387200,
+          "volume_count": 772
+        },
+        {
+          "name": "Sinar Terang Mandiri PT Tbk",
+          "isin": "ID1000209505",
+          "ticker": "MINE.JK",
+          "type": "stock",
+          "currency": "IDR",
+          "history_status": 200,
+          "row_count": 0,
+          "first_t": null,
+          "last_t": null,
+          "volume_count": 0
+        }
+      ],
+      "search_error": null
     },
     {
-      "ticker": "STMP",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "99988",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 0,
-      "first_t": null,
-      "last_t": null,
-      "volume_count": 0,
-      "nonnull_volume": 0,
-      "nonnull_close": 0
+      "query": "AAWW",
+      "search_status": 200,
+      "matches": [
+        {
+          "name": "Atlas Air Worldwide Holdings Inc",
+          "isin": "US0491642056",
+          "ticker": "AAWW",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 0,
+          "first_t": null,
+          "last_t": null,
+          "volume_count": 0
+        }
+      ],
+      "search_error": null
     },
     {
-      "ticker": "AAWW",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "99987",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 0,
-      "first_t": null,
-      "last_t": null,
-      "volume_count": 0,
-      "nonnull_volume": 0,
-      "nonnull_close": 0
+      "query": "AABA",
+      "search_status": 200,
+      "matches": [],
+      "search_error": null
     },
     {
-      "ticker": "AABA",
-      "http_status": 404,
-      "error_body_prefix": "{\"error\":\"Security not found\"}"
+      "query": "HANS",
+      "search_status": 200,
+      "matches": [
+        {
+          "name": "Hanstone Gold Corp",
+          "isin": "CA4113511097",
+          "ticker": "HANS.V",
+          "type": "stock",
+          "currency": "CAD",
+          "history_status": 200,
+          "row_count": 753,
+          "first_t": 1577975400,
+          "last_t": 1672410600,
+          "volume_count": 753
+        },
+        {
+          "name": "Hans Group Holdings Ltd",
+          "isin": "KYG4382G1073",
+          "ticker": "554.HK",
+          "type": "stock",
+          "currency": "HKD",
+          "history_status": 200,
+          "row_count": 761,
+          "first_t": 1575250200,
+          "last_t": 1672363800,
+          "volume_count": 761
+        },
+        {
+          "name": "Hans Biomed Corp",
+          "isin": "KR7042520007",
+          "ticker": "042520.KQ",
+          "type": "stock",
+          "currency": "KRW",
+          "history_status": 200,
+          "row_count": 760,
+          "first_t": 1575244800,
+          "last_t": 1672272000,
+          "volume_count": 760
+        },
+        {
+          "name": "Hansoh Pharmaceutical Group Company Ltd",
+          "isin": "KYG549581067",
+          "ticker": "3692.HK",
+          "type": "stock",
+          "currency": "CNY",
+          "history_status": 200,
+          "row_count": 761,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 761
+        },
+        {
+          "name": "Hansa Investment Company Ltd",
+          "isin": "BMG428941162",
+          "ticker": "HAN.L",
+          "type": "stock",
+          "currency": "GBP",
+          "history_status": 200,
+          "row_count": 777,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 777
+        },
+        {
+          "name": "Hanshow Technology Co Ltd",
+          "isin": "CNE100006V81",
+          "ticker": "301275.SZ",
+          "type": "stock",
+          "currency": "CNY",
+          "history_status": 200,
+          "row_count": 0,
+          "first_t": null,
+          "last_t": null,
+          "volume_count": 0
+        },
+        {
+          "name": "Hansen Technologies Ltd",
+          "isin": "AU000000HSN3",
+          "ticker": "HSN.AX",
+          "type": "stock",
+          "currency": "AUD",
+          "history_status": 500,
+          "history_error": "{\"error\":\"Internal server error\"}"
+        },
+        {
+          "name": "Hansong (Nanjing) Technology Ltd",
+          "isin": "CNE1000074J6",
+          "ticker": "301491.SZ",
+          "type": "stock",
+          "currency": "CNY",
+          "history_status": 200,
+          "row_count": 0,
+          "first_t": null,
+          "last_t": null,
+          "volume_count": 0
+        },
+        {
+          "name": "Hansard Global PLC",
+          "isin": "IM00B1H1XF89",
+          "ticker": "HSD.L",
+          "type": "stock",
+          "currency": "GBP",
+          "history_status": 200,
+          "row_count": 777,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 777
+        },
+        {
+          "name": "Hanshang Group Co Ltd",
+          "isin": "CNE000000NC5",
+          "ticker": "600774.SS",
+          "type": "stock",
+          "currency": "CNY",
+          "history_status": 200,
+          "row_count": 750,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 750
+        }
+      ],
+      "search_error": null
     },
     {
-      "ticker": "HANS",
-      "http_status": 404,
-      "error_body_prefix": "{\"error\":\"Security not found\"}"
+      "query": "MNST",
+      "search_status": 200,
+      "matches": [
+        {
+          "name": "Monster Beverage Corp",
+          "isin": "US61174X1090",
+          "ticker": "MNST",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 777,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 777
+        },
+        {
+          "name": "Corgi ETF Trust I - Corgi MNST 2x Daily ETF",
+          "isin": "US21874K8154",
+          "ticker": "MNSX",
+          "type": "etf",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        }
+      ],
+      "search_error": null
     },
     {
-      "ticker": "MNST",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "99984",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 777,
-      "first_t": 1575244800,
-      "last_t": 1672358400,
-      "volume_count": 777,
-      "nonnull_volume": 777,
-      "nonnull_close": 777
+      "query": "AAPL",
+      "search_status": 200,
+      "matches": [
+        {
+          "name": "Apple Inc",
+          "isin": "US0378331005",
+          "ticker": "AAPL",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 777,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 777
+        },
+        {
+          "name": "LS 1x Apple Tracker ETC",
+          "isin": "XS2337099563",
+          "ticker": "AAPL.L",
+          "type": "etf",
+          "currency": "GBP",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "YieldMax AAPL Option Income Strategy ETF",
+          "isin": "US88634T8577",
+          "ticker": "APLY",
+          "type": "etf",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "Apple (AAPL) Yield Shares Purpose ETF",
+          "isin": "CA03783G1019",
+          "ticker": "APLY.NE",
+          "type": "etf",
+          "currency": "CAD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "Direxion Daily AAPL Bull 2X Shares",
+          "isin": "US25461A8743",
+          "ticker": "AAPU",
+          "type": "etf",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "Roundhill Investments - AAPL WeeklyPay ETF",
+          "isin": "US77926X7912",
+          "ticker": "AAPW",
+          "type": "etf",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "GraniteShares 2x Long AAPL Daily ETF",
+          "isin": "US38747R8842",
+          "ticker": "AAPB",
+          "type": "etf",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "Direxion Daily AAPL Bear 1X ETF",
+          "isin": "US25461A3041",
+          "ticker": "AAPD",
+          "type": "etf",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "IncomeShares Apple (AAPL) Options ETP",
+          "isin": "XS2901884663",
+          "ticker": "AAPY.L",
+          "type": "etf",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "Savvylong 2X AAPL ETF",
+          "isin": "CA54315B7714",
+          "ticker": "AAPU.TO",
+          "type": "etf",
+          "currency": "CAD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        }
+      ],
+      "search_error": null
     },
     {
-      "ticker": "ABT",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "99983",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "row_count": 778,
-      "first_t": 1575244800,
-      "last_t": 1672358400,
-      "volume_count": 778,
-      "nonnull_volume": 778,
-      "nonnull_close": 778
+      "query": "ABT",
+      "search_status": 200,
+      "matches": [
+        {
+          "name": "Abbott Laboratories",
+          "isin": "US0028241000",
+          "ticker": "ABT",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 778,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 778
+        },
+        {
+          "name": "Advanced Bitcoin Technologies AG",
+          "isin": "DE000A2YPJ22",
+          "ticker": "ABT.DU",
+          "type": "stock",
+          "currency": "EUR",
+          "history_status": 200,
+          "row_count": 766,
+          "first_t": 1577948400,
+          "last_t": 1672383600,
+          "volume_count": 766
+        },
+        {
+          "name": "Abitare In SpA",
+          "isin": "IT0005445280",
+          "ticker": "ABT.MI",
+          "type": "stock",
+          "currency": "EUR",
+          "history_status": 200,
+          "row_count": 785,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 785
+        },
+        {
+          "name": "Bentre Aquaproduct Import and Export JSC",
+          "isin": "VN000000ABT2",
+          "ticker": "ABT.VN",
+          "type": "stock",
+          "currency": "VND",
+          "history_status": 200,
+          "row_count": 767,
+          "first_t": 1575244800,
+          "last_t": 1672358400,
+          "volume_count": 767
+        },
+        {
+          "name": "21Shares Bitcoin ETP",
+          "isin": "CH0454664001",
+          "ticker": "ABTC.SW",
+          "type": "etf",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "AB Municipal Income Fund, Inc: AB High Income Municipal Portfolio; Advisor Class Shares",
+          "isin": "US0186427441",
+          "ticker": "ABTYX",
+          "type": "fund",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "AB Municipal Income Fund, Inc: AB High Income Municipal Portfolio; Class A Shares",
+          "isin": "US0186427516",
+          "ticker": "ABTHX",
+          "type": "fund",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        },
+        {
+          "name": "American Bitcoin Corp",
+          "isin": "US02462A1043",
+          "ticker": "ABTC",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 777,
+          "first_t": 1575297000,
+          "last_t": 1672410600,
+          "volume_count": 777
+        },
+        {
+          "name": "Allegiance Bancshares Inc",
+          "isin": "US01748H1077",
+          "ticker": "ABTX",
+          "type": "stock",
+          "currency": "USD",
+          "history_status": 200,
+          "row_count": 719,
+          "first_t": 1575244800,
+          "last_t": 1665149400,
+          "volume_count": 719
+        },
+        {
+          "name": "American Century Government Income Trust: Government Bond Fund; Class R5 Shares",
+          "isin": "US0250817535",
+          "ticker": "ABTIX",
+          "type": "fund",
+          "currency": "USD",
+          "history_status": 404,
+          "history_error": "{\"error\":\"Security not found\"}"
+        }
+      ],
+      "search_error": null
     }
   ]
 }
