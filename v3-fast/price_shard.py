@@ -17,10 +17,20 @@ def fetch_one(ticker):
     last=''
     for attempt in range(4):
         try:
-            r=requests.get(url,params=params,timeout=25,headers={'User-Agent':'Mozilla/5.0 V3-Free research'})
+            r=requests.get(url,params=params,timeout=10,headers={'User-Agent':'Mozilla/5.0 V3-Free research'})
+            # Permanent Yahoo "symbol not found / delisted" responses must NOT be retried.
+            # Retrying these was the cause of the multi-hour slowdown on the historical universe.
+            if r.status_code == 404:
+                return pd.DataFrame(),'NO_DATA','HTTP_404_PERMANENT'
             if r.status_code in {429,500,502,503,504}: raise RuntimeError(f'HTTP_{r.status_code}')
             r.raise_for_status(); p=r.json(); chart=p.get('chart') or {}
-            if chart.get('error'): raise RuntimeError(str(chart['error']))
+            err=chart.get('error')
+            if err:
+                desc=str(err.get('description','')) if isinstance(err,dict) else str(err)
+                code=str(err.get('code','')) if isinstance(err,dict) else ''
+                if code.lower()=='not found' or 'No data found' in desc:
+                    return pd.DataFrame(),'NO_DATA',desc[:300]
+                raise RuntimeError(str(err))
             rs=chart.get('result') or []
             if not rs: return pd.DataFrame(),'NO_DATA',''
             q=rs[0]; ts=q.get('timestamp') or []
