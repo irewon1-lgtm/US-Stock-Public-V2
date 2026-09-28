@@ -1,1 +1,1 @@
-trigger unadjusted probe v6\n
+trigger split probe v7\n
