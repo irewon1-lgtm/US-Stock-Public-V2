@@ -33,13 +33,16 @@ jobs:
                 r=requests.get(u,params=p,timeout=8,headers={'User-Agent':'Mozilla/5.0 V3-Probe'})
                 try:
                   j=r.json(); rs=(j.get('chart') or {}).get('result') or []; er=(j.get('chart') or {}).get('error')
-                  n=len((rs[0].get('timestamp') or [])) if rs else 0
+                  ts=(rs[0].get('timestamp') or []) if rs else []
+                  n=len(ts)
+                  first=time.strftime('%Y-%m-%d',time.gmtime(ts[0])) if ts else ''
+                  last=time.strftime('%Y-%m-%d',time.gmtime(ts[-1])) if ts else ''
                   desc=(er or {}).get('description','') if isinstance(er,dict) else str(er or '')
                 except Exception:
                   n=0; desc=''
-                out.append({'s':s,'test':test,'code':r.status_code,'n':n,'desc':desc[:100]})
+                out.append({'s':s,'test':test,'code':r.status_code,'n':n,'first':first,'last':last,'desc':desc[:100]})
               except Exception as e:
-                out.append({'s':s,'test':test,'code':'EXC','n':0,'desc':repr(e)[:100]})
+                out.append({'s':s,'test':test,'code':'EXC','n':0,'first':'','last':'','desc':repr(e)[:100]})
               time.sleep(.02)
           ok={}
           for x in out:
