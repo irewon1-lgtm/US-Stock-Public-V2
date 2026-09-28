@@ -1,0 +1,21 @@
+{
+  "schema": "V4_SEC_DEI_COVER_FACT_RECOVERY_V1",
+  "purpose": "Outcome-free market-cap eligibility recovery only.",
+  "target_ciks": 436,
+  "fact_rows": 8992,
+  "ciks_with_facts": 419,
+  "accepted_mapped_rows": 8990,
+  "accepted_missing_rows": 2,
+  "cik_errors": 0,
+  "forms": [
+    "10-K",
+    "10-K/A",
+    "10-Q",
+    "10-Q/A",
+    "20-F",
+    "20-F/A",
+    "40-F",
+    "40-F/A"
+  ],
+  "selection_note": "Only dei:EntityCommonStockSharesOutstanding is extracted. No weighted-average shares and no us-gaap class aggregation. Snapshot selection occurs later with accession acceptance cutoff."
+}
