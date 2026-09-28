@@ -1,0 +1,27 @@
+name: V4 Eulerpool Split Factors
+on:
+  push:
+    paths:
+      - 'v4-eulerpool-splits-trigger.txt'
+  workflow_dispatch:
+jobs:
+  splits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas numpy
+      - env:
+          EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
+        run: python v4-eulerpool/eulerpool_splits.py --shard ${{ matrix.shard }} --nshards 16
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-eulerpool-splits-${{ matrix.shard }}
+          path: v4-eulerpool-output/splits/*
+          retention-days: 30
