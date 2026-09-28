@@ -1,1 +1,1 @@
-trigger split probe v7\n
+trigger split crosscheck v8\n
