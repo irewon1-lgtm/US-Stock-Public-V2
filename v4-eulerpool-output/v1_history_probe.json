@@ -1,0 +1,205 @@
+{
+  "schema": "V4_V1_HISTORY_PROBE_V1",
+  "results": [
+    {
+      "ticker": "AAPL",
+      "url": "https://api.eulerpool.com/v1/equities/AAPL/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /v1/equities/AAPL/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "AAPL",
+      "url": "https://api.eulerpool.com/v1/equities/AAPL/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d",
+        "adjusted": "false"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /v1/equities/AAPL/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "AAPL",
+      "url": "https://api.eulerpool.com/api/1/equities/AAPL/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /api/1/equities/AAPL/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "AAPL",
+      "url": "https://api.eulerpool.com/api/1/equities/AAPL/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d",
+        "adjusted": "false"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /api/1/equities/AAPL/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "ABMD",
+      "url": "https://api.eulerpool.com/v1/equities/ABMD/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /v1/equities/ABMD/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "ABMD",
+      "url": "https://api.eulerpool.com/v1/equities/ABMD/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d",
+        "adjusted": "false"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /v1/equities/ABMD/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "ABMD",
+      "url": "https://api.eulerpool.com/api/1/equities/ABMD/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /api/1/equities/ABMD/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "ABMD",
+      "url": "https://api.eulerpool.com/api/1/equities/ABMD/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d",
+        "adjusted": "false"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /api/1/equities/ABMD/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "STMP",
+      "url": "https://api.eulerpool.com/v1/equities/STMP/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /v1/equities/STMP/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "STMP",
+      "url": "https://api.eulerpool.com/v1/equities/STMP/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d",
+        "adjusted": "false"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /v1/equities/STMP/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "STMP",
+      "url": "https://api.eulerpool.com/api/1/equities/STMP/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /api/1/equities/STMP/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "STMP",
+      "url": "https://api.eulerpool.com/api/1/equities/STMP/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d",
+        "adjusted": "false"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /api/1/equities/STMP/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "AAWW",
+      "url": "https://api.eulerpool.com/v1/equities/AAWW/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /v1/equities/AAWW/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "AAWW",
+      "url": "https://api.eulerpool.com/v1/equities/AAWW/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d",
+        "adjusted": "false"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /v1/equities/AAWW/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "AAWW",
+      "url": "https://api.eulerpool.com/api/1/equities/AAWW/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /api/1/equities/AAWW/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    },
+    {
+      "ticker": "AAWW",
+      "url": "https://api.eulerpool.com/api/1/equities/AAWW/history",
+      "params": {
+        "from": "2019-09-01",
+        "to": "2023-01-05",
+        "interval": "1d",
+        "adjusted": "false"
+      },
+      "status": 404,
+      "content_type": "application/json; charset=utf-8",
+      "body": "{\"error\":\"No endpoint matches GET /api/1/equities/AAWW/history\",\"hint\":\"Browse all 400+ endpoints at https://eulerpool.com/llms-full.txt or https://eulerpool.com/developers\",\"openapi_spec\":\"https://api.eulerpool.com/api/1/documentation/yaml\",\"get_free_api_key\":\"https://eulerpool.com/developers/register\"}"
+    }
+  ]
+}
