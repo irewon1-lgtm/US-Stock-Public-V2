@@ -1,0 +1,13 @@
+{
+  "schema": "V4_EXISTING_CONFIRMED_CORP_ACTION_EXCLUSIONS_V1",
+  "policy": "Use only names already confirmed in existing project materials. Do not perform new delisting/M&A discovery or API calls for this purpose.",
+  "tickers": ["AAWW", "ABMD", "STMP"],
+  "exclude_from": [
+    "factor_calculation_rows",
+    "coverage_denominator_N_t",
+    "top10_selection_size_N_t",
+    "top5_event_size_N_t"
+  ],
+  "new_corp_action_lookup_allowed": false,
+  "corp_action_metric_recovery_allowed": false
+}
