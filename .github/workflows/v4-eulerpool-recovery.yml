@@ -1,4 +1,4 @@
-name: V4 Eulerpool Unknown Recovery
+name: V4 Eulerpool Outcome-Free Recovery
 on:
   push:
     paths:
@@ -9,24 +9,51 @@ permissions:
 jobs:
   recover:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install -q pandas numpy requests
-      - name: Recover only previously UNKNOWN OHLCV rows
+      - run: pip install -q pandas numpy
+      - name: Recover missing historical OHLCV
         env:
           EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
-        run: python v4-eulerpool/eulerpool_recover_unknown.py
-      - name: Commit bounded outcome-free results
+        run: python v4-eulerpool/eulerpool_recover.py --shard ${{ matrix.shard }} --nshards 16
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-eulerpool-shard-${{ matrix.shard }}
+          path: v4-eulerpool-output/recovery/*
+          retention-days: 30
+  summarize:
+    needs: recover
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q pandas numpy
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v4-eulerpool-shard-*
+          path: downloaded
+      - run: |
+          mkdir -p v4-eulerpool-output/recovery
+          find downloaded -name 'rows_*.csv.gz' -exec cp {} v4-eulerpool-output/recovery/ \;
+          find downloaded -name 'audit_*.csv' -exec cp {} v4-eulerpool-output/recovery/ \;
+          find downloaded -name 'meta_*.json' -exec cp {} v4-eulerpool-output/recovery/ \;
+          python v4-eulerpool/eulerpool_summary.py
+      - name: Commit compact outcome-free summary only
         run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
-          git add v4-eulerpool-output/eulerpool_unknown_recovery.csv.gz
-          git add v4-eulerpool-output/eulerpool_fetch_audit.csv
-          git add v4-eulerpool-output/liquidity_bitmask_eulerpool_supplement.json
-          git add v4-eulerpool-output/liquidity_recovery_summary.json
-          git commit -m 'Add V4 Eulerpool UNKNOWN recovery' || true
+          git add v4-eulerpool-output/recovery_summary.json v4-eulerpool-output/recovery_summary_readable.json
+          git commit -m 'Add V4 Eulerpool outcome-free recovery summary' || true
           git push
