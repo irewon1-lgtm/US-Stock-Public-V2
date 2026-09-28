@@ -18,16 +18,33 @@ jobs:
           python - <<'PY'
           import requests,time,json,urllib.parse
           syms=['AACI','AFBI','ALOT','ASRT','ATAI','AVB','BREW','BRKL','BWNB','CIR','CLIM','CRNX','CTAA','DHCNL','DICE','EA','ELSE','FBRX','GV','HLX','ITG','KALV','LBRDP','LEG','LMNX','LPRO','MCVT','MIC','NCSM','NFBK','OLPX','PS','RNA','ROC','RVI','SAT','SCA','SKYT','TALK','TWO','VIASP','WBS','WSR']
+          tests=[
+            ('q1_full','query1',{'period1':1546300800,'period2':1771113600,'interval':'1d'}),
+            ('q2_full','query2',{'period1':1546300800,'period2':1771113600,'interval':'1d'}),
+            ('q1_max','query1',{'range':'max','interval':'1d'}),
+            ('q1_5y','query1',{'range':'5y','interval':'1d'}),
+          ]
           out=[]
           for s in syms:
-              ys=s.replace('.','-').replace('/','-')
-              u=f'https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ys,safe="")}'
-              p={'period1':1546300800,'period2':1771113600,'interval':'1d'}
-              t=time.time()
+            ys=s.replace('.','-').replace('/','-')
+            for test,host,p in tests:
+              u=f'https://{host}.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ys,safe="")}'
               try:
-                  r=requests.get(u,params=p,timeout=8,headers={'User-Agent':'Mozilla/5.0 V3-Probe'})
-                  out.append({'s':s,'ys':ys,'code':r.status_code,'sec':round(time.time()-t,3),'len':len(r.content),'head':r.text[:120]})
+                r=requests.get(u,params=p,timeout=8,headers={'User-Agent':'Mozilla/5.0 V3-Probe'})
+                try:
+                  j=r.json(); rs=(j.get('chart') or {}).get('result') or []; er=(j.get('chart') or {}).get('error')
+                  n=len((rs[0].get('timestamp') or [])) if rs else 0
+                  desc=(er or {}).get('description','') if isinstance(er,dict) else str(er or '')
+                except Exception:
+                  n=0; desc=''
+                out.append({'s':s,'test':test,'code':r.status_code,'n':n,'desc':desc[:100]})
               except Exception as e:
-                  out.append({'s':s,'ys':ys,'error':repr(e),'sec':round(time.time()-t,3)})
+                out.append({'s':s,'test':test,'code':'EXC','n':0,'desc':repr(e)[:100]})
+              time.sleep(.02)
+          ok={}
+          for x in out:
+            if x['n']>0 and x['code']==200: ok.setdefault(x['s'],[]).append(x['test'])
           print(json.dumps(out,indent=2))
+          print('RECOVERED',json.dumps(ok,sort_keys=True))
+          print('UNRESOLVED',','.join([s for s in syms if s not in ok]))
           PY
