@@ -22,6 +22,14 @@ def fetch_one(ticker):
             # Retrying these was the cause of the multi-hour slowdown on the historical universe.
             if r.status_code == 404:
                 return pd.DataFrame(),'NO_DATA','HTTP_404_PERMANENT'
+            if r.status_code == 400:
+                try:
+                    e400=(r.json().get('chart') or {}).get('error') or {}
+                    d400=str(e400.get('description','')) if isinstance(e400,dict) else str(e400)
+                except Exception:
+                    d400=''
+                if "Data doesn't exist for startDate" in d400:
+                    return pd.DataFrame(),'NO_DATA','HTTP_400_NO_DATA_REQUEST_WINDOW'
             if r.status_code in {429,500,502,503,504}: raise RuntimeError(f'HTTP_{r.status_code}')
             r.raise_for_status(); p=r.json(); chart=p.get('chart') or {}
             err=chart.get('error')
