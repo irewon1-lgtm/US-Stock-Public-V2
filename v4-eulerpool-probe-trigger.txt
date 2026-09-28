@@ -1,1 +1,1 @@
-trigger split crosscheck v8\n
+trigger split basis probe\n
