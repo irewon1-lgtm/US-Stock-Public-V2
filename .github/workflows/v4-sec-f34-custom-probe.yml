@@ -1,0 +1,24 @@
+name: V4 SEC Companyfacts Namespace Probe
+on:
+  push:
+    paths:
+      - 'v4-sec-f34-custom-probe-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q requests
+      - run: python v4-sec-cover/probe_companyfacts_namespaces.py
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-sec-f34-custom-probe-output/result.json
+          git commit -m 'Add V4 companyfacts namespace probe' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
