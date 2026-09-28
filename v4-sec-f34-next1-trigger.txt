@@ -1,1 +1,1 @@
-NEXT1 SEC F34 FSD discovery 2026-09-29 run-03
+NEXT1 SEC F34 missing-CIK-only discovery 2026-09-29 retry-3\n
