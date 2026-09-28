@@ -1,16 +1,19 @@
 from __future__ import annotations
-import json, math, re, threading, time
+import json, re, threading, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+
 import pandas as pd
 import requests
 
 ROOT=Path(".")
 UNIVERSE=ROOT/"v3-fast/price_universe_resolved.csv.gz"
+TARGETS=ROOT/"v4-sec-cover/next1_missing_f34_target_ciks.json"
+EXCLUSIONS=ROOT/"v4-sec-cover/existing_corp_action_exclusions.json"
 OUT=ROOT/"v4-sec-f34-next1-output"
 OUT.mkdir(parents=True,exist_ok=True)
+
 UA="V4-Full-Rigor-NEXT1 outcome-free SEC candidate discovery"
-KNOWN_DELISTED_NO_RECOVERY={"ABMD","STMP","AAWW"}
 FORMS={"10-Q","10-K","10-Q/A","10-K/A"}
 SESSION=requests.Session()
 SESSION.headers.update({"User-Agent":UA,"Accept-Encoding":"gzip, deflate","Accept":"application/json"})
@@ -20,8 +23,8 @@ LAST=[0.0]
 def rate_wait():
     with RATE_LOCK:
         dt=time.monotonic()-LAST[0]
-        if dt<0.115:
-            time.sleep(0.115-dt)
+        if dt<0.13:
+            time.sleep(0.13-dt)
         LAST[0]=time.monotonic()
 
 def get_json(url,attempts=5):
@@ -42,29 +45,46 @@ def get_json(url,attempts=5):
 
 def candidate_tag(tag:str)->bool:
     t=str(tag or "")
-    if not t: return False
-    if re.search(r"(Revenue|SalesRevenue|OperatingRevenue)",t,re.I): return True
-    if t.startswith("NetCashProvidedByUsedInOperatingActivities"): return True
-    if "Payments" in t and any(k in t for k in [
-        "PropertyPlantAndEquipment","ProductiveAssets","CapitalExpenditure",
-        "CapitalExpenditures","AdditionsToPropertyPlantAndEquipment"
-    ]): return True
-    if "WeightedAverage" in t and ("Share" in t or "Stock" in t) and any(k in t for k in [
-        "Outstanding","Basic","Diluted"
-    ]): return True
+    if not t:
+        return False
+    lo=t.lower()
+    # Discovery only. Semantic approval remains separate.
+    if "revenue" in lo or "salesrevenue" in lo or "operatingrevenue" in lo:
+        bad=("cost","expense","deferred","unearned","receivable","percentage",
+             "remainingperformance","contractliability","perunit","pershare",
+             "member","abstract")
+        return not any(x in lo for x in bad)
+    if "operatingactivities" in lo and ("cash" in lo or "netcash" in lo):
+        return True
+    if ("payment" in lo or "capitalexpenditure" in lo) and any(k in lo for k in (
+        "propertyplantandequipment","productiveasset","capitalasset","equipment"
+    )):
+        return True
+    if "weightedaverage" in lo and ("share" in lo or "stock" in lo) and ("basic" in lo or "dilut" in lo or "outstanding" in lo):
+        return True
     return False
 
 u=pd.read_csv(UNIVERSE,dtype=str,keep_default_na=False,compression="gzip",low_memory=False)
-if "snapshot_date" in u.columns:
-    yy=pd.to_datetime(u["snapshot_date"],errors="coerce").dt.year
-    if yy.ge(2023).any():
-        raise RuntimeError("REFUSED: 2023+ formation present")
+years=pd.to_datetime(u["snapshot_date"],errors="coerce").dt.year
+if years.ge(2023).any():
+    raise RuntimeError("REFUSED: 2023+ formation present")
 u["ticker_norm"]=u["ticker_at_snapshot"].astype(str).str.upper().str.strip()
 u["cik_num"]=pd.to_numeric(u["cik"],errors="coerce").astype("Int64")
-u=u[~u.ticker_norm.isin(KNOWN_DELISTED_NO_RECOVERY)]
-ticker_by_cik=(u.dropna(subset=["cik_num"]).groupby("cik_num")["ticker_norm"]
+
+policy=json.loads(EXCLUSIONS.read_text(encoding="utf-8"))
+excluded_tickers=set(str(x).upper().strip() for x in policy["tickers"])
+if policy.get("new_corp_action_lookup_allowed") is not False:
+    raise RuntimeError("Corporate-action policy must forbid new lookup")
+
+# Existing-only exclusion: no API/search is used to expand this set.
+u_calc=u[~u["ticker_norm"].isin(excluded_tickers)].copy()
+ticker_by_cik=(u_calc.dropna(subset=["cik_num"]).groupby("cik_num")["ticker_norm"]
                .agg(lambda s:"|".join(sorted(set(x for x in s if x)))))
-TARGET_META=json.loads((ROOT/"v4-sec-cover/next1_missing_f34_target_ciks.json").read_text())\nTARGET_CIKS=sorted(int(x) for x in TARGET_META["ciks"] if int(x) in set(u.cik_num.dropna().astype(int)))
+
+target_meta=json.loads(TARGETS.read_text(encoding="utf-8"))
+target_ciks=set(int(x) for x in target_meta["ciks"])
+available_ciks=set(u_calc["cik_num"].dropna().astype(int))
+TARGET_CIKS=sorted(target_ciks & available_ciks)
 
 def scan_cik(cik:int):
     cik10=f"{cik:010d}"
@@ -79,7 +99,7 @@ def scan_cik(cik:int):
             units=concept.get("units") or {}
             kept=0
             unit_names=[]
-            qtrs_like=0
+            duration_rows=0
             for unit,rows in units.items():
                 if str(unit).lower().strip() not in {"usd","shares","share"} or not isinstance(rows,list):
                     continue
@@ -91,16 +111,14 @@ def scan_cik(cik:int):
                     start=str(r.get("start") or "")[:10]
                     if form not in FORMS:
                         continue
-                    # Deliberately ignore post-2022 filings/facts. No 2023 formation data is opened/used.
+                    # Discovery is strictly pre-2023 and outcome-free.
                     if not filed or filed>"2022-12-31":
                         continue
-                    if end and end>"2022-12-31":
-                        continue
-                    if end and end<"2017-01-01":
+                    if end and (end>"2022-12-31" or end<"2017-01-01"):
                         continue
                     kept+=1
                     if start and end:
-                        qtrs_like+=1
+                        duration_rows+=1
             if kept:
                 tags.append({
                     "cik":cik,
@@ -109,22 +127,25 @@ def scan_cik(cik:int):
                     "label":str(concept.get("label") or ""),
                     "description":str(concept.get("description") or ""),
                     "fact_rows_pre2023":kept,
-                    "duration_rows_pre2023":qtrs_like,
+                    "duration_rows_pre2023":duration_rows,
                     "units":"|".join(sorted(set(unit_names))),
                 })
         audit["candidate_tags"]=len(tags)
         audit["candidate_fact_rows"]=sum(x["fact_rows_pre2023"] for x in tags)
         return tags,audit
     except Exception as e:
-        audit["status"]="ERROR"; audit["error"]=repr(e)[:400]
+        audit["status"]="ERROR"
+        audit["error"]=repr(e)[:400]
         return [],audit
 
-alltags=[]; audits=[]
+alltags=[]
+audits=[]
 with ThreadPoolExecutor(max_workers=6) as ex:
     futs={ex.submit(scan_cik,c):c for c in TARGET_CIKS}
     for i,f in enumerate(as_completed(futs),1):
         rows,a=f.result()
-        alltags.extend(rows); audits.append(a)
+        alltags.extend(rows)
+        audits.append(a)
         if i%100==0:
             print("PROGRESS",i,"/",len(TARGET_CIKS),"tag_rows",len(alltags),flush=True)
 
@@ -146,17 +167,19 @@ s.to_csv(OUT/"candidate_tag_summary.csv",index=False)
 pd.DataFrame(audits).sort_values("cik").to_csv(OUT/"companyfacts_fetch_audit.csv",index=False)
 
 summary={
- "schema":"V4_NEXT1_SEC_COMPANYFACTS_CANDIDATE_TAG_DISCOVERY_V2",
- "source":"SEC data.sec.gov companyfacts; only facts filed/end <= 2022-12-31 retained",
- "formation_2023_opened":False,
- "future_outcomes_used":False,
- "us3700_used":False,
- "known_delisted_no_recovery":sorted(KNOWN_DELISTED_NO_RECOVERY),
- "target_ciks":len(TARGET_CIKS),
- "fetch_errors":sum(a["status"]!="OK" for a in audits),
- "candidate_cik_tag_rows":int(len(d)),
- "candidate_tags":int(d.tag.nunique()) if len(d) else 0,
- "note":"Discovery only. No candidate tag becomes an accepted F3/F4 mapping until semantic review and accepted-time/alignment recomputation."
+    "schema":"V4_NEXT1_SEC_COMPANYFACTS_CANDIDATE_TAG_DISCOVERY_V3",
+    "source":"SEC data.sec.gov companyfacts; only facts filed/end <= 2022-12-31 retained",
+    "formation_2023_opened":False,
+    "future_outcomes_used":False,
+    "us3700_used":False,
+    "corporate_action_policy":"existing-confirmed-only; no new lookup",
+    "existing_corp_action_excluded_tickers":sorted(excluded_tickers),
+    "new_corp_action_lookup_calls":0,
+    "target_ciks":len(TARGET_CIKS),
+    "fetch_errors":sum(a["status"]!="OK" for a in audits),
+    "candidate_cik_tag_rows":int(len(d)),
+    "candidate_tags":int(d["tag"].nunique()) if len(d) else 0,
+    "note":"Discovery only. No candidate tag becomes an accepted F3/F4 mapping until semantic review and accepted-time/alignment recomputation."
 }
 (OUT/"summary.json").write_text(json.dumps(summary,indent=2),encoding="utf-8")
 print(json.dumps(summary,indent=2),flush=True)
