@@ -1,0 +1,14 @@
+{
+  "schema": "V4_EULERPOOL_MCAP_RECOVERY_V1",
+  "purpose": "Outcome-free historical market-cap availability recovery; no return labels.",
+  "target_tickers": 436,
+  "snapshot_rows": 5232,
+  "resolved_snapshot_rows": 3184,
+  "unresolved_snapshot_rows": 2048,
+  "vendor_resolved_rows": 1381,
+  "official_5y_fallback_rows": 1803,
+  "overlap_count": 698,
+  "overlap_rel_diff_median": 0.048286575290461424,
+  "overlap_rel_diff_p95": 0.27251979060296255,
+  "note": "Vendor history is a current historical reconstruction. PIT/publication-time validity remains to be audited before final V4 eligibility PASS."
+}
