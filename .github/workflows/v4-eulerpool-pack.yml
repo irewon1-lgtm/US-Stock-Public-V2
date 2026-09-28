@@ -16,6 +16,11 @@ jobs:
           python-version: '3.12'
       - run: pip install -q pandas numpy
       - run: python v4-eulerpool/pack_recovered_numeric.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-eulerpool-recovered-numeric-pack
+          path: v4-eulerpool-output/recovered_numeric_pack.json
+          retention-days: 1
       - run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
