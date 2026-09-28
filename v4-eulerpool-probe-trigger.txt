@@ -1,1 +1,1 @@
-trigger numeric range discovery v3\n
+trigger delisted coverage v4\n
