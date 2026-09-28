@@ -1,0 +1,85 @@
+{
+  "schema": "V4_NEXT1_SEC_APPROVED_ALT_FACTS_V1",
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "corporate_action_policy": "existing-confirmed-only; no new lookup",
+  "existing_corp_action_excluded_tickers": [
+    "AAWW",
+    "ABMD",
+    "STMP"
+  ],
+  "new_corp_action_lookup_calls": 0,
+  "target_ciks": 680,
+  "fact_rows": 22175,
+  "accepted_mapped_rows": 22171,
+  "accepted_missing_rows": 4,
+  "cik_errors": 0,
+  "approved_tags": {
+    "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations": {
+      "rows": 2757,
+      "ciks": 306,
+      "accepted_mapped": 2757,
+      "role": "CFO",
+      "priority": 2,
+      "semantic_basis": "CONTINUING_OPS_CFO"
+    },
+    "PaymentsToAcquireProductiveAssets": {
+      "rows": 5953,
+      "ciks": 183,
+      "accepted_mapped": 5949,
+      "role": "CAPEX",
+      "priority": 2,
+      "semantic_basis": "PRODUCTIVE_ASSETS"
+    },
+    "PaymentsForAdditionsToPropertyPlantAndEquipment": {
+      "rows": 0,
+      "ciks": 0,
+      "accepted_mapped": 0,
+      "role": "CAPEX",
+      "priority": 3,
+      "semantic_basis": "PP&E_ADDITIONS"
+    },
+    "PaymentsToAcquireOilAndGasPropertyAndEquipment": {
+      "rows": 133,
+      "ciks": 5,
+      "accepted_mapped": 133,
+      "role": "CAPEX",
+      "priority": 4,
+      "semantic_basis": "OIL_GAS_PROPERTY_EQUIPMENT"
+    },
+    "WeightedAverageNumberOfShareOutstandingBasicAndDiluted": {
+      "rows": 12495,
+      "ciks": 364,
+      "accepted_mapped": 12495,
+      "role": "DILUTED_SHARES",
+      "priority": 2,
+      "semantic_basis": "BASIC_AND_DILUTED_COMBINED"
+    },
+    "RegulatedAndUnregulatedOperatingRevenue": {
+      "rows": 792,
+      "ciks": 11,
+      "accepted_mapped": 792,
+      "role": "REVENUE",
+      "priority": 5,
+      "semantic_basis": "TOTAL_REGULATED_AND_UNREGULATED_OPERATING_REVENUE"
+    },
+    "HealthCareOrganizationRevenue": {
+      "rows": 35,
+      "ciks": 4,
+      "accepted_mapped": 35,
+      "role": "REVENUE",
+      "priority": 6,
+      "semantic_basis": "TOTAL_HEALTHCARE_ORG_REVENUE"
+    },
+    "HealthCareOrganizationRevenueNetOfPatientServiceRevenueProvisions": {
+      "rows": 10,
+      "ciks": 1,
+      "accepted_mapped": 10,
+      "role": "REVENUE",
+      "priority": 7,
+      "semantic_basis": "TOTAL_HEALTHCARE_ORG_REVENUE_NET_PROVISIONS"
+    }
+  },
+  "note": "Only semantically approved total-role alternatives. PIT selection must still enforce accepted<=formation and aligned-quarter reconstruction."
+}
