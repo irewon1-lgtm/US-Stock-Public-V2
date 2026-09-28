@@ -1,79 +1,79 @@
 from __future__ import annotations
-import json, os, time, urllib.request, urllib.error
+import json, os, urllib.request, urllib.error, urllib.parse
 from pathlib import Path
 
-API="https://api.eulerpool.com/api/1/equities/{ticker}/history"
 KEY=os.environ["EULERPOOL_API_KEY"].strip()
+BASE="https://api.eulerpool.com/api/1"
 OUT=Path("v4-eulerpool-output")
 OUT.mkdir(parents=True, exist_ok=True)
 
-# Control + delisted/acquired + ticker-change/reuse stress cases.
-TICKERS=["AAPL","ABMD","STMP","AAWW","AABA","HANS","MNST","ABT"]
-START="2018-01-01"
-END="2023-01-15"
+TESTS=[
+    ("/equity/candles/AAPL", {}),
+    ("/equity/candles/AAPL", {"from":"2020-01-01","to":"2020-01-10","interval":"1d"}),
+    ("/equity/candles/AAPL", {"startDate":"2020-01-01","endDate":"2020-01-10","interval":"1d"}),
+    ("/charting/ohlcv/AAPL", {}),
+    ("/charting/ohlcv/AAPL", {"from":"2020-01-01","to":"2020-01-10","interval":"1d"}),
+    ("/charting/ohlcv/AAPL", {"startDate":"2020-01-01","endDate":"2020-01-10","interval":"1d"}),
+]
 
-def call(ticker:str):
-    url=API.format(ticker=ticker)+f"?from={START}&to={END}"
-    req=urllib.request.Request(
-        url,
-        headers={
-            "Authorization":f"Bearer {KEY}",
-            "Accept":"application/json",
-            "User-Agent":"V4-outcome-free-feasibility-probe/1.0",
-        },
-        method="GET",
-    )
-    out={"ticker":ticker,"url_path":f"/api/1/equities/{ticker}/history","start":START,"end":END}
+def run(path, params):
+    qs=urllib.parse.urlencode(params)
+    url=BASE+path+("?" + qs if qs else "")
+    req=urllib.request.Request(url, headers={
+        "Authorization":f"Bearer {KEY}",
+        "Accept":"application/json",
+        "User-Agent":"V4-outcome-free-endpoint-discovery/1.0",
+    })
+    out={"path":path,"params":params}
     try:
         with urllib.request.urlopen(req, timeout=45) as r:
             raw=r.read()
             out["http_status"]=int(r.status)
-            # Never persist auth material. Keep only potentially useful quota metadata.
-            keep_headers={}
+            out["bytes"]=len(raw)
+            keep={}
             for k,v in r.headers.items():
                 lk=k.lower()
                 if any(s in lk for s in ["rate","limit","remaining","quota","retry"]):
-                    keep_headers[k]=v
-            out["quota_headers"]=keep_headers
-            out["bytes"]=len(raw)
-            payload=json.loads(raw.decode("utf-8"))
-            data=payload.get("data",[]) if isinstance(payload,dict) else payload
-            out["response_type"]=type(payload).__name__
-            out["top_keys"]=sorted(payload.keys()) if isinstance(payload,dict) else []
-            out["row_count"]=len(data) if isinstance(data,list) else None
-            if isinstance(data,list) and data:
-                first=data[0] if isinstance(data[0],dict) else {}
-                last=data[-1] if isinstance(data[-1],dict) else {}
-                out["fields"]=sorted(first.keys()) if isinstance(first,dict) else []
-                out["first_date"]=first.get("date")
-                out["last_date"]=last.get("date")
-                # Outcome-free availability diagnostics only.
-                out["volume_nonnull"]=sum(1 for x in data if isinstance(x,dict) and x.get("volume") not in (None,""))
-                out["close_nonnull"]=sum(1 for x in data if isinstance(x,dict) and x.get("close") not in (None,""))
-            return out
+                    keep[k]=v
+            out["quota_headers"]=keep
+            try:
+                payload=json.loads(raw.decode("utf-8"))
+                out["response_type"]=type(payload).__name__
+                if isinstance(payload,dict):
+                    out["top_keys"]=sorted(payload.keys())
+                    data=payload.get("data")
+                    if isinstance(data,list):
+                        out["row_count"]=len(data)
+                        if data and isinstance(data[0],dict):
+                            out["fields"]=sorted(data[0].keys())
+                            out["first_row"]=data[0]
+                            out["last_row"]=data[-1]
+                    else:
+                        # Bound output, no secret or large payload.
+                        out["payload_preview"]=str(payload)[:1200]
+                elif isinstance(payload,list):
+                    out["row_count"]=len(payload)
+                    if payload and isinstance(payload[0],dict):
+                        out["fields"]=sorted(payload[0].keys())
+                        out["first_row"]=payload[0]
+                        out["last_row"]=payload[-1]
+            except Exception:
+                out["text_preview"]=raw.decode("utf-8","replace")[:1200]
     except urllib.error.HTTPError as e:
-        body=e.read().decode("utf-8","replace")[:500]
+        body=e.read().decode("utf-8","replace")[:1200]
         out["http_status"]=int(e.code)
         out["error_body_prefix"]=body
         out["retry_after"]=e.headers.get("Retry-After")
-        return out
     except Exception as e:
         out["http_status"]=None
         out["error"]=repr(e)[:500]
-        return out
+    return out
 
-rows=[]
-for t in TICKERS:
-    rows.append(call(t))
-    time.sleep(0.35)
-
-summary={
-    "schema":"V4_EULERPOOL_PROBE_V1",
-    "purpose":"Outcome-free feasibility only; no future-return labels computed.",
-    "endpoint_template":"/api/1/equities/{ticker}/history",
-    "auth":"Authorization Bearer from GitHub Actions secret; secret never persisted.",
-    "requested_tickers":TICKERS,
+rows=[run(p,q) for p,q in TESTS]
+doc={
+    "schema":"V4_EULERPOOL_ENDPOINT_DISCOVERY_V2",
+    "purpose":"Outcome-free endpoint/parameter discovery only.",
     "results":rows,
 }
-(OUT/"probe.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding="utf-8")
-print(json.dumps({r["ticker"]:{"http_status":r.get("http_status"),"row_count":r.get("row_count"),"first_date":r.get("first_date"),"last_date":r.get("last_date")} for r in rows},ensure_ascii=False))
+(OUT/"probe.json").write_text(json.dumps(doc,ensure_ascii=False,indent=2),encoding="utf-8")
+print(json.dumps([{"path":r["path"],"params":r["params"],"status":r.get("http_status"),"rows":r.get("row_count")} for r in rows],ensure_ascii=False))
