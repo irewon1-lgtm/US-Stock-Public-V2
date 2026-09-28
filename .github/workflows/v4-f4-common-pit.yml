@@ -1,0 +1,29 @@
+name: V4 NEXT1 F4 Common Share PIT Recovery
+on:
+  push:
+    paths:
+      - 'v4-f4-common-pit-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas requests
+      - name: Recover SEC PIT common basic-and-diluted share facts
+        run: python v4-sec-cover/recover_f4_common_share_facts.py
+      - name: Commit NEXT1 F4 PIT supplement
+        run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-sec-f34-next1-output/f4_common_basic_diluted_pit_facts.csv
+          git add v4-sec-f34-next1-output/f4_common_basic_diluted_fetch_audit.csv
+          git add v4-sec-f34-next1-output/f4_common_basic_diluted_summary.json
+          git commit -m 'Add V4 NEXT1 F4 common-share PIT supplement' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
