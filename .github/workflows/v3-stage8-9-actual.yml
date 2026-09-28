@@ -1,0 +1,63 @@
+name: V3 Stage8-9 Actual
+
+on:
+  push:
+    paths:
+      - '.github/workflows/v3-stage8-9-actual.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  stage8_9:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -q pandas numpy
+
+      - name: Download frozen actual inputs
+        env:
+          FACTOR_URL: 'https://sdmntprwestus.oaiusercontent.com/files/00000000-70b4-8230-bfac-80b3b38b6c00/raw?se=2026-09-28T09%3A57%3A13Z&sp=r&sv=2026-02-06&sr=b&scid=99b32d65-a655-56ed-80c6-2a81e8da2f61&skoid=456594af-533f-44ef-9bdc-35ea2f9daee5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T09%3A25%3A18Z&ske=2026-09-29T09%3A25%3A18Z&sks=b&skv=2026-02-06&sig=zyMDebweSZCbrXuoHlntUev2oA3tCD5dD/WS7JbtDas%3D'
+          STAGE7_URL: 'https://sdmntprwestus.oaiusercontent.com/files/00000000-1754-8230-9f0c-e98840d9c6a0/raw?se=2026-09-28T09%3A57%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=bdf1cc65-7534-5a45-99d0-c11e3cb86d3f&skoid=456594af-533f-44ef-9bdc-35ea2f9daee5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T00%3A27%3A55Z&ske=2026-09-29T00%3A27%3A55Z&sks=b&skv=2026-02-06&sig=J2A5uMxYKUJAKRROWfUQg6//8T76W67JoNDYbeF0An8%3D'
+          PKG_URL: 'https://sdmntprwestus.oaiusercontent.com/files/00000000-4724-8230-8a87-49d77884a5cf/raw?se=2026-09-28T09%3A57%3A16Z&sp=r&sv=2026-02-06&sr=b&scid=88aa73ea-389c-5ae9-9863-f7847c7e9f47&skoid=456594af-533f-44ef-9bdc-35ea2f9daee5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T09%3A22%3A08Z&ske=2026-09-29T09%3A22%3A08Z&sks=b&skv=2026-02-06&sig=G1UtAvFMm9XRCM7gFc0ecMECWgVDfVVGHC4VRmsH8/4%3D'
+        run: |
+          curl --fail --location --retry 3 "$FACTOR_URL" -o factor_scores_baseline.csv.gz
+          curl --fail --location --retry 3 "$STAGE7_URL" -o stage7_factor_status.csv
+          curl --fail --location --retry 3 "$PKG_URL" -o v3_pkg.zip
+          echo '5630785b431941748784483ffaca6dce503f3a4e05655cb2678af852f4c97fbc  factor_scores_baseline.csv.gz' | sha256sum -c -
+          echo '65af28766ac089ab34be64f34eba7c9210bb5dc7f7b4e9e88dacd0a67d8b4d89  stage7_factor_status.csv' | sha256sum -c -
+          echo 'e25af1a5f5f3d3cc712b86135b986b4b2b39f970c6663b3e4d3e9f40b5226f64  v3_pkg.zip' | sha256sum -c -
+          unzip -q v3_pkg.zip
+          test -f V3_FREE_EMPIRICAL_PACKAGE/run_stage8_mtc.py
+          test -f V3_FREE_EMPIRICAL_PACKAGE/run_stage9_composite.py
+
+      - name: Run production Stage8
+        run: |
+          mkdir -p actual-stage8 actual-stage9
+          python -u V3_FREE_EMPIRICAL_PACKAGE/run_stage8_mtc.py             --scores factor_scores_baseline.csv.gz             --stage7-status stage7_factor_status.csv             --out-dir actual-stage8             --n-perm 50000             --n-bootstrap 20000             --seed 20260928
+
+      - name: Run Stage9
+        run: |
+          python -u V3_FREE_EMPIRICAL_PACKAGE/run_stage9_composite.py             --scores factor_scores_baseline.csv.gz             --stage8 actual-stage8/stage8_mtc_results.csv             --out-dir actual-stage9
+
+      - name: Persist actual Stage8-9 results
+        run: |
+          mkdir -p v3-stage8-9-actual-output
+          cp actual-stage8/stage8_mtc_results.csv v3-stage8-9-actual-output/
+          cp actual-stage9/stage9_summary.csv v3-stage8-9-actual-output/
+          for f in actual-stage9/factor_pair_correlations.csv actual-stage9/factor_families.csv actual-stage9/stage9_snapshot_metrics.csv; do
+            test -f "$f" && cp "$f" v3-stage8-9-actual-output/ || true
+          done
+          git config user.name "v3-free-runner"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main || true
+          git add v3-stage8-9-actual-output
+          git commit -m "V3 actual Stage8-9 results" || true
+          git push
