@@ -16,17 +16,10 @@ jobs:
           python-version: '3.12'
       - run: pip install -q pandas numpy
       - run: python v4-eulerpool/pack_recovered_numeric.py
-      - uses: actions/upload-artifact@v4
-        with:
-          name: v4-eulerpool-recovery-bundle
-          path: |
-            v4-eulerpool-output/recovered_numeric_pack.json
-            v4-eulerpool-output/liquidity_bitmask_eulerpool_supplement.json
-            v4-eulerpool-output/liquidity_recovery_summary.json
-          retention-days: 1
       - run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
-          git add v4-eulerpool-output/recovered_numeric_pack.json
-          git commit -m 'Add V4 recovered numeric pack' || true
-          git push
+          git add v4-eulerpool-output/split_ratio_pack.json
+          git commit -m 'Add V4 split ratio pack' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
