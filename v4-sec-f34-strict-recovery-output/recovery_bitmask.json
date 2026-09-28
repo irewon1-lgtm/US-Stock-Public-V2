@@ -1,0 +1,187 @@
+{
+  "schema": "V4_NEXT1_STRICT_CF_RECOVERY_BITMASK_V1",
+  "target_count": 1601,
+  "target_sha256": "82322d8ba460d54a375fb3a19320af9e9b21313a3f14b6257f6c5c1b273b1596",
+  "snapshots": [
+    "2020-03-31",
+    "2020-06-30",
+    "2020-09-30",
+    "2020-12-31",
+    "2021-03-31",
+    "2021-06-30",
+    "2021-09-30",
+    "2021-12-31",
+    "2022-03-31",
+    "2022-06-30",
+    "2022-09-30",
+    "2022-12-30"
+  ],
+  "new_corp_action_lookup_calls": 0,
+  "excluded_ciks": [
+    815094,
+    1082923,
+    1135185
+  ],
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "by_snapshot": [
+    {
+      "snapshot_date": "2020-03-31",
+      "f3_usable_b64": "B+R9qOAK26rdsAVhIuDkQbIBChC84Ysj4mr0b3lilkAuSYfRU1BnISWzRkq4ppBhAT3lEpiJH9PRRAuW6L9p7UUcje1nMyH3MJqgyn4HjqOt1TWO/8QMDtPjBVuqshB6xngn/EQCIThaDISGZATADEmCyYEAVDAKEnCTf5CQoQssCCc0DAgxLgwXjR4GSjAEPIAAOQoFMCAsUgaACowIQAYBACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "/3///b////9/////+vrv////3//73//9v7//+r+7/5f//9/////T//+9+/r/+//3//v+/v/3/l/3+/b2/N8/63/893/3v/r6Md90/v/8vv7G3/e//12+Zv/2f33u/9P/n/8V/VbrMb3fnmf+OwWF3hOG3eWl/Dabv3nk97P5r05uh+e+fUG1bm2TLdqGDnPdvOzkrS/3FLyv2uSjLd4JUzYBYCBACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f3_usable_target_ciks": 526,
+      "f4_usable_target_ciks": 981,
+      "f4_methods": {
+        "DILUTED": 632,
+        "NO_VALID_6Q": 620,
+        "BASIC_DILUTED_COMBINED": 340,
+        "BASIC_FALLBACK": 9
+      }
+    },
+    {
+      "snapshot_date": "2020-06-30",
+      "f3_usable_b64": "B+R9qOAK2qrdsAVhMuDkwbJBChD84Ysj4mr0bXlilgAuSY/RU1pnITWzRlq4poBlAT3lEoiJH9PRTIuW4L9hzUWcje9HMyH3MJIgyn4Hjqet1DWON4QMDtPjBVuyspBaxXo/fEQSIThaBISEZITAjEmCyYFFcDAKEnCTf5CQoQssCCE2DIBxLgQWjR4GSjAEPIABOQoFMCAsUgbACowARAYBACCECJABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "/3///b//9/9/////+vrv////3//73//9v7//+r+7/7///99//7/T///9+/r/+//33/v+/v/3/l/3+/f2/N8/63/893/2v/v6cd90/v/8vv7G3/e//12+Zv/mb33+/9P/n+8V/Vb7Mb3fnuf+O4WF3hMC3eXl/Babv3nk/7P5v05uh++2fclV7m2RLdKGDnPdvO30rS/3FLyv+KSjLd4JUzbRYHrUjLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f3_usable_target_ciks": 537,
+      "f4_usable_target_ciks": 999,
+      "f4_methods": {
+        "DILUTED": 642,
+        "NO_VALID_6Q": 602,
+        "BASIC_DILUTED_COMBINED": 347,
+        "BASIC_FALLBACK": 10
+      }
+    },
+    {
+      "snapshot_date": "2020-09-30",
+      "f3_usable_b64": "BeZ9qegK2urZ8I1hMuLkwbLBChD84Qur4mr0bXtilwCuTR/RUlpnKbWT5lq4poBtAT3lEoipX9ORTYuW4L9lzcWcne9HMyn3MJJgyn8Pjo+t1jWON4QMDtPzBVuylpBa5Xo/fEQyIRhaBISEZITAjFmCyYFFUDAaGnCTf7CQoQssDSA2DIBxLgQWjR4GQjAEPIQDOSoFsGAsUgTACowAAAYBACCFCJABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "/////f//9/9/////+vrv////3//73//9v7//+/+7/////99//r/7///9+/rf//+/39v+/v/3/1/3+/f2/N8/63/8///2v/t7cd/0v//8tv7G3/e//93+ZP/mf33+/9P/388f7Vb7Mb3dnub+O4XF3hMC3eXl/BaLv3nk/7P5v05uh++2fcl17m2RLdKGBnvd/u31rW/3lPyv+KSjLd4dVzbVaHrVrrQiBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f3_usable_target_ciks": 570,
+      "f4_usable_target_ciks": 1027,
+      "f4_methods": {
+        "DILUTED": 648,
+        "NO_VALID_6Q": 574,
+        "BASIC_DILUTED_COMBINED": 365,
+        "BASIC_FALLBACK": 14
+      }
+    },
+    {
+      "snapshot_date": "2020-12-31",
+      "f3_usable_b64": "AeZ9qegK2urZ8I1jMuLkwbLBChD88Qur4mr0bXtilwSORR/RElonKbWT5nqw5gBsAT3lEoipT/OxTYuW4J9lzcXcne9HMyn3MJJg6n8Pjo+t1jWON4QMDtHzhXuyloBa5fq/fERyIRhaBISU5ITAhFmCyaFFUDAaGnKTf7CwoQssDSC2DIBxLgQWnR4OQjAEPIQDOSoFsGAsUkTAiowAAAYBACCFCJIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "/////f////9//////vr///v/3//73//9v7//+/+7/////99/vq/7///9+/rX//+//5///v/3/3/3+/f2/P8/63/8///2v/l7cd/0v//89v7G3/e//t3+ZP/2/33+/8P338+f7Vb7Mb3dnmb+u4TF3xMC3fTl/BaDvzvk/6P5v05uh++2fcl17m2RPdKOBnvd9u31vW/3nPyv+OSjLd4dVybVeHrVrrciBAQCAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f3_usable_target_ciks": 583,
+      "f4_usable_target_ciks": 1037,
+      "f4_methods": {
+        "DILUTED": 644,
+        "NO_VALID_6Q": 564,
+        "BASIC_DILUTED_COMBINED": 375,
+        "BASIC_FALLBACK": 18
+      }
+    },
+    {
+      "snapshot_date": "2021-03-31",
+      "f3_usable_b64": "EeZ9uegK2urZ8I1zMuLkwbLBClD84Qur4mr3bXNilwSORR/RMlonKbWS5nqw5gBtQT3lEoipT/OwTcuW4J9nzcXcne9HOyn3MJpg6n8Pno+t1jWOd4QMDtHzhXuyloBa5fq/fERyIRpaAISU9IRAhFmCyeFFUDAaGnKTfrSwIQssDSD+DIBxLgQWnZ4OQjAEfoSTvSoFsGAsUkTEigwAAAYBASDFCJIBAAGSAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "/3//9f////9/////9vr///v/1///3//9P7//+/+7/////99/vL/7///9+/rX/////9///v/3/3/3+/f2/P8/63/8d//2v/l/cd/0v//+/v/G3/e//93+Zv/2/1/+/9P338+f7Vb/Mb3dnmb+u4XF3hcG3eTl/B+Dvzvk/7f5P05uh+/2fcl17G2zvdqOBn/d/u31vW/3nPyveuTnf94dVzZVeX7VrrMyBQ0SAwAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f3_usable_target_ciks": 609,
+      "f4_usable_target_ciks": 1064,
+      "f4_methods": {
+        "DILUTED": 662,
+        "NO_VALID_6Q": 537,
+        "BASIC_DILUTED_COMBINED": 385,
+        "BASIC_FALLBACK": 17
+      }
+    },
+    {
+      "snapshot_date": "2021-06-30",
+      "f3_usable_b64": "UeZ9uegK2urd8I1zMuLkgbLJClD84Qurwmr37XNilwSORR/RMlonKbWy5nqw5gBtQT3lEoipT/OwTcuW4J9nzcXcne9HOyn3IJrg6n8Pjo+t1jWON4QMDtHzhXu61oAaxXq/fEQyIxpaAISW9IRQhFmCyMFFUDgeGnCDfvSwIQssDSD+DIBxLAQGnZ4OQjAMfoSTvSoFsGAsUkTMigwABAYBAyDFCJMBAAHSIhACAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "/3//9f//v/9/////9vrv//v/1///3//9P/+/+/+7////+99/vb////f9+/r3///3/9///v/3/n/3u/f2/P8v6//8d//2v/l/cd90v//+/vfO//e//d3+JP/2/1/+/9P3X0+f7Vb/I73Vnmb+u4XV3hcG3eTl/B+Pvzvk3/X5P05uh+/2fcl17G2y/dqOFn/d/s31ve/3nPyvesT/f94fVyZVe27U7vMyBR1SIzAioQ0BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f3_usable_target_ciks": 619,
+      "f4_usable_target_ciks": 1072,
+      "f4_methods": {
+        "DILUTED": 670,
+        "NO_VALID_6Q": 529,
+        "BASIC_DILUTED_COMBINED": 385,
+        "BASIC_FALLBACK": 17
+      }
+    },
+    {
+      "snapshot_date": "2021-09-30",
+      "f3_usable_b64": "EeZ9uegK2urd8I1zMuLkgbLJChD84Qurwmr37XNilwSORT/RIlonKbWy5nq45ABtQD1lEoipT/OwTcuW4J/nzcXcne9HOyn2IJrg6n8Pjo+t1jeON4QODtHzhXu61oAaxXq/fEQyKxpaAISW9IVQjF2CyMFFUDgeGnCDvvSwIQssDSD+BIBxPAwHnZ4OQjIMfoWbvSoFsGAsUlTMmgwABAeHAyDFDJMBAAPSIpgCQBUIAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "////9f//v/9//////vrv////Vz//3/39v///+/+7////+/9/v///7/f9+/r3///3/////v/3/n/3uf/2/P8v6//8d//2v/l/cd90v+/+9vPO//e//N3+JP/2/3/+/9P3n0+f7Vb/I73Vnmbuu6XV3xem3fTl/B+fvzn03/X5P05up+/2fc917m2y/dqOln/d/tn3t//3nvivetT/f94fV2ZWe27V7vcyR13Su7Mi4w0JCgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f3_usable_target_ciks": 640,
+      "f4_usable_target_ciks": 1105,
+      "f4_methods": {
+        "DILUTED": 674,
+        "NO_VALID_6Q": 496,
+        "BASIC_DILUTED_COMBINED": 418,
+        "BASIC_FALLBACK": 13
+      }
+    },
+    {
+      "snapshot_date": "2021-12-31",
+      "f3_usable_b64": "EeZ1uegK2srd8I1zM+LkgbLJChD84Qurwmr37XpiFwSuRT/RIlpnKbWy5jq45ABtQD1lEoipT/KxTcuW4J/nzcXdne9HOyn2IJrg6n8Ojo+t1ieOt4UODtHzpXu61oASx3q/fEQyKxpaAISS9IVQjF2CyMFFVDieGnCDvvSwoQssDQD+BIBxPAwHn54OQjIMfoWbvSoFMGIsUlfMmgwARAOHAyDFDJcBAAPSIpgCQDQIAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "///39f//v/9////v/vr/////Xz//3/39v///+/+7////+//fv///z/f9++r3///3/////v/3/n/3uf/2/P8v6//8d6/2v/l7cd90/+//5uPO/3e//N3+JP/2/3/+/9P3n0+f7Vb/I73VnmZuu6TV3xOu3fTl/B+fvzn03/X5P07up+/2fc917m0z/9qOln/d/tn3v//3nvqvetf/d98fV3ZWe27V7vcyR1/Su7Oi4y0LCoKAABABAAAAAAAAAAAAAAAAAAAAAAAA",
+      "f3_usable_target_ciks": 647,
+      "f4_usable_target_ciks": 1112,
+      "f4_methods": {
+        "DILUTED": 680,
+        "NO_VALID_6Q": 489,
+        "BASIC_DILUTED_COMBINED": 419,
+        "BASIC_FALLBACK": 13
+      }
+    },
+    {
+      "snapshot_date": "2022-03-31",
+      "f3_usable_b64": "EeZ1uegK28rd8I1zM+LkwbLJChD84Qurwmr37XpiFwSuRT7RMlpnKbWz5jq45gBtQD1lEgipT/KxTcuS4Z/nzcXdne5FOyn2IJ7g6n8Ojo+t1meOt4UODtHzpXuy1pASx3q/fEQyKxpaCISS9IFajF2TyMFFXDjeGnCDvvSwoQssDQD+BoBxPIyPn54OQjIMfsWbvSoNcGIkU1/MmgxERgMPAyDtDJcBAkPSIpwDQDQJgLJCAIALCqJYAAAAAAAAAAAAAAAAAAAA",
+      "f4_usable_b64": "/3/39f////9////v/vr//////z//3//9v/f/+/+7//f/+//fv//9z//9++r////3///////3/n/3+f9+/P8v6//8d6/3u/t7cd/0/2//9uPO33e//N3+JP/373/+/9P3n++f7Xb/I7zVlmZuu6Tf3xO+3fTn/B/fvzn82/X5P07st+/2f4917+0r/9ueln/9/vn3v///3vqvet//998/V3Zf+3797vcyR9/Tv7Pz4y1LSpLaAZADPZFcAAgAAAAAAAAAQAAAAAAA",
+      "f3_usable_target_ciks": 691,
+      "f4_usable_target_ciks": 1170,
+      "f4_methods": {
+        "DILUTED": 764,
+        "NO_VALID_6Q": 431,
+        "BASIC_DILUTED_COMBINED": 389,
+        "BASIC_FALLBACK": 17
+      }
+    },
+    {
+      "snapshot_date": "2022-06-30",
+      "f3_usable_b64": "EeZ1uegK28rd8I1zM+LkwbLJClDc4QurwmrX/XpiF0SuRT7RM15nKbWz5jq45gBtQD3lEgipT/KxDcuS4Z/nzcXdne5Neyn2IL7i6n8Kjo+91meOZ4UODtHzpXsy1pBSpzq/fkQyKx5aCYSS9IBajF2TyMFFXLjeGnCDvvS0oQstHQD/DqBxPIyOn54OQjIM/8WTvSoNcOIE00/MmgxERgMPAyD5DJcFkmPWYJwLRTQJgbJKQIALSqJbIRAQAWKDxgAAAAAAAAAA",
+      "f4_usable_b64": "/3/39f////9////v/vr/////f7//////v/ff+/+7//f/+//fv//97///++r///7///////v//3/3+fd+/f+/6//8d6//u/t7cd/2/2///ufe33e//d3+Jv/z7//+/9P3//ef73b/K7zXlmZ+u6zf3xO+3fTn/B/fvzn9+/X9v0btt//3f6/1/+0r/8uetn/9//3/////3v6v+v//998/13/f+//9/ve31//Xv/Pz4z1Ly5LaAZQjfbFdoRmwQGcDwgAAQAAAAAAA",
+      "f3_usable_target_ciks": 734,
+      "f4_usable_target_ciks": 1248,
+      "f4_methods": {
+        "DILUTED": 901,
+        "NO_VALID_6Q": 353,
+        "BASIC_DILUTED_COMBINED": 333,
+        "BASIC_FALLBACK": 14
+      }
+    },
+    {
+      "snapshot_date": "2022-09-30",
+      "f3_usable_b64": "EeZ5uegK28rd8I1zM+LkwbLJClDc4QurwmrX/XpiFwSuRT7RM15nKbWz5jq45wBtQD3lEgipT/KxDcuS4Z/nzcX9ne5Neyn2IL7i6n+Kio+91meOZ4WODtHzpXsy1pBSpzq/fkQyLx5aCYSS9IB6jF2TyclFfLjeGlSDvnS04Qs9HQD/DqBxP46On54OQrIM/8WTvSoNcOIE003OmgRARgcPIyD5DpdFEmPWYJwLxTQpxfZKwIALSqJbIVASAWKD1phAQwYAAAAA",
+      "f4_usable_b64": "///39f////9////v/vr//////7////////ff+3+7//f////fv///7///++r//f///////////3/3+ff+/f+/6//8d+//u/t7cf/2/2///ufe/3e//d3+Jv/z///+/9P3//ef73b/P7zfl+Z+u63/3xO+3fTn/B/fvz39+/X9/0b/t//3f+/1/+9r/8uevv/9//3/////3v6v+///99+/13//+//9/vf/1//fv/fz4/1ry7baCZ0jf7FfqVm6aWcD3hhFQQYAAAAA",
+      "f3_usable_target_ciks": 766,
+      "f4_usable_target_ciks": 1309,
+      "f4_methods": {
+        "DILUTED": 981,
+        "NO_VALID_6Q": 292,
+        "BASIC_DILUTED_COMBINED": 312,
+        "BASIC_FALLBACK": 16
+      }
+    },
+    {
+      "snapshot_date": "2022-12-30",
+      "f3_usable_b64": "EaZ5uagK28rd8I1zM+LkwbLJClDM4QurwmrX/XpiFwSuRT7RM15nKbWz5j645wBtQD3lFgnpT/KxDcuS4Z/nzcW9ne5Neyn2IL7i6n+Lio+91meOZ4UODtHzpXsylhBSpzq/fkQyLx5aCYSS9IBajF2TyclFfLjeGlSDvnS04Qs9HQT/DqBxP46On54OQrIM/cWTvSoNcOIE003OmgRARgcPIyD5DpdFEmPWYJwL1TQrZfZuwKALSuJ7JVAyAWKD1phAQxYgYAAA",
+      "f4_usable_b64": "////9f////9////v/vr//////7////////ff+/+7///////fv///////++7//f///////////3/3+ff+/f+/6//8d+v/v/t7cf/2/2///ufe/3e//d3+Jv/z///+/9P3///f73b/P7zfl+Z+u6//3xO+3/Tn/B/fvz39+/X9/0b/t///f+/9/+/r/8uevv////3/////3v7v+///99+/13//+//9/vf/1//fv/fz9/17+7f/CZ0j//V/rV27aWcD3rhFUwYgQAAA",
+      "f3_usable_target_ciks": 776,
+      "f4_usable_target_ciks": 1345,
+      "f4_methods": {
+        "DILUTED": 1035,
+        "NO_VALID_6Q": 256,
+        "BASIC_DILUTED_COMBINED": 291,
+        "BASIC_FALLBACK": 19
+      }
+    }
+  ],
+  "fetch_errors": 0
+}
