@@ -1,176 +1,56 @@
 {
-  "schema": "V4_EULERPOOL_SPLIT_PROBE_V7",
-  "results": [
+  "schema": "V4_SPLIT_CROSSCHECK_V8",
+  "rows": [
     {
-      "identifier": "AAPL",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98049",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "response_type": "list",
-      "payload": [
+      "ticker": "AAPL",
+      "adjusted_close": 75.089996337891,
+      "adjusted_volume": 135647456,
+      "future_split_cum_ratio": 4.0,
+      "reconstructed_as_traded_close": 300.359985351564,
+      "reconstructed_as_traded_volume": 33911864.0,
+      "dollar_volume_invariance_check": 0.0,
+      "splits_used": [
         {
-          "symbol": "AAPL",
           "date": "2020-08-31",
-          "fromFactor": 1,
-          "toFactor": 4
-        },
-        {
-          "symbol": "AAPL",
-          "date": "2014-06-09",
-          "fromFactor": 1,
-          "toFactor": 7
-        },
-        {
-          "symbol": "AAPL",
-          "date": "2005-02-28",
-          "fromFactor": 1,
-          "toFactor": 2
-        },
-        {
-          "symbol": "AAPL",
-          "date": "2000-06-21",
-          "fromFactor": 1,
-          "toFactor": 2
+          "ratio": 4.0
         }
       ]
     },
     {
-      "identifier": "TSLA",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98048",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "response_type": "list",
-      "payload": [
+      "ticker": "NVDA",
+      "adjusted_close": 5.99775,
+      "adjusted_volume": 237678760,
+      "future_split_cum_ratio": 40.0,
+      "reconstructed_as_traded_close": 239.91,
+      "reconstructed_as_traded_volume": 5941969.0,
+      "dollar_volume_invariance_check": 0.0,
+      "splits_used": [
         {
-          "symbol": "TSLA",
-          "date": "2022-08-25",
-          "fromFactor": 1,
-          "toFactor": 3
-        },
-        {
-          "symbol": "TSLA",
-          "date": "2020-08-31",
-          "fromFactor": 1,
-          "toFactor": 5
-        }
-      ]
-    },
-    {
-      "identifier": "NVDA",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98047",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "response_type": "list",
-      "payload": [
-        {
-          "symbol": "NVDA",
           "date": "2024-06-10",
-          "fromFactor": 1,
-          "toFactor": 10
+          "ratio": 10.0
         },
         {
-          "symbol": "NVDA",
           "date": "2021-07-20",
-          "fromFactor": 1,
-          "toFactor": 4
-        },
-        {
-          "symbol": "NVDA",
-          "date": "2007-09-11",
-          "fromFactor": 2,
-          "toFactor": 3
-        },
-        {
-          "symbol": "NVDA",
-          "date": "2006-04-07",
-          "fromFactor": 1,
-          "toFactor": 2
-        },
-        {
-          "symbol": "NVDA",
-          "date": "2001-09-12",
-          "fromFactor": 1,
-          "toFactor": 2
-        },
-        {
-          "symbol": "NVDA",
-          "date": "2000-06-27",
-          "fromFactor": 1,
-          "toFactor": 2
+          "ratio": 4.0
         }
       ]
     },
     {
-      "identifier": "CMG",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98046",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "response_type": "list",
-      "payload": [
+      "ticker": "GE",
+      "adjusted_close": 59.3968,
+      "adjusted_volume": 10941736,
+      "future_split_cum_ratio": 0.160125,
+      "reconstructed_as_traded_close": 9.5109126,
+      "reconstructed_as_traded_volume": 68332465.26151444,
+      "dollar_volume_invariance_check": 1.1920928955078125e-07,
+      "splits_used": [
         {
-          "symbol": "CMG",
-          "date": "2024-06-26",
-          "fromFactor": 1,
-          "toFactor": 50
-        }
-      ]
-    },
-    {
-      "identifier": "GE",
-      "http_status": 200,
-      "quota_headers": {
-        "x-ratelimit-limit": "100000",
-        "x-ratelimit-remaining": "98045",
-        "x-ratelimit-reset": "1790812800",
-        "x-ratelimit-window": "month"
-      },
-      "response_type": "list",
-      "payload": [
-        {
-          "symbol": "GE",
           "date": "2023-01-04",
-          "fromFactor": 1000,
-          "toFactor": 1281
+          "ratio": 1.281
         },
         {
-          "symbol": "GE",
           "date": "2021-08-02",
-          "fromFactor": 8,
-          "toFactor": 1
-        },
-        {
-          "symbol": "GE",
-          "date": "2000-05-08",
-          "fromFactor": 1,
-          "toFactor": 3
-        },
-        {
-          "symbol": "GE",
-          "date": "1997-05-12",
-          "fromFactor": 1,
-          "toFactor": 2
-        },
-        {
-          "symbol": "GE",
-          "date": "1994-05-16",
-          "fromFactor": 1,
-          "toFactor": 2
+          "ratio": 0.125
         }
       ]
     }
