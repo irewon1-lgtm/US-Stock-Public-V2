@@ -64,7 +64,7 @@ u["cik_num"]=pd.to_numeric(u["cik"],errors="coerce").astype("Int64")
 u=u[~u.ticker_norm.isin(KNOWN_DELISTED_NO_RECOVERY)]
 ticker_by_cik=(u.dropna(subset=["cik_num"]).groupby("cik_num")["ticker_norm"]
                .agg(lambda s:"|".join(sorted(set(x for x in s if x)))))
-TARGET_CIKS=sorted(int(x) for x in u.cik_num.dropna().unique())
+TARGET_META=json.loads((ROOT/"v4-sec-cover/next1_missing_f34_target_ciks.json").read_text())\nTARGET_CIKS=sorted(int(x) for x in TARGET_META["ciks"] if int(x) in set(u.cik_num.dropna().astype(int)))
 
 def scan_cik(cik:int):
     cik10=f"{cik:010d}"
