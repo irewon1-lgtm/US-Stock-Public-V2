@@ -1,0 +1,27 @@
+name: V4 Eulerpool MCap Shares Probe
+on:
+  push:
+    paths:
+      - 'v4-eulerpool-mcap-probe-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe market cap and shares endpoints
+        env:
+          EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
+        run: python v4-eulerpool/mcap_shares_probe.py
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git pull --rebase || true
+          git add v4-eulerpool-output/mcap_shares_probe.json
+          git commit -m 'Add V4 Eulerpool market cap shares probe' || true
+          git push || true
