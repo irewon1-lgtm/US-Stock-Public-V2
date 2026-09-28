@@ -1,0 +1,32 @@
+name: V4 SEC F34 Strict Confirmed Recovery
+on:
+  push:
+    paths:
+      - 'v4-sec-f34-strict-confirmed-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q requests
+      - name: Rebuild strict PIT F3 F4 confirmed recovery
+        env:
+          TARGET_B64_OVERRIDE: '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'
+        run: python v4-sec-cover/recover_f34_strict_matrix.py
+      - name: Preserve confirmed-only output
+        run: |
+          mkdir -p v4-sec-f34-strict-confirmed-output
+          cp v4-sec-f34-strict-recovery-output/recovery_bitmask.json v4-sec-f34-strict-confirmed-output/recovery_bitmask.json
+          cp v4-sec-f34-strict-recovery-output/fetch_audit.json v4-sec-f34-strict-confirmed-output/fetch_audit.json
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-sec-f34-strict-confirmed-output/
+          git commit -m 'Add confirmed-only V4 strict recovery bitmask' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
