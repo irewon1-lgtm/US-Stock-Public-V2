@@ -1,0 +1,36 @@
+name: V3 Yahoo Probe
+
+on:
+  push:
+    paths:
+      - 'v3-probe-trigger.txt'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q requests
+      - name: Probe Yahoo
+        run: |
+          python - <<'PY'
+          import requests,time,json
+          syms=['AAPL','MSFT','NVDA','TSLA','AMZN','META','GOOGL','JPM','XOM','KO']
+          out=[]
+          for s in syms:
+              u=f'https://query1.finance.yahoo.com/v8/finance/chart/{s}'
+              p={'period1':1546300800,'period2':1771113600,'interval':'1d'}
+              t=time.time()
+              try:
+                  r=requests.get(u,params=p,timeout=8,headers={'User-Agent':'Mozilla/5.0 V3-Probe'})
+                  out.append({'s':s,'code':r.status_code,'sec':round(time.time()-t,3),'len':len(r.content)})
+              except Exception as e:
+                  out.append({'s':s,'error':repr(e),'sec':round(time.time()-t,3)})
+          print(json.dumps(out,indent=2))
+          bad=[x for x in out if x.get('code')!=200]
+          if bad:
+              raise SystemExit(2)
+          PY
