@@ -1,1 +1,1 @@
-trigger full unknown recovery 2026-09-29 KST\n
+trigger full outcome-free recovery v2\n
