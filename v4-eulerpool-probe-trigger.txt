@@ -1,1 +1,1 @@
-trigger split basis probe\n
+trigger stooq delisted probe\n
