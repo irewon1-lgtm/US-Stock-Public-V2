@@ -16,12 +16,12 @@ jobs:
         with: {python-version: '3.12'}
       - run: pip install -q pandas requests
       - name: Discover outcome-free SEC F3/F4 candidate tags
-        run: python v4-sec-f34-next1/discover_and_extract.py
+        run: python v4-sec-cover/discover_f34_candidate_tags.py
       - name: Commit NEXT1 discovery outputs
         run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
           git add v4-sec-f34-next1-output/
-          git commit -m 'Add V4 NEXT1 SEC F34 tag discovery' || true
+          git commit -m 'Add V4 NEXT1 SEC F34 companyfacts discovery' || true
           git pull --rebase origin main
           git push origin HEAD:main
