@@ -1,0 +1,47 @@
+{
+  "schema": "V4_NEXT1_SEC_EXACT_ALT_FACTS_V1",
+  "target_ciks": 680,
+  "existing_corp_action_excluded_tickers": [
+    "AAWW",
+    "ABMD",
+    "STMP"
+  ],
+  "new_corp_action_lookup_calls": 0,
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "source": "SEC data.sec.gov companyfacts + submissions accepted timestamps",
+  "approved_exact_or_exactly_composable_roles": {
+    "SHARES_BASIC_DILUTED_COMBINED": "single reported weighted-average value explicitly used for both basic and diluted EPS",
+    "CFO_CONTINUING_PLUS_CFO_DISCONTINUED": "sum only when both components align to same duration/end; reconstructs total operating cash flow",
+    "REVENUE_TOTAL_OPERATING": "RegulatedAndUnregulatedOperatingRevenue definition states total operating revenues"
+  },
+  "rejected_for_final_mapping": [
+    "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations alone",
+    "PaymentsToAcquireProductiveAssets",
+    "component revenue tags without proven exhaustive aggregation"
+  ],
+  "by_role": {
+    "SHARES_BASIC_DILUTED_COMBINED": {
+      "rows": 12497,
+      "ciks": 364,
+      "accepted_mapped": 12497
+    },
+    "CFO_CONTINUING": {
+      "rows": 2757,
+      "ciks": 306,
+      "accepted_mapped": 2757
+    },
+    "CFO_DISCONTINUED": {
+      "rows": 1488,
+      "ciks": 81,
+      "accepted_mapped": 1488
+    },
+    "REVENUE_TOTAL_OPERATING": {
+      "rows": 792,
+      "ciks": 11,
+      "accepted_mapped": 792
+    }
+  },
+  "fetch_errors": 0
+}
