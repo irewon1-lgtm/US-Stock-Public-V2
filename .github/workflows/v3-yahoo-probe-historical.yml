@@ -12,35 +12,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install -q requests
-      - name: Reprobe 169 unresolved common-stock Yahoo symbols
+      - run: pip install -q requests pandas
+      - name: Probe free Stooq fallback on Yahoo-missing sample
         run: |
           python - <<'PY'
-          import requests,time,json,urllib.parse
-          syms=["ACLX","ADVM","AKLI","ALE","ALEX","ALIM","ALPN","AMWD","ANSS","APLS","APLT","ARAV","ATCOL","AVDL","AVHI","AVNS","AXLA","BGFV","BLD","BLFY","BRAC","CASI","CCLDO","CCLDP","CFB","CMRX","CNTA","CORX","CPN","CPRX","CSGS","CTLP","CTRA","CUK","DAWN","DCOMP","DCPH","DENN","DVAX","EEX","EHAB","EQC","EVBG","EXAS","FCRX","FFIC","FFWM","FL","FLIC","FNA","FOLD","FORA","FOSLL","FSFG","FTAIN","FTAIO","FTAIP","GBIO","GDEN","GHSI","GIFI","GLDD","GORV","GTLS","HBI","HHGC","HI","HMNF","HNNAZ","HOLX","HSII","HTBK","HTLF","HTLFP","HUDA","ICCH","ICPT","IMGN","INFA","IROQ","JAMF","JHG","KACL","KNL","KORE","KRTX","LANDM","LILAV","LILKV","LNKB","MASI","MBCN","MBINO","MDRRP","METCL","MINDP","MIXT","MODV","MOFG","MPX","MRCC","MRTX","NKLA","NOVV","NSA","NURO","OCFCP","ODP","OMGA","ONCT","ONTF","ORGN","OXSQZ","PCH","PET","PIK","PIXY","PLYA","PRA","PVBC","QOMO","RAPT","RCB","REVG","RILYK","RILYM","RNAM","RVNC","RWAYZ","RYI","RZB","SCCC","SEM","SGEN","SILA","SLNO","SNCRL","SNCY","SOHO","SOVO","SP","SPLK","STKL","STRM","SWKH","TBNK","TBPH","TECTP","TERN","TFFP","TGNA","THS","TMHC","TPH","TPTA","TRUE","TSRI","UDMY","UNAMQ","VBTX","VIVKD","VRE","VTYX","WHLRL","WSBCP","WTFCM","WTFCP","ZEUS","ZIMV"]
-          p={'period1':1546300800,'period2':1771113600,'interval':'1d','events':'div,splits','includeAdjustedClose':'true','includePrePost':'false'}
-          recovered=[]; counts={}; samples=[]
+          import requests,time,io,pandas as pd,json
+          syms=['ABMD','AAWW','AVDL','CPRX','CTRA','AVB','EA','WBS','ACLX','ADVM']
+          out=[]
           for s in syms:
-            ys=s.replace('.','-').replace('/','-')
-            u=f'https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ys,safe="")}'
-            code='EXC'; n=0; desc=''
+            u='https://stooq.com/q/d/l/'
+            p={'s':s.lower()+'.us','d1':'20190101','d2':'20260215','i':'d'}
+            row={'s':s}
             try:
-              r=requests.get(u,params=p,timeout=8,headers={'User-Agent':'Mozilla/5.0 V3-Reprobe'})
-              code=r.status_code
+              r=requests.get(u,params=p,timeout=15,headers={'User-Agent':'Mozilla/5.0'})
+              row['code']=r.status_code; row['bytes']=len(r.content); row['head']=r.text[:100].replace('\n',' ')
               try:
-                j=r.json(); ch=j.get('chart') or {}; rs=ch.get('result') or []; er=ch.get('error')
-                n=len((rs[0].get('timestamp') or [])) if rs else 0
-                desc=((er or {}).get('description','') if isinstance(er,dict) else str(er or ''))[:120]
-              except Exception:
-                pass
+                d=pd.read_csv(io.StringIO(r.text))
+                row['rows']=len(d); row['first']=str(d.iloc[0,0]) if len(d) else ''; row['last']=str(d.iloc[-1,0]) if len(d) else ''
+              except Exception as e:
+                row['rows']=0; row['parse']=repr(e)[:120]
             except Exception as e:
-              desc=repr(e)[:120]
-            counts[str(code)]=counts.get(str(code),0)+1
-            if code==200 and n>0: recovered.append({'s':s,'n':n})
-            elif len(samples)<40: samples.append({'s':s,'code':code,'n':n,'desc':desc})
-            time.sleep(.02)
-          print('COUNTS',json.dumps(counts,sort_keys=True))
-          print('RECOVERED',json.dumps(recovered,sort_keys=True))
-          print('UNRESOLVED_N',len(syms)-len(recovered))
-          print('SAMPLES',json.dumps(samples,indent=2))
+              row.update(code='EXC',bytes=0,rows=0,head=repr(e)[:120])
+            out.append(row); time.sleep(.2)
+          print(json.dumps(out,indent=2))
           PY
