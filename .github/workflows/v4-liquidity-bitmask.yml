@@ -1,0 +1,23 @@
+name: V4 Liquidity Bitmask
+on:
+  push:
+    paths:
+      - 'v4-liquidity-bitmask-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas numpy
+      - run: python v4-liquidity/liquidity_bitmask.py
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-liquidity-output/liquidity_bitmask.json v4-liquidity-output/liquidity_summary.json
+          git commit -m 'Add V4 liquidity bitmask summary' || true
+          git push
