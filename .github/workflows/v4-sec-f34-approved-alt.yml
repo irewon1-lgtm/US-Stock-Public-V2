@@ -1,0 +1,27 @@
+name: V4 SEC F34 Approved Alt Facts
+on:
+  push:
+    paths:
+      - 'v4-sec-f34-approved-alt-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas requests
+      - name: Fetch semantically approved SEC alternative facts with acceptance time
+        run: python v4-sec-cover/recover_f34_approved_alt_facts.py
+      - name: Commit approved alternative facts
+        run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-sec-f34-approved-alt-output/
+          git commit -m 'Add V4 NEXT1 approved SEC F34 alternative facts' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
