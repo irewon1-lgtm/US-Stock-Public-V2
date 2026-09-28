@@ -1,0 +1,31 @@
+name: V4 Eulerpool Split Correction
+on:
+  push:
+    paths:
+      - 'v4-eulerpool-split-correct-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q pandas numpy requests
+      - name: Correct Eulerpool adjusted prices to as-traded basis
+        env:
+          EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
+        run: python v4-eulerpool/split_correct_recovery.py
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-eulerpool-output/eulerpool_split_corrected_recovery.csv.gz
+          git add v4-eulerpool-output/eulerpool_split_audit.csv
+          git add v4-eulerpool-output/liquidity_mask_split_corrected.json
+          git add v4-eulerpool-output/split_correction_summary.json
+          git commit -m 'Add V4 split-corrected Eulerpool recovery' || true
+          git push
