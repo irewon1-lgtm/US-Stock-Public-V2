@@ -1,0 +1,64 @@
+name: V4 Outcome-Free Liquidity
+on:
+  push:
+    paths:
+      - 'v4-liquidity-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  shard:
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7]
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas numpy requests
+      - name: Verify input
+        run: |
+          cp v3-fast/price_universe_resolved.csv.gz universe.csv.gz
+          echo '29e11d6e39428c56908c02b618ab0d32819ef0f7d274dfaadc3edab57e3b83fe  universe.csv.gz' | sha256sum -c -
+      - name: Run outcome-free liquidity shard
+        run: python v4-liquidity/liquidity_shard.py --input universe.csv.gz --shard ${{ matrix.shard }} --nshards 8 --outdir shard-out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-liquidity-${{ matrix.shard }}
+          path: shard-out/*
+          retention-days: 1
+  merge:
+    needs: shard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: v4-liquidity-*
+          path: shards
+          merge-multiple: true
+      - name: Merge
+        run: |
+          python - <<'PY'
+          import glob,pandas as pd,os
+          rows=pd.concat([pd.read_csv(x,dtype=str,keep_default_na=False) for x in glob.glob('shards/rows_*.csv.gz')],ignore_index=True)
+          audits=pd.concat([pd.read_csv(x,dtype=str,keep_default_na=False) for x in glob.glob('shards/audit_*.csv')],ignore_index=True)
+          rows['_row_id']=pd.to_numeric(rows['_row_id'],errors='coerce'); rows=rows.sort_values('_row_id')
+          os.makedirs('v4-liquidity-output',exist_ok=True)
+          rows.to_csv('v4-liquidity-output/liquidity_panel.csv.gz',index=False,compression='gzip')
+          audits.to_csv('v4-liquidity-output/fetch_audit.csv',index=False)
+          print('rows',len(rows)); print(rows.liquidity_status.value_counts(dropna=False).to_string()); print(audits.status.value_counts(dropna=False).to_string())
+          PY
+      - name: Commit outcome-free result
+        run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-liquidity-output/liquidity_panel.csv.gz v4-liquidity-output/fetch_audit.csv
+          git commit -m 'V4 outcome-free liquidity result' || true
+          git push
