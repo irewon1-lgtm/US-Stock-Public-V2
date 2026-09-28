@@ -1,0 +1,17 @@
+{
+  "schema": "V4_NEXT1_SEC_COMPANYFACTS_CANDIDATE_TAG_DISCOVERY_V2",
+  "source": "SEC data.sec.gov companyfacts; only facts filed/end <= 2022-12-31 retained",
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "known_delisted_no_recovery": [
+    "AAWW",
+    "ABMD",
+    "STMP"
+  ],
+  "target_ciks": 3513,
+  "fetch_errors": 0,
+  "candidate_cik_tag_rows": 36059,
+  "candidate_tags": 233,
+  "note": "Discovery only. No candidate tag becomes an accepted F3/F4 mapping until semantic review and accepted-time/alignment recomputation."
+}
