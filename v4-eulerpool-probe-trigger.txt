@@ -1,1 +1,1 @@
-trigger endpoint discovery v2\n
+trigger numeric range discovery v3\n
