@@ -1,1 +1,1 @@
-trigger numeric pack\n
+trigger numeric pack artifact v2
