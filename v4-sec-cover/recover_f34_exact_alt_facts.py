@@ -18,6 +18,7 @@ TAGS={
     "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations":"CFO_CONTINUING",
     "CashProvidedByUsedInOperatingActivitiesDiscontinuedOperations":"CFO_DISCONTINUED",
     "RegulatedAndUnregulatedOperatingRevenue":"REVENUE_TOTAL_OPERATING",
+    "WeightedAverageNumberDilutedSharesOutstandingAdjustment":"DILUTED_SHARES_ADJUSTMENT",
 }
 SESSION=requests.Session()
 SESSION.headers.update({"User-Agent":UA,"Accept-Encoding":"gzip, deflate","Accept":"application/json"})
@@ -189,6 +190,7 @@ summary={
     "source":"SEC data.sec.gov companyfacts + submissions accepted timestamps",
     "approved_exact_or_exactly_composable_roles":{
         "SHARES_BASIC_DILUTED_COMBINED":"single reported weighted-average value explicitly used for both basic and diluted EPS",
+        "BASIC_PLUS_DILUTED_ADJUSTMENT":"basic weighted-average shares plus the reported dilutive potential-share adjustment reconstructs diluted weighted-average shares",
         "CFO_CONTINUING_PLUS_CFO_DISCONTINUED":"sum only when both components align to same duration/end; reconstructs total operating cash flow",
         "REVENUE_TOTAL_OPERATING":"RegulatedAndUnregulatedOperatingRevenue definition states total operating revenues"
     },
