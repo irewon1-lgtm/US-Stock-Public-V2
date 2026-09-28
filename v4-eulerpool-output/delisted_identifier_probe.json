@@ -1,0 +1,83 @@
+{
+  "schema": "V4_DELISTED_IDENTIFIER_PROBE_V1",
+  "results": [
+    {
+      "ticker": "ABMD",
+      "mcap_status": 200,
+      "mcap_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "isin": "US0036541003",
+      "mcap_data_count": 0,
+      "shares_status": 200,
+      "shares_count": 37,
+      "ohlcv_tests": [
+        {
+          "identifier": "ABMD",
+          "status": 200,
+          "rows": 0
+        },
+        {
+          "identifier": "US0036541003",
+          "status": 200,
+          "rows": 0
+        }
+      ]
+    },
+    {
+      "ticker": "STMP",
+      "mcap_status": 200,
+      "mcap_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "isin": "US8528572006",
+      "mcap_data_count": 0,
+      "shares_status": 200,
+      "shares_count": 23,
+      "ohlcv_tests": [
+        {
+          "identifier": "STMP",
+          "status": 200,
+          "rows": 0
+        },
+        {
+          "identifier": "US8528572006",
+          "status": 200,
+          "rows": 0
+        }
+      ]
+    },
+    {
+      "ticker": "AAWW",
+      "mcap_status": 200,
+      "mcap_keys": [
+        "currency",
+        "data",
+        "isin",
+        "sharesOutstanding"
+      ],
+      "isin": "US0491642056",
+      "mcap_data_count": 0,
+      "shares_status": 200,
+      "shares_count": 23,
+      "ohlcv_tests": [
+        {
+          "identifier": "AAWW",
+          "status": 200,
+          "rows": 0
+        },
+        {
+          "identifier": "US0491642056",
+          "status": 200,
+          "rows": 0
+        }
+      ]
+    }
+  ]
+}
