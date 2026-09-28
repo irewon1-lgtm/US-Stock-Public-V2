@@ -1,0 +1,20 @@
+name: V4 SEC F34 Exact Alt Export
+on:
+  push:
+    paths:
+      - 'v4-sec-f34-exact-alt-export-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-sec-f34-exact-alt-facts
+          path: |
+            v4-sec-f34-exact-alt-output/exact_alt_facts.csv
+            v4-sec-f34-exact-alt-output/summary.json
+          retention-days: 7
