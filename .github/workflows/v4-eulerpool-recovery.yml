@@ -1,0 +1,32 @@
+name: V4 Eulerpool Unknown Recovery
+on:
+  push:
+    paths:
+      - 'v4-eulerpool-recovery-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q pandas numpy requests
+      - name: Recover only previously UNKNOWN OHLCV rows
+        env:
+          EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
+        run: python v4-eulerpool/eulerpool_recover_unknown.py
+      - name: Commit bounded outcome-free results
+        run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-eulerpool-output/eulerpool_unknown_recovery.csv.gz
+          git add v4-eulerpool-output/eulerpool_fetch_audit.csv
+          git add v4-eulerpool-output/liquidity_bitmask_eulerpool_supplement.json
+          git add v4-eulerpool-output/liquidity_recovery_summary.json
+          git commit -m 'Add V4 Eulerpool UNKNOWN recovery' || true
+          git push
