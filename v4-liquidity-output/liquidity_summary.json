@@ -1,0 +1,127 @@
+{
+  "schema": "V4_LIQUIDITY_BITMASK_V2",
+  "row_count": 42014,
+  "row_id_diagnostics": {
+    "n": 42014,
+    "rid_na": 0,
+    "rid_unique": 42014,
+    "rid_min": 0,
+    "rid_max": 42013
+  },
+  "row_order": "bit position equals _row_id from v3-fast/price_universe_resolved input",
+  "thresholds": {
+    "raw_price_min": 5.0,
+    "median_dollar_volume_60d_min": 5000000
+  },
+  "bitorder": "little",
+  "by_snapshot": [
+    {
+      "snapshot_date": "2020-03-31",
+      "rows": 3406,
+      "known_ok": 2155,
+      "pass_price_liquidity": 1176,
+      "unknown": 1251,
+      "price_fail": 290,
+      "liquidity_fail": 689
+    },
+    {
+      "snapshot_date": "2020-06-30",
+      "rows": 3420,
+      "known_ok": 2175,
+      "pass_price_liquidity": 1214,
+      "unknown": 1245,
+      "price_fail": 207,
+      "liquidity_fail": 754
+    },
+    {
+      "snapshot_date": "2020-09-30",
+      "rows": 3456,
+      "known_ok": 2192,
+      "pass_price_liquidity": 1189,
+      "unknown": 1264,
+      "price_fail": 189,
+      "liquidity_fail": 814
+    },
+    {
+      "snapshot_date": "2020-12-31",
+      "rows": 3470,
+      "known_ok": 2237,
+      "pass_price_liquidity": 1258,
+      "unknown": 1233,
+      "price_fail": 141,
+      "liquidity_fail": 838
+    },
+    {
+      "snapshot_date": "2021-03-31",
+      "rows": 3474,
+      "known_ok": 2282,
+      "pass_price_liquidity": 1428,
+      "unknown": 1192,
+      "price_fail": 87,
+      "liquidity_fail": 767
+    },
+    {
+      "snapshot_date": "2021-06-30",
+      "rows": 3503,
+      "known_ok": 2320,
+      "pass_price_liquidity": 1385,
+      "unknown": 1183,
+      "price_fail": 83,
+      "liquidity_fail": 852
+    },
+    {
+      "snapshot_date": "2021-09-30",
+      "rows": 3543,
+      "known_ok": 2384,
+      "pass_price_liquidity": 1343,
+      "unknown": 1159,
+      "price_fail": 96,
+      "liquidity_fail": 945
+    },
+    {
+      "snapshot_date": "2021-12-31",
+      "rows": 3568,
+      "known_ok": 2437,
+      "pass_price_liquidity": 1381,
+      "unknown": 1131,
+      "price_fail": 135,
+      "liquidity_fail": 921
+    },
+    {
+      "snapshot_date": "2022-03-31",
+      "rows": 3567,
+      "known_ok": 2481,
+      "pass_price_liquidity": 1383,
+      "unknown": 1086,
+      "price_fail": 164,
+      "liquidity_fail": 934
+    },
+    {
+      "snapshot_date": "2022-06-30",
+      "rows": 3562,
+      "known_ok": 2501,
+      "pass_price_liquidity": 1350,
+      "unknown": 1061,
+      "price_fail": 264,
+      "liquidity_fail": 887
+    },
+    {
+      "snapshot_date": "2022-09-30",
+      "rows": 3541,
+      "known_ok": 2514,
+      "pass_price_liquidity": 1309,
+      "unknown": 1027,
+      "price_fail": 277,
+      "liquidity_fail": 928
+    },
+    {
+      "snapshot_date": "2022-12-30",
+      "rows": 3504,
+      "known_ok": 2535,
+      "pass_price_liquidity": 1303,
+      "unknown": 969,
+      "price_fail": 294,
+      "liquidity_fail": 938
+    }
+  ]
+}
