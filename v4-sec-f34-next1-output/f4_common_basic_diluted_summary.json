@@ -1,0 +1,21 @@
+{
+  "schema": "V4_NEXT1_F4_COMMON_BASIC_DILUTED_PIT_V1",
+  "tag": "WeightedAverageNumberOfShareOutstandingBasicAndDiluted",
+  "semantic_basis": "SEC Company Facts definition says the average shares used in calculating both basic and diluted EPS; accepted as exact common basic=diluted share series.",
+  "candidate_ciks": 364,
+  "fact_rows": 12476,
+  "ciks_with_facts": 364,
+  "accepted_mapped_rows": 12476,
+  "accepted_missing_rows": 0,
+  "fetch_errors": 0,
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "corporate_action_policy": "existing-confirmed-only; no new lookup",
+  "existing_corp_action_excluded_tickers": [
+    "AAWW",
+    "ABMD",
+    "STMP"
+  ],
+  "new_corp_action_lookup_calls": 0
+}
