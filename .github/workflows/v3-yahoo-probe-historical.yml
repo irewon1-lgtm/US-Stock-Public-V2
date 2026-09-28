@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'v3-probe-historical-trigger.txt'
+      - '.github/workflows/v3-yahoo-probe-historical.yml'
 jobs:
   probe:
     runs-on: ubuntu-latest
