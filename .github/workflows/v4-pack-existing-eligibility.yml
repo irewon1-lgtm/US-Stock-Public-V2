@@ -1,0 +1,25 @@
+name: V4 Pack Existing Eligibility Recovery
+on:
+  push:
+    paths:
+      - 'v4-pack-existing-eligibility-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-existing-eligibility-recovery
+          path: |
+            v4-eulerpool-output/eulerpool_fetch_audit.csv
+            v4-eulerpool-output/eulerpool_unknown_recovery.csv.gz
+            v4-eulerpool-output/eulerpool_split_corrected_recovery.csv.gz
+            v4-eulerpool-output/liquidity_mask_split_corrected.json
+            v4-eulerpool-output/mcap_recovery_audit.csv
+            v4-eulerpool-output/mcap_recovery_snapshots.csv
+            v4-eulerpool-output/mcap_recovery_summary.json
+          retention-days: 30
