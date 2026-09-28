@@ -1,0 +1,25 @@
+name: V4 Eulerpool Delisted Identifier Probe
+on:
+  push:
+    paths:
+      - 'v4-eulerpool-delisted-id-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - env:
+          EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
+        run: python v4-eulerpool/delisted_identifier_probe.py
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git pull --rebase || true
+          git add v4-eulerpool-output/delisted_identifier_probe.json
+          git commit -m 'Add delisted identifier probe' || true
+          git push || true
