@@ -1,0 +1,920 @@
+[
+  {
+    "cik": 1158449,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "srt",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average grant-date fair value of options granted during the reporting period as calculated by applying the disclosed option pricing methodology."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which option holders acquired shares when converting their stock options into shares."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options of the plan that expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price",
+        "description": "Weighted average per share amount at which grantees can acquire shares of common stock by exercise of options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Exercise Price",
+        "description": "The weighted-average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on vested portions of options outstanding and currently exercisable under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesIssuedBasic",
+        "label": "Weighted Average Number of Shares Issued, Basic",
+        "description": "This element represents the weighted average total number of shares issued throughout the period including the first (beginning balance outstanding) and last (ending balance outstanding) day of the period before considering any reductions (for instance, shares held in treasury) to arrive at the weighted average number of shares outstanding. Weighted average relates to the portion of time within a reporting period that common shares have been issued and outstanding to the total time in that period. Such concept is used in determining the weighted average number of shares outstanding for purposes of calculating earnings per share (basic)."
+      }
+    ]
+  },
+  {
+    "cik": 1674862,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      }
+    ]
+  },
+  {
+    "cik": 1018963,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "ffd",
+      "srt",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeituresWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Forfeitures, Weighted Average Grant Date Fair Value",
+        "description": "Weighted average fair value as of the grant date of equity-based award plans other than stock (unit) option plans that were not exercised or put into effect as a result of the occurrence of a terminating event."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value at grant date for nonvested equity-based awards issued during the period on other than stock (or unit) option plans (for example, phantom stock or unit plan, stock or unit appreciation rights plan, performance target plan)."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Nonvested, Weighted Average Grant Date Fair Value",
+        "description": "Per share or unit weighted-average fair value of nonvested award under share-based payment arrangement. Excludes share and unit options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Vested in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value as of grant date pertaining to an equity-based award plan other than a stock (or unit) option plan for which the grantee gained the right during the reporting period, by satisfying service and performance requirements, to receive or retain shares or units, other instruments, or cash in accordance with the terms of the arrangement."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Exercise Price",
+        "description": "The weighted-average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on vested portions of options outstanding and currently exercisable under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price at which option holders acquired shares when converting their stock options into shares under the plan during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresAndExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Forfeitures and Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price of options that were either forfeited or expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on stock options awarded under the plan during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Vested and Expected to Vest, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted-average exercise price, at which grantee can acquire shares reserved for issuance, for fully vested and expected to vest options outstanding. Includes, but is not limited to, unvested options for which requisite service period has not been rendered but that are expected to vest based on achievement of performance condition, if forfeitures are recognized when they occur."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestOutstandingWeightedAverageRemainingContractualTerm",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Vested and Expected to Vest, Outstanding, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted-average period between the balance sheet date and expiration date for fully vested and expected to vest options outstanding, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which option holders acquired shares when converting their stock options into shares."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price",
+        "description": "Weighted average per share amount at which grantees can acquire shares of common stock by exercise of options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeExercisableOptionsWeightedAverageExercisePrice",
+        "label": "Share-based Compensation, Shares Authorized under Stock Option Plans, Exercise Price Range, Exercisable Options, Weighted Average Exercise Price (Deprecated 2011-01-31)",
+        "description": "Weighted average exercise price as of the balance sheet date for those equity-based payment arrangements exercisable and outstanding."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeExercisableOptionsWeightedAverageRemainingContractualTerm",
+        "label": "Share-based Compensation, Shares Authorized under Stock Option Plans, Exercise Price Range, Exercisable Options, Weighted Average Remaining Contractual Term (Deprecated 2011-01-31)",
+        "description": "The weighted average remaining life of the outstanding, exercisable stock options as of the balance sheet date for all option plans in the customized range of exercise prices."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeExercisableOptionsWeightedAverageExercisePrice1",
+        "label": "Share-based Payment Arrangement, Option, Exercise Price Range, Exercisable, Weighted Average Exercise Price",
+        "description": "Weighted average exercise price as of the balance sheet date for those equity-based payment arrangements exercisable and outstanding."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeExercisableOptionsWeightedAverageRemainingContractualTerm1",
+        "label": "Share-based Compensation, Shares Authorized under Stock Option Plans, Exercise Price Range, Exercisable Options, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted average remaining life of the exercisable stock options as of the balance sheet date for all option plans in the customized range of exercise prices."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberBasicSharesOutstandingAdjustmentProForma",
+        "label": "Weighted Average Number Basic Shares Outstanding Adjustment, Pro Forma",
+        "description": "Adjustment to the weighted average number of basic shares outstanding to convert this to a pro forma presentation."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      }
+    ]
+  },
+  {
+    "cik": 14707,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "ecd",
+      "ffd",
+      "invest",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeituresWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Forfeitures, Weighted Average Grant Date Fair Value",
+        "description": "Weighted average fair value as of the grant date of equity-based award plans other than stock (unit) option plans that were not exercised or put into effect as a result of the occurrence of a terminating event."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value at grant date for nonvested equity-based awards issued during the period on other than stock (or unit) option plans (for example, phantom stock or unit plan, stock or unit appreciation rights plan, performance target plan)."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Nonvested, Weighted Average Grant Date Fair Value",
+        "description": "Per share or unit weighted-average fair value of nonvested award under share-based payment arrangement. Excludes share and unit options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Vested in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value as of grant date pertaining to an equity-based award plan other than a stock (or unit) option plan for which the grantee gained the right during the reporting period, by satisfying service and performance requirements, to receive or retain shares or units, other instruments, or cash in accordance with the terms of the arrangement."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Exercise Price",
+        "description": "The weighted-average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on vested portions of options outstanding and currently exercisable under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresAndExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Forfeitures and Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price of options that were either forfeited or expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average grant-date fair value of options granted during the reporting period as calculated by applying the disclosed option pricing methodology."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which option holders acquired shares when converting their stock options into shares."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options of the plan that expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsForfeituresInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Forfeitures in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options that were terminated."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price",
+        "description": "Weighted average per share amount at which grantees can acquire shares of common stock by exercise of options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      }
+    ]
+  },
+  {
+    "cik": 811156,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "ffd",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeitedInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Forfeited in Period, Weighted Average Grant Date Fair Value (Deprecated 2012-01-31)",
+        "description": "The weighted average fair value as of the grant date of equity-based award plans other than stock (unit) option plans that were not exercised or put into effect during the reporting period as a result of the occurrence of a terminating event specified in the contractual agreement of the plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeituresWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Forfeitures, Weighted Average Grant Date Fair Value",
+        "description": "Weighted average fair value as of the grant date of equity-based award plans other than stock (unit) option plans that were not exercised or put into effect as a result of the occurrence of a terminating event."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value at grant date for nonvested equity-based awards issued during the period on other than stock (or unit) option plans (for example, phantom stock or unit plan, stock or unit appreciation rights plan, performance target plan)."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Nonvested, Weighted Average Grant Date Fair Value",
+        "description": "Per share or unit weighted-average fair value of nonvested award under share-based payment arrangement. Excludes share and unit options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Vested in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value as of grant date pertaining to an equity-based award plan other than a stock (or unit) option plan for which the grantee gained the right during the reporting period, by satisfying service and performance requirements, to receive or retain shares or units, other instruments, or cash in accordance with the terms of the arrangement."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price at which option holders acquired shares when converting their stock options into shares under the plan during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresAndExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Forfeitures and Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price of options that were either forfeited or expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationArrangementBySharebasedPaymentAwardOptionsOutstandingWeightedAverageRemainingContractualTerm1",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted average period between the balance sheet date and expiration for all awards outstanding under the plan, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesIssuedBasic",
+        "label": "Weighted Average Number of Shares Issued, Basic",
+        "description": "This element represents the weighted average total number of shares issued throughout the period including the first (beginning balance outstanding) and last (ending balance outstanding) day of the period before considering any reductions (for instance, shares held in treasury) to arrive at the weighted average number of shares outstanding. Weighted average relates to the portion of time within a reporting period that common shares have been issued and outstanding to the total time in that period. Such concept is used in determining the weighted average number of shares outstanding for purposes of calculating earnings per share (basic)."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      }
+    ]
+  },
+  {
+    "cik": 723612,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "invest",
+      "srt",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeitedInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Forfeited in Period, Weighted Average Grant Date Fair Value (Deprecated 2012-01-31)",
+        "description": "The weighted average fair value as of the grant date of equity-based award plans other than stock (unit) option plans that were not exercised or put into effect during the reporting period as a result of the occurrence of a terminating event specified in the contractual agreement of the plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeituresWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Forfeitures, Weighted Average Grant Date Fair Value",
+        "description": "Weighted average fair value as of the grant date of equity-based award plans other than stock (unit) option plans that were not exercised or put into effect as a result of the occurrence of a terminating event."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value at grant date for nonvested equity-based awards issued during the period on other than stock (or unit) option plans (for example, phantom stock or unit plan, stock or unit appreciation rights plan, performance target plan)."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Nonvested, Weighted Average Grant Date Fair Value",
+        "description": "Per share or unit weighted-average fair value of nonvested award under share-based payment arrangement. Excludes share and unit options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Vested in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value as of grant date pertaining to an equity-based award plan other than a stock (or unit) option plan for which the grantee gained the right during the reporting period, by satisfying service and performance requirements, to receive or retain shares or units, other instruments, or cash in accordance with the terms of the arrangement."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Exercise Price",
+        "description": "The weighted-average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on vested portions of options outstanding and currently exercisable under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price at which option holders acquired shares when converting their stock options into shares under the plan during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresAndExpirationsInPeriodWeightedAverageIntrinsicValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Forfeitures and Expirations in Period, Weighted Average Intrinsic Value",
+        "description": "The combined weighted average of the accumulated differences between the fair values on underlying shares and exercises prices to acquire such shares as of the grant date on options that were either forfeited or lapsed."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Forfeitures in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price at which grantees could have acquired the underlying shares with respect to stock options that were terminated during the reporting period due to noncompliance with plan terms during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on stock options awarded under the plan during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which option holders acquired shares when converting their stock options into shares."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsForfeituresInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Forfeitures in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options that were terminated."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price",
+        "description": "Weighted average per share amount at which grantees can acquire shares of common stock by exercise of options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationArrangementBySharebasedPaymentAwardOptionsOutstandingWeightedAverageRemainingContractualTerm1",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted average period between the balance sheet date and expiration for all awards outstanding under the plan, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeOutstandingOptionsWeightedAverageExercisePriceBeginningBalance1",
+        "label": "Share-based Payment Arrangement, Option, Exercise Price Range, Outstanding, Weighted Average Exercise Price",
+        "description": "The weighted average price as of the balance sheet date at which grantees could acquire the underlying shares with respect to all outstanding stock options which are in the customized range of exercise prices."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeOutstandingOptionsWeightedAverageRemainingContractualTerm1",
+        "label": "Share-based Compensation, Shares Authorized under Stock Option Plans, Exercise Price Range, Outstanding Options, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted-average period remaining as of the balance sheet date until option expiration pertaining to the outstanding stock options for all option plans in the customized range of exercise prices, which may be expressed in a variety of ways (for example, years, months)."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberDilutedSharesOutstandingAdjustment",
+        "label": "Weighted Average Number Diluted Shares Outstanding Adjustment",
+        "description": "The sum of dilutive potential common shares or units used in the calculation of the diluted per-share or per-unit computation."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      }
+    ]
+  },
+  {
+    "cik": 215466,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "srt",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "EmployeeServiceShareBasedCompensationUnrecognizedCompensationCostsOnNonvestedAwardsWeightedAveragePeriodOfRecognition",
+        "label": "Employee Service Share-based Compensation, Unrecognized Compensation Costs on Nonvested Awards, Weighted Average Period of Recognition (Deprecated 2011-01-31)",
+        "description": "The weighted average period over which unrecognized equity-based compensation costs are expected to be reported."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value at grant date for nonvested equity-based awards issued during the period on other than stock (or unit) option plans (for example, phantom stock or unit plan, stock or unit appreciation rights plan, performance target plan)."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Exercise Price",
+        "description": "The weighted-average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on vested portions of options outstanding and currently exercisable under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average grant-date fair value of options granted during the reporting period as calculated by applying the disclosed option pricing methodology."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Vested and Expected to Vest, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted-average exercise price, at which grantee can acquire shares reserved for issuance, for fully vested and expected to vest options outstanding. Includes, but is not limited to, unvested options for which requisite service period has not been rendered but that are expected to vest based on achievement of performance condition, if forfeitures are recognized when they occur."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options of the plan that expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeExercisableOptionsWeightedAverageExercisePrice1",
+        "label": "Share-based Payment Arrangement, Option, Exercise Price Range, Exercisable, Weighted Average Exercise Price",
+        "description": "Weighted average exercise price as of the balance sheet date for those equity-based payment arrangements exercisable and outstanding."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeOutstandingOptionsWeightedAverageExercisePriceBeginningBalance1",
+        "label": "Share-based Payment Arrangement, Option, Exercise Price Range, Outstanding, Weighted Average Exercise Price",
+        "description": "The weighted average price as of the balance sheet date at which grantees could acquire the underlying shares with respect to all outstanding stock options which are in the customized range of exercise prices."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which option holders acquired shares when converting their stock options into shares."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsForfeituresInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Forfeitures in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options that were terminated."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price",
+        "description": "Weighted average per share amount at which grantees can acquire shares of common stock by exercise of options."
+      }
+    ]
+  },
+  {
+    "cik": 794619,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsWeightedAverageVolatilityRate",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Fair Value Assumptions, Weighted Average Volatility Rate",
+        "description": "Rate of weighted-average expected volatility for award under share-based payment arrangement."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Exercise Price",
+        "description": "The weighted-average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on vested portions of options outstanding and currently exercisable under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average grant-date fair value of options granted during the reporting period as calculated by applying the disclosed option pricing methodology."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Vested and Expected to Vest, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted-average exercise price, at which grantee can acquire shares reserved for issuance, for fully vested and expected to vest options outstanding. Includes, but is not limited to, unvested options for which requisite service period has not been rendered but that are expected to vest based on achievement of performance condition, if forfeitures are recognized when they occur."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which option holders acquired shares when converting their stock options into shares."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options of the plan that expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price",
+        "description": "Weighted average per share amount at which grantees can acquire shares of common stock by exercise of options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberDilutedSharesOutstandingAdjustment",
+        "label": "Weighted Average Number Diluted Shares Outstanding Adjustment",
+        "description": "The sum of dilutive potential common shares or units used in the calculation of the diluted per-share or per-unit computation."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsForfeituresInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Forfeitures in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options that were terminated."
+      }
+    ]
+  },
+  {
+    "cik": 109563,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "ecd",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Exercise Price",
+        "description": "The weighted-average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on vested portions of options outstanding and currently exercisable under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageRemainingContractualTerm",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted average period between the balance sheet date and expiration for all vested portions of options outstanding and currently exercisable (or convertible) under the plan, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price at which option holders acquired shares when converting their stock options into shares under the plan during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresAndExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Forfeitures and Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price of options that were either forfeited or expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on stock options awarded under the plan during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average grant-date fair value of options granted during the reporting period as calculated by applying the disclosed option pricing methodology."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageRemainingContractualTerm",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Remaining Contractual Term (Deprecated 2011-01-31)",
+        "description": "The weighted average period between the balance sheet date and expiration for all awards outstanding under the plan, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberDilutedSharesOutstandingAdjustment",
+        "label": "Weighted Average Number Diluted Shares Outstanding Adjustment",
+        "description": "The sum of dilutive potential common shares or units used in the calculation of the diluted per-share or per-unit computation."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      }
+    ]
+  },
+  {
+    "cik": 866787,
+    "status": 200,
+    "namespaces": [
+      "dei",
+      "ffd",
+      "invest",
+      "srt",
+      "us-gaap"
+    ],
+    "share_candidates": [
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeituresWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Forfeitures, Weighted Average Grant Date Fair Value",
+        "description": "Weighted average fair value as of the grant date of equity-based award plans other than stock (unit) option plans that were not exercised or put into effect as a result of the occurrence of a terminating event."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value at grant date for nonvested equity-based awards issued during the period on other than stock (or unit) option plans (for example, phantom stock or unit plan, stock or unit appreciation rights plan, performance target plan)."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Nonvested, Weighted Average Grant Date Fair Value",
+        "description": "Per share or unit weighted-average fair value of nonvested award under share-based payment arrangement. Excludes share and unit options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Equity Instruments Other than Options, Vested in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average fair value as of grant date pertaining to an equity-based award plan other than a stock (or unit) option plan for which the grantee gained the right during the reporting period, by satisfying service and performance requirements, to receive or retain shares or units, other instruments, or cash in accordance with the terms of the arrangement."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Exercise Price",
+        "description": "The weighted-average price as of the balance sheet date at which grantees can acquire the shares reserved for issuance on vested portions of options outstanding and currently exercisable under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageRemainingContractualTerm",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercisable, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted average period between the balance sheet date and expiration for all vested portions of options outstanding and currently exercisable (or convertible) under the plan, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price (Deprecated 2012-01-31)",
+        "description": "The weighted average price at which option holders acquired shares when converting their stock options into shares under the plan during the reporting period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Grants in Period, Weighted Average Grant Date Fair Value",
+        "description": "The weighted average grant-date fair value of options granted during the reporting period as calculated by applying the disclosed option pricing methodology."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees can acquire the shares reserved for issuance under the stock option plan."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageRemainingContractualTerm",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Remaining Contractual Term (Deprecated 2011-01-31)",
+        "description": "The weighted average period between the balance sheet date and expiration for all awards outstanding under the plan, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestExercisableWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Vested and Expected to Vest, Exercisable, Weighted Average Exercise Price",
+        "description": "Weighted-average exercise price, at which grantee can acquire shares reserved for issuance, for fully vested and expected to vest exercisable or convertible options. Includes, but is not limited to, unvested options for which requisite service period has not been rendered but that are expected to vest based on achievement of performance condition, if forfeitures are recognized when they occur."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsVestedAndExpectedToVestOutstandingWeightedAverageRemainingContractualTerm",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Vested and Expected to Vest, Outstanding, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted-average period between the balance sheet date and expiration date for fully vested and expected to vest options outstanding, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Exercises in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which option holders acquired shares when converting their stock options into shares."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExpirationsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Expirations in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options of the plan that expired."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Grants in Period, Weighted Average Exercise Price",
+        "description": "Weighted average per share amount at which grantees can acquire shares of common stock by exercise of options."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "SharebasedCompensationArrangementBySharebasedPaymentAwardOptionsOutstandingWeightedAverageRemainingContractualTerm1",
+        "label": "Share-based Compensation Arrangement by Share-based Payment Award, Options, Outstanding, Weighted Average Remaining Contractual Term (Deprecated 2012-01-31)",
+        "description": "The weighted average period between the balance sheet date and expiration for all awards outstanding under the plan, which may be expressed in a decimal value for number of years."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberDilutedSharesOutstandingAdjustment",
+        "label": "Weighted Average Number Diluted Shares Outstanding Adjustment",
+        "description": "The sum of dilutive potential common shares or units used in the calculation of the diluted per-share or per-unit computation."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+        "label": "Weighted Average Number of Shares Outstanding, Diluted",
+        "description": "The average number of shares or units issued and outstanding that are used in calculating diluted EPS or earnings per unit (EPU), determined based on the timing of issuance of shares or units in the period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+        "label": "Weighted Average Number of Shares Outstanding, Basic",
+        "description": "Number of [basic] shares or units, after adjustment for contingently issuable shares or units and other shares or units not deemed outstanding, determined by relating the portion of time within a reporting period that common shares or units have been outstanding to the total time in that period."
+      },
+      {
+        "namespace": "us-gaap",
+        "tag": "ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsForfeituresInPeriodWeightedAverageExercisePrice",
+        "label": "Share-based Compensation Arrangements by Share-based Payment Award, Options, Forfeitures in Period, Weighted Average Exercise Price",
+        "description": "Weighted average price at which grantees could have acquired the underlying shares with respect to stock options that were terminated."
+      }
+    ]
+  }
+]
