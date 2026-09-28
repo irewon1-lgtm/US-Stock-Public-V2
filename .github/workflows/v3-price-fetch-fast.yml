@@ -25,7 +25,7 @@ jobs:
       - run: pip install -q pandas numpy requests exchange-calendars
       - name: Download sealed universe input
         env:
-          UNIVERSE_URL: 'https://sdmntprwestus.oaiusercontent.com/files/00000000-a170-8230-bd50-cd19e57af861/raw?se=2026-09-28T08%3A10%3A52Z&sp=r&sv=2026-02-06&sr=b&scid=8aa002da-2eec-507b-aaba-bb9509248f71&skoid=456594af-533f-44ef-9bdc-35ea2f9daee5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T06%3A15%3A11Z&ske=2026-09-29T06%3A15%3A11Z&sks=b&skv=2026-02-06&sig=frOxgFjLoM4nQed2jAmNJGIwwXrxEhI/wIgkWUU5VDQ%3D'
+          UNIVERSE_URL: 'https://sdmntprwestus.oaiusercontent.com/files/00000000-bf74-8230-a49d-e7d1d4063b56/raw?se=2026-09-28T08%3A53%3A28Z&sp=r&sv=2026-02-06&sr=b&scid=bf84e859-c322-5a3d-b6de-f627718f8a3d&skoid=456594af-533f-44ef-9bdc-35ea2f9daee5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T00%3A20%3A43Z&ske=2026-09-29T00%3A20%3A43Z&sks=b&skv=2026-02-06&sig=y1C7xrWBBfI3BgjndeA3WOSdnBuhdWkzzzByPsvVO2Y%3D'
         run: |
           curl --fail --location --retry 4 --retry-delay 2 "$UNIVERSE_URL" -o price_universe_resolved.csv.gz
           test -s price_universe_resolved.csv.gz
