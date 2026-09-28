@@ -1,0 +1,30 @@
+name: V4 SEC F34 After SEC Cover
+on:
+  push:
+    paths:
+      - 'v4-sec-f34-after-sec-cover-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q requests
+      - run: python v4-sec-cover/recover_f34_exact_alt_after_sec_cover.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-sec-f34-after-sec-cover
+          path: v4-sec-f34-after-sec-cover-output/
+          retention-days: 7
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-sec-f34-after-sec-cover-output/
+          git commit -m 'Add NEXT1 post-cover exact-alt facts' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
