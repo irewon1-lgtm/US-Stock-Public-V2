@@ -13,6 +13,7 @@
   "source": "SEC data.sec.gov companyfacts + submissions accepted timestamps",
   "approved_exact_or_exactly_composable_roles": {
     "SHARES_BASIC_DILUTED_COMBINED": "single reported weighted-average value explicitly used for both basic and diluted EPS",
+    "BASIC_PLUS_DILUTED_ADJUSTMENT": "basic weighted-average shares plus the reported dilutive potential-share adjustment reconstructs diluted weighted-average shares",
     "CFO_CONTINUING_PLUS_CFO_DISCONTINUED": "sum only when both components align to same duration/end; reconstructs total operating cash flow",
     "REVENUE_TOTAL_OPERATING": "RegulatedAndUnregulatedOperatingRevenue definition states total operating revenues"
   },
@@ -41,6 +42,11 @@
       "rows": 792,
       "ciks": 11,
       "accepted_mapped": 792
+    },
+    "DILUTED_SHARES_ADJUSTMENT": {
+      "rows": 5970,
+      "ciks": 184,
+      "accepted_mapped": 5970
     }
   },
   "fetch_errors": 0
