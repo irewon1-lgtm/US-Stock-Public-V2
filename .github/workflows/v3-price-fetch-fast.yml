@@ -23,12 +23,11 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -q pandas numpy requests exchange-calendars
-      - name: Download sealed universe input
-        env:
-          UNIVERSE_URL: 'https://sdmntprwestus.oaiusercontent.com/files/00000000-bf74-8230-a49d-e7d1d4063b56/raw?se=2026-09-28T08%3A53%3A28Z&sp=r&sv=2026-02-06&sr=b&scid=bf84e859-c322-5a3d-b6de-f627718f8a3d&skoid=456594af-533f-44ef-9bdc-35ea2f9daee5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T00%3A20%3A43Z&ske=2026-09-29T00%3A20%3A43Z&sks=b&skv=2026-02-06&sig=y1C7xrWBBfI3BgjndeA3WOSdnBuhdWkzzzByPsvVO2Y%3D'
+      - name: Prepare sealed universe input
         run: |
-          curl --fail --location --retry 4 --retry-delay 2 "$UNIVERSE_URL" -o price_universe_resolved.csv.gz
+          cp v3-fast/price_universe_resolved.csv.gz price_universe_resolved.csv.gz
           test -s price_universe_resolved.csv.gz
+          echo '29e11d6e39428c56908c02b618ab0d32819ef0f7d274dfaadc3edab57e3b83fe  price_universe_resolved.csv.gz' | sha256sum -c -
       - name: Run shard
         run: python v3-fast/price_shard.py --input price_universe_resolved.csv.gz --shard ${{ matrix.shard }} --nshards 4 --outdir shard-out
       - uses: actions/upload-artifact@v4
