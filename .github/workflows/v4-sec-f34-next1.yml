@@ -9,14 +9,14 @@ permissions:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - run: pip install -q pandas requests
       - name: Discover outcome-free SEC F3/F4 candidate tags
-        run: python v4-sec-cover/discover_f34_candidate_tags.py
+        run: python v4-sec-f34-next1/discover_and_extract.py
       - name: Commit NEXT1 discovery outputs
         run: |
           git config user.name 'v4-free-runner'
