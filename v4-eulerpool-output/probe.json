@@ -1,58 +1,61 @@
 {
-  "schema": "V4_SPLIT_CROSSCHECK_V8",
+  "schema": "V4_EULERPOOL_SPLIT_BASIS_PROBE_V1",
   "rows": [
     {
-      "ticker": "AAPL",
-      "adjusted_close": 75.089996337891,
-      "adjusted_volume": 135647456,
-      "future_split_cum_ratio": 4.0,
-      "reconstructed_as_traded_close": 300.359985351564,
-      "reconstructed_as_traded_volume": 33911864.0,
-      "dollar_volume_invariance_check": 0.0,
-      "splits_used": [
-        {
-          "date": "2020-08-31",
-          "ratio": 4.0
-        }
-      ]
+      "t": 1598400000,
+      "o": 126.51999664307,
+      "h": 126.51999664307,
+      "l": 126.51999664307,
+      "c": 126.51999664307,
+      "v": 163022268
     },
     {
-      "ticker": "NVDA",
-      "adjusted_close": 5.99775,
-      "adjusted_volume": 237678760,
-      "future_split_cum_ratio": 40.0,
-      "reconstructed_as_traded_close": 239.91,
-      "reconstructed_as_traded_volume": 5941969.0,
-      "dollar_volume_invariance_check": 0.0,
-      "splits_used": [
-        {
-          "date": "2024-06-10",
-          "ratio": 10.0
-        },
-        {
-          "date": "2021-07-20",
-          "ratio": 4.0
-        }
-      ]
+      "t": 1598486400,
+      "o": 125.01000213623,
+      "h": 125.01000213623,
+      "l": 125.01000213623,
+      "c": 125.01000213623,
+      "v": 155552384
     },
     {
-      "ticker": "GE",
-      "adjusted_close": 59.3968,
-      "adjusted_volume": 10941736,
-      "future_split_cum_ratio": 0.160125,
-      "reconstructed_as_traded_close": 9.5109126,
-      "reconstructed_as_traded_volume": 68332465.26151444,
-      "dollar_volume_invariance_check": 1.1920928955078125e-07,
-      "splits_used": [
-        {
-          "date": "2023-01-04",
-          "ratio": 1.281
-        },
-        {
-          "date": "2021-08-02",
-          "ratio": 0.125
-        }
-      ]
+      "t": 1598572800,
+      "o": 124.80999755859,
+      "h": 124.80999755859,
+      "l": 124.80999755859,
+      "c": 124.80999755859,
+      "v": 187629916
+    },
+    {
+      "t": 1598832000,
+      "o": 129.03999328613,
+      "h": 129.03999328613,
+      "l": 129.03999328613,
+      "c": 129.03999328613,
+      "v": 225702688
+    },
+    {
+      "t": 1598918400,
+      "o": 134.17999267578,
+      "h": 134.17999267578,
+      "l": 134.17999267578,
+      "c": 134.17999267578,
+      "v": 152470142
+    },
+    {
+      "t": 1599004800,
+      "o": 131.39999389648,
+      "h": 131.39999389648,
+      "l": 131.39999389648,
+      "c": 131.39999389648,
+      "v": 200118991
+    },
+    {
+      "t": 1599091200,
+      "o": 120.87999725342,
+      "h": 120.87999725342,
+      "l": 120.87999725342,
+      "c": 120.87999725342,
+      "v": 257599640
     }
   ]
 }
