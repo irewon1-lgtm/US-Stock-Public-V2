@@ -24,12 +24,11 @@ jobs:
       - name: Install dependencies
         run: pip install -q pandas numpy requests exchange-calendars
 
-      - name: Download sealed universe input
-        env:
-          UNIVERSE_URL: 'https://sdmntprjapaneast.oaiusercontent.com/files/00000000-a964-8209-ba60-a2f989f87378/raw?se=2026-09-28T05%3A51%3A34Z&sp=r&sv=2026-02-06&sr=b&scid=cc225ae2-42f5-5a32-863c-d311b33e0b52&skoid=9063adf3-a524-4acf-b70a-8731b33f2f50&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T00%3A15%3A16Z&ske=2026-09-29T00%3A15%3A16Z&sks=b&skv=2026-02-06&sig=lBZsuY2ZrEqBiCX2hcejfEFKfbzQ9aogOcw5NBBTkzg%3D'
+      - name: Prepare sealed universe input
         run: |
-          curl --fail --location --retry 4 --retry-delay 2 "$UNIVERSE_URL" -o price_universe_resolved.csv.gz
+          cp v3-fast/price_universe_resolved.csv.gz price_universe_resolved.csv.gz
           test -s price_universe_resolved.csv.gz
+          echo '29e11d6e39428c56908c02b618ab0d32819ef0f7d274dfaadc3edab57e3b83fe  price_universe_resolved.csv.gz' | sha256sum -c -
 
       - name: Fetch Yahoo and build locked price features
         run: |
