@@ -7,47 +7,52 @@ on:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install -q requests
-      - name: Probe historical and preferred tickers
+      - name: Probe yearly historical windows for 43 failures
         run: |
           python - <<'PY'
-          import requests,time,json,urllib.parse
+          import requests,time,json,urllib.parse,datetime as dt
           syms=['AACI','AFBI','ALOT','ASRT','ATAI','AVB','BREW','BRKL','BWNB','CIR','CLIM','CRNX','CTAA','DHCNL','DICE','EA','ELSE','FBRX','GV','HLX','ITG','KALV','LBRDP','LEG','LMNX','LPRO','MCVT','MIC','NCSM','NFBK','OLPX','PS','RNA','ROC','RVI','SAT','SCA','SKYT','TALK','TWO','VIASP','WBS','WSR']
-          tests=[
-            ('q1_full','query1',{'period1':1546300800,'period2':1771113600,'interval':'1d'}),
-            ('q2_full','query2',{'period1':1546300800,'period2':1771113600,'interval':'1d'}),
-            ('q1_max','query1',{'range':'max','interval':'1d'}),
-            ('q1_5y','query1',{'range':'5y','interval':'1d'}),
+          def ux(s):
+              return int(dt.datetime.fromisoformat(s).replace(tzinfo=dt.timezone.utc).timestamp())
+          windows=[
+            ('2019_2021',ux('2019-01-01'),ux('2021-01-01')),
+            ('2021_2023',ux('2021-01-01'),ux('2023-01-01')),
+            ('2023_2025',ux('2023-01-01'),ux('2025-01-01')),
+            ('2025_2026',ux('2025-01-01'),ux('2026-02-15')),
           ]
           out=[]
           for s in syms:
             ys=s.replace('.','-').replace('/','-')
-            for test,host,p in tests:
-              u=f'https://{host}.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ys,safe="")}'
+            u=f'https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ys,safe="")}'
+            for w,p1,p2 in windows:
+              p={'period1':p1,'period2':p2,'interval':'1d','events':'div,splits','includeAdjustedClose':'true','includePrePost':'false'}
+              row={'s':s,'window':w}
               try:
-                r=requests.get(u,params=p,timeout=8,headers={'User-Agent':'Mozilla/5.0 V3-Probe'})
+                r=requests.get(u,params=p,timeout=8,headers={'User-Agent':'Mozilla/5.0 V3-Year-Probe'})
+                row['code']=r.status_code
                 try:
-                  j=r.json(); rs=(j.get('chart') or {}).get('result') or []; er=(j.get('chart') or {}).get('error')
+                  j=r.json(); ch=j.get('chart') or {}; rs=ch.get('result') or []; er=ch.get('error')
                   ts=(rs[0].get('timestamp') or []) if rs else []
-                  n=len(ts)
-                  first=time.strftime('%Y-%m-%d',time.gmtime(ts[0])) if ts else ''
-                  last=time.strftime('%Y-%m-%d',time.gmtime(ts[-1])) if ts else ''
-                  desc=(er or {}).get('description','') if isinstance(er,dict) else str(er or '')
+                  row['n']=len(ts)
+                  row['first']=time.strftime('%Y-%m-%d',time.gmtime(ts[0])) if ts else ''
+                  row['last']=time.strftime('%Y-%m-%d',time.gmtime(ts[-1])) if ts else ''
+                  row['desc']=((er or {}).get('description','') if isinstance(er,dict) else str(er or ''))[:100]
                 except Exception:
-                  n=0; desc=''
-                out.append({'s':s,'test':test,'code':r.status_code,'n':n,'first':first,'last':last,'desc':desc[:100]})
+                  row.update(n=0,first='',last='',desc='')
               except Exception as e:
-                out.append({'s':s,'test':test,'code':'EXC','n':0,'first':'','last':'','desc':repr(e)[:100]})
-              time.sleep(.02)
-          ok={}
+                row.update(code='EXC',n=0,first='',last='',desc=repr(e)[:100])
+              out.append(row); time.sleep(.02)
+          recovered={}
           for x in out:
-            if x['n']>0 and x['code']==200: ok.setdefault(x['s'],[]).append(x['test'])
+            if x['code']==200 and x['n']>0:
+              recovered.setdefault(x['s'],[]).append(x['window'])
           print(json.dumps(out,indent=2))
-          print('RECOVERED',json.dumps(ok,sort_keys=True))
-          print('UNRESOLVED',','.join([s for s in syms if s not in ok]))
+          print('RECOVERED_WINDOWS',json.dumps(recovered,sort_keys=True))
+          print('FULLY_UNRESOLVED',','.join([s for s in syms if s not in recovered]))
           PY
