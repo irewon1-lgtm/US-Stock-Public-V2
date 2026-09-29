@@ -1,25 +1,12 @@
 
 ACC 0001628280-19-013298 200
-LABELS us-gaap_PaymentsToAcquireOtherProductiveAssets [('http://www.xbrl.org/2003/role/label', 'Payments to Acquire Other Productive Assets')]
-PRE ARC role http://balchem.com/role/CondensedConsolidatedStatementsOfCashFlows preferredLabel http://www.xbrl.org/2009/role/negatedTerseLabel order 2
-PREFERRED TEXT []
 
 ACC 0001628280-20-001968 200
-LABELS us-gaap_PaymentsToAcquireOtherProductiveAssets [('http://www.xbrl.org/2003/role/label', 'Payments to Acquire Other Productive Assets')]
-PRE ARC role http://balchem.com/role/ConsolidatedStatementsofCashFlows preferredLabel http://www.xbrl.org/2009/role/negatedLabel order 1
-PREFERRED TEXT []
 
 ACC 0001628280-20-006067 200
-LABELS us-gaap_PaymentsToAcquireOtherProductiveAssets [('http://www.xbrl.org/2003/role/label', 'Payments to Acquire Other Productive Assets')]
-PRE ARC role http://balchem.com/role/CondensedConsolidatedStatementsofCashFlows preferredLabel http://www.xbrl.org/2009/role/negatedTerseLabel order 1
-PREFERRED TEXT []
 
 ACC 0001628280-20-014967 200
-LABELS us-gaap_PaymentsToAcquireOtherProductiveAssets [('http://www.xbrl.org/2003/role/label', 'Payments to Acquire Other Productive Assets')]
-PRE ARC role http://balchem.com/role/CondensedConsolidatedStatementsofCashFlows preferredLabel http://www.xbrl.org/2009/role/negatedTerseLabel order 2
-PREFERRED TEXT []
 
 ACC 0001628280-21-002578 200
-LABELS us-gaap_PaymentsToAcquireOtherProductiveAssets [('http://www.xbrl.org/2003/role/label', 'Payments to Acquire Other Productive Assets')]
-PRE ARC role http://balchem.com/role/ConsolidatedStatementsofCashFlows preferredLabel http://www.xbrl.org/2009/role/negatedLabel order 1
-PREFERRED TEXT []
+
+ACC 0001628280-21-008430 200
