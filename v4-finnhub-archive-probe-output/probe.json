@@ -1,0 +1,271 @@
+{
+  "schema": [
+    {
+      "column_name": "timestamp",
+      "column_type": "TIMESTAMP WITH TIME ZONE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "open",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "high",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "low",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "close",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "volume",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "ticker",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    }
+  ],
+  "rows": 83530,
+  "symbols_found": [
+    "AAPL",
+    "ADMS",
+    "AE",
+    "AEGN",
+    "AERI",
+    "AGN",
+    "AGTC",
+    "AIMC",
+    "AINC",
+    "ALBO",
+    "ATVI",
+    "MSFT"
+  ],
+  "counts": {
+    "AAPL": 18528,
+    "ADMS": 4430,
+    "AE": 373,
+    "AEGN": 3440,
+    "AERI": 7383,
+    "AGN": 8774,
+    "AGTC": 3654,
+    "AIMC": 7029,
+    "AINC": 500,
+    "ALBO": 2598,
+    "ATVI": 9306,
+    "MSFT": 17515
+  },
+  "sample": [
+    {
+      "timestamp": "2020-03-02 09:00:00+00:00",
+      "open": 283.0,
+      "high": 283.0,
+      "low": 281.6,
+      "close": 282.1,
+      "volume": 9545.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:01:00+00:00",
+      "open": 282.94,
+      "high": 282.94,
+      "low": 280.64,
+      "close": 282.8,
+      "volume": 7475.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:02:00+00:00",
+      "open": 282.0,
+      "high": 283.0,
+      "low": 282.0,
+      "close": 282.91,
+      "volume": 6117.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:03:00+00:00",
+      "open": 283.0,
+      "high": 283.5,
+      "low": 283.0,
+      "close": 283.5,
+      "volume": 8921.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:04:00+00:00",
+      "open": 283.5,
+      "high": 284.12,
+      "low": 283.5,
+      "close": 284.12,
+      "volume": 13796.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:05:00+00:00",
+      "open": 284.0,
+      "high": 284.05,
+      "low": 284.0,
+      "close": 284.05,
+      "volume": 2843.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:06:00+00:00",
+      "open": 284.32,
+      "high": 284.51,
+      "low": 284.32,
+      "close": 284.5,
+      "volume": 8822.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:07:00+00:00",
+      "open": 284.51,
+      "high": 284.84,
+      "low": 284.51,
+      "close": 284.56,
+      "volume": 1518.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:08:00+00:00",
+      "open": 284.7,
+      "high": 284.7,
+      "low": 284.56,
+      "close": 284.56,
+      "volume": 3159.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:09:00+00:00",
+      "open": 284.6,
+      "high": 284.6,
+      "low": 284.19,
+      "close": 284.19,
+      "volume": 12406.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:10:00+00:00",
+      "open": 284.11,
+      "high": 284.43,
+      "low": 284.1,
+      "close": 284.2,
+      "volume": 4866.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:11:00+00:00",
+      "open": 284.35,
+      "high": 284.6,
+      "low": 284.2,
+      "close": 284.6,
+      "volume": 5984.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:12:00+00:00",
+      "open": 284.17,
+      "high": 284.17,
+      "low": 283.69,
+      "close": 284.01,
+      "volume": 1239.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:13:00+00:00",
+      "open": 284.0,
+      "high": 284.0,
+      "low": 283.07,
+      "close": 283.07,
+      "volume": 4030.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:14:00+00:00",
+      "open": 282.99,
+      "high": 283.0,
+      "low": 282.6,
+      "close": 282.6,
+      "volume": 1728.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:15:00+00:00",
+      "open": 282.3,
+      "high": 282.3,
+      "low": 282.3,
+      "close": 282.3,
+      "volume": 759.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:16:00+00:00",
+      "open": 282.3,
+      "high": 282.3,
+      "low": 281.64,
+      "close": 281.97,
+      "volume": 3232.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:17:00+00:00",
+      "open": 281.97,
+      "high": 282.0,
+      "low": 281.96,
+      "close": 282.0,
+      "volume": 2251.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:18:00+00:00",
+      "open": 282.0,
+      "high": 282.2,
+      "low": 282.0,
+      "close": 282.2,
+      "volume": 1203.0,
+      "ticker": "AAPL"
+    },
+    {
+      "timestamp": "2020-03-02 09:19:00+00:00",
+      "open": 282.65,
+      "high": 282.7,
+      "low": 282.05,
+      "close": 282.05,
+      "volume": 1940.0,
+      "ticker": "AAPL"
+    }
+  ]
+}
