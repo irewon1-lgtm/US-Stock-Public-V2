@@ -1,0 +1,31 @@
+name: V4 SEC Custom XBRL Recovery
+on:
+  push:
+    paths:
+      - 'v4-sec-custom-xbrl-recovery-trigger.txt'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas requests lxml
+      - name: Recover exact custom XBRL facts
+        run: python v4-sec-cover/recover_custom_xbrl.py --shard ${{ matrix.shard }} --nshards 8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-sec-custom-xbrl-${{ matrix.shard }}
+          path: |
+            v4-sec-custom-xbrl-output/custom_xbrl_facts_*.csv.gz
+            v4-sec-custom-xbrl-output/custom_xbrl_audit_*.csv
+            v4-sec-custom-xbrl-output/summary_*.json
+          retention-days: 30
