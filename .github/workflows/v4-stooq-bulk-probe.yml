@@ -13,8 +13,10 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - run: pip install -q requests
-      - run: python v4-stooq/probe_bulk.py > v4-stooq-bulk-probe.log 2>&1
-      - run: tail -200 v4-stooq-bulk-probe.log
+      - run: |
+          python v4-stooq/probe_bulk.py 2>&1 | tee v4-stooq-bulk-probe.log
+      - if: always()
+        run: tail -200 v4-stooq-bulk-probe.log || true
       - run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
