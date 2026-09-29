@@ -6,7 +6,7 @@ H={"User-Agent":"Mozilla/5.0","Accept":"application/json, text/plain, */*","Refe
 rows=[]
 for t in tickers:
     url=f"https://api.nasdaq.com/api/quote/{t}/historical"
-    params={"assetclass":"stocks","fromdate":"09/01/2019","todate":"01/05/2023","limit":"5000"}
+    params={"assetclass":"stocks","fromdate":"2019-09-01","todate":"2023-01-05","limit":"5000"}
     try:
         r=requests.get(url,params=params,headers=H,timeout=30)
         j=None; err=""
