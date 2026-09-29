@@ -65,7 +65,7 @@ summary={
  "resolved_tickers":int(o.ticker.nunique()) if len(o) else 0,
  "price_fail_rows":int(o.price_gate_finnhub.eq("FAIL").sum()) if len(o) else 0,
  "price_pass_rows":int(o.price_gate_finnhub.eq("PASS").sum()) if len(o) else 0,
- "validation_rows":int(len(v)),"validation_close_rel_diff_median":med,"validation_close_rel_diff_p95":p95,
+ "validation_rows":int(len(v)),"validation_close_rel_diff_median":med,"validation_close_rel_diff_p95":p95,"validation_close_rel_diff_max":maxdiff,
  "validation_close_rel_diff_max":vmax,
  "guaranteed_price_fail_cutoff":float(5.0*(1.0-vmax)),
  "guaranteed_price_pass_cutoff":float(5.0/(1.0-vmax)),
