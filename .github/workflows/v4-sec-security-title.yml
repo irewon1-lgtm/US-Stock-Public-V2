@@ -1,0 +1,28 @@
+name: V4 SEC Security Titles
+on:
+  push:
+    paths: ['v4-sec-security-title-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q requests pandas lxml
+      - run: python v4-sec-cover/extract_security_titles.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-sec-security-titles
+          path: v4-sec-security-title-output/
+          retention-days: 30
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-sec-security-title-output/summary.json v4-sec-security-title-output/audit.csv
+          git commit -m 'Add V4 security title extraction summary' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
