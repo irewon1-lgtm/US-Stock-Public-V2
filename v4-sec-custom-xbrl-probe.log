@@ -1,95 +1,28 @@
-ZIP 200 498679 application/zip
-FILES ['aal-20220930.htm', 'aal-20220930.xsd', 'aal-20220930_cal.xml', 'aal-20220930_def.xml', 'aal-20220930_lab.xml', 'aal-20220930_pre.xml', 'ex101q322supplementalagree.htm', 'ex102q322supplementalagree.htm', 'ex311q32210q.htm', 'ex312q32210q.htm', 'ex313q32210q.htm', 'ex314q32210q.htm', 'ex321q32210q.htm', 'ex322q32210q.htm']
-
-### aal-20220930.xsd HITS 9
-2408402 - Disclosure - Earnings (Loss) per Common Share - Computation of Basic and Diluted (Details)
-2409403 - Disclosure - Earnings (Loss) per Common Share - Anti-Dilutive Securities Excluded From Calculation of Diluted EPS (Details)
-2110104 - Disclosure - Revenue Recognition
-2311303 - Disclosure - Revenue Recognition (Tables)
-2412404 - Disclosure - Revenue Recognition - Significant Categories of Reported Operating Revenues (Details)
-2413405 - Disclosure - Revenue Recognition - Passenger Revenue by Geographic Region (Details)
-2414406 - Disclosure - Revenue Recognition - Significant Contract Liabilities (Details)
-2415407 - Disclosure - Revenue Recognition - Changes in Loyalty Program Liability (Details)
-2416408 - Disclosure - Revenue Recognition - Narrative (Details)
-
-### aal-20220930_lab.xml HITS 100
-Loyalty revenue - marketing services
-Conversion terms, percentage sales price exceeds conversion price
-Convertible Debt, Conversion Terms, Percentage Of Sales Price Exceeding Conversion Price
-Convertible Debt, Conversion Terms, Percentage Of Sales Price Exceeding Conversion Price
-Additional paid-in capital
-Additional Paid in Capital, Common Stock
-Total property and equipment, net
-Total property and equipment, net
-Property, Plant, and Equipment and Finance Lease Right-of-Use Asset, after Accumulated Depreciation and Amortization
-Net cash provided by operating activities
-Net Cash Provided by (Used in) Operating Activities
-Special Facility Revenue Bonds
-Special Facility Revenue Bonds [Member]
-Special Facility Revenue Bonds [Member]
-Revenue from External Customer [Line Items]
-Revenue from External Customer [Line Items]
-Equipment purchase deposits
-Deposits on Flight Equipment
-Equipment Loans and Other Notes Payable
-Equipment Loans and Other Notes Payable [Member]
-Equipment Loans and Other Notes Payable [Member]
-Loyalty revenue - travel
-Debt, Weighted Average Interest Rate
-Interest Paid, Excluding Capitalized Interest, Operating Activities
-Property and equipment acquired through finance leases
-Sales of short-term investments
-Deferral of revenue
-Contract with Customer, Liability, Increase from Deferral Of Revenue
-Contract with Customer, Liability, Increase from Deferral Of Revenue
-Enhanced Equipment Trust Certificates (EETC)
-Enhanced Equipment Trust Certificate [Member]
-Capital expenditures, net of aircraft purchase deposit returns
-Revenue, Performance Obligation, Description of Timing
-Additional Paid-in Capital
-Additional Paid-in Capital [Member]
-Diluted (in shares)
-Diluted weighted average common shares outstanding (in shares)
-Weighted Average Number of Shares Outstanding, Diluted
-Enhanced Equipment Trust Certificates 2021-1
-Enhanced Equipment Trust Certificates 2021-1 [Member]
-Enhanced Equipment Trust Certificates 2021-1
-Anti-Dilutive Securities Excluded From Calculation of Diluted EPS
-Operating property and equipment
-Property, Plant and Equipment, Net [Abstract]
-Adjustments to Additional Paid in Capital, Warrant Issued
-Deferred revenue, current
-Disaggregation of Revenue [Table]
-Disaggregation of Revenue [Table]
-Proceeds From Sale Of Property Plant And Equipment and Sale Leaseback Transactions
-Proceeds From Sale Of Property Plant And Equipment and Sale Leaseback Transactions
-Recognition of revenue
-Recognition of revenue
-Contract with Customer, Liability, Revenue Recognized
-Operating revenues:
-Revenues [Abstract]
-Revenue recognition term
-Contract With Customer, Liability, Revenue Recognition Period
-Contract With Customer, Liability, Revenue Recognition Period
-Weighted average shares outstanding (in thousands):
-Weighted Average Number of Shares Outstanding, Diluted [Abstract]
-Flight Equipment, Operating Lease, And Inventory Impairment Loss
-Flight Equipment, Operating Lease, And Inventory Impairment Loss
-Property, Plant, and Equipment and Finance Lease Right-of-Use Asset, Accumulated Depreciation and Amortization
-Basic weighted average common shares outstanding (in shares)
-Weighted Average Number of Shares Outstanding, Basic
-Flight equipment
-Flight Equipment And Finance Lease Right-of-Use Asset, Before Accumulated Depreciation And Amortization
-Flight Equipment And Finance Lease Right-of-Use Asset, Before Accumulated Depreciation And Amortization
-Operating revenues
-Revenue from Contract with Customer, Excluding Assessed Tax
-Revenue Recognition
-Revenue from Contract with Customer [Text Block]
-Revenue from External Customers by Products and Services [Table]
-Revenue from External Customers by Products and Services [Table]
-Diluted EPS:
-Earnings Per Share, Diluted [Abstract]
-Net income (loss) for purposes of computing diluted EPS
-Net Income (Loss) Available to Common Stockholders, Diluted
-Diluted (in dollars per share)
-Diluted EPS (in dollars per share)
+ZIP 200 498679
+KEYS 8
+CONCEPT us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetAfterAccumulatedDepreciationAndAmortization
+  LABEL http://www.xbrl.org/2003/role/label Property, Plant, and Equipment and Finance Lease Right-of-Use Asset, after Accumulated Depreciation and Amortization
+CONCEPT us-gaap_PropertyPlantAndEquipmentNetAbstract
+  LABEL http://www.xbrl.org/2003/role/label Property, Plant and Equipment, Net [Abstract]
+CONCEPT aal_ProceedsFromSaleOfPropertyPlantAndEquipmentAndSaleLeaseBackTransactions
+  LABEL http://www.xbrl.org/2003/role/documentation Proceeds From Sale Of Property Plant And Equipment and Sale Leaseback Transactions
+CONCEPT us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetAccumulatedDepreciationAndAmortization
+  LABEL http://www.xbrl.org/2003/role/label Property, Plant, and Equipment and Finance Lease Right-of-Use Asset, Accumulated Depreciation and Amortization
+CONCEPT us-gaap_ProceedsFromSaleOfPropertyPlantAndEquipment
+  LABEL http://www.xbrl.org/2003/role/label Proceeds from Sale of Property, Plant, and Equipment
+CONCEPT aal_NumberOfAircraftsFinancedThroughRepurchasedDebt
+  LABEL http://www.xbrl.org/2003/role/documentation Number Of Aircrafts Financed Through Repurchased Debt
+CONCEPT aal_GroundPropertyAndEquipmentGross
+  LABEL http://www.xbrl.org/2003/role/documentation The gross amount of long-lived, depreciable ground property and equipment.
+CONCEPT us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetBeforeAccumulatedDepreciationAndAmortization
+  LABEL http://www.xbrl.org/2003/role/label Property, Plant, and Equipment and Finance Lease Right-of-Use Asset, before Accumulated Depreciation and Amortization
+CALROLE http://www.aa.com/role/CondensedConsolidatedBalanceSheetsAmericanAirlinesGroupInc
+  ARC ('us-gaap_Assets', 'us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetAfterAccumulatedDepreciationAndAmortization', '1.0')
+  ARC ('us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetBeforeAccumulatedDepreciationAndAmortization', 'aal_FlightEquipmentAndFinanceLeaseRightOfUseAssetBeforeAccumulatedDepreciationAndAmortization', '1.0')
+  ARC ('us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetBeforeAccumulatedDepreciationAndAmortization', 'aal_GroundPropertyAndEquipmentGross', '1.0')
+  ARC ('us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetBeforeAccumulatedDepreciationAndAmortization', 'us-gaap_DepositsOnFlightEquipment', '1.0')
+  ARC ('us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetAfterAccumulatedDepreciationAndAmortization', 'us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetAccumulatedDepreciationAndAmortization', '-1.0')
+  ARC ('us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetAfterAccumulatedDepreciationAndAmortization', 'us-gaap_PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetBeforeAccumulatedDepreciationAndAmortization', '1.0')
+CALROLE http://www.aa.com/role/CondensedConsolidatedStatementsofCashFlowsAmericanAirlinesGroupInc
+  ARC ('us-gaap_NetCashProvidedByUsedInInvestingActivities', 'aal_ProceedsFromSaleOfPropertyPlantAndEquipmentAndSaleLeaseBackTransactions', '1.0')
+  ARC ('us-gaap_NetCashProvidedByUsedInInvestingActivities', 'us-gaap_ProceedsFromSaleOfPropertyPlantAndEquipment', '1.0')
