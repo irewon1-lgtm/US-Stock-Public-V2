@@ -12,7 +12,7 @@ for url in urls:
         x={"url":url,"status":r.status_code,"bytes":len(r.content)}
         if r.ok:
             j=r.json()
-            x["matches"]=[o.get("path") for o in j if isinstance(o,dict) and ("unified.parquet" in str(o.get("path","")) or "delisted" in str(o.get("path","")).lower())][:500]
+            x["all_paths"]=[o.get("path") for o in j if isinstance(o,dict)][:1000]; x["matches"]=[p for p in x["all_paths"] if ("unified" in str(p).lower() or "delisted" in str(p).lower() or "ohlcv" in str(p).lower())][:500]
             x["count"]=len(j) if isinstance(j,list) else None
         else:x["prefix"]=r.text[:1000]
         items.append(x)
