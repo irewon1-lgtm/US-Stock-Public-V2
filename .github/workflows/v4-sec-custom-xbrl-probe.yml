@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
-      - run: pip install -q requests
+      - run: pip install -q requests lxml
       - run: python v4-sec-cover/probe_custom_xbrl.py > v4-sec-custom-xbrl-probe.log 2>&1
       - run: cat v4-sec-custom-xbrl-probe.log
       - run: |
