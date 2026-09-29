@@ -1,0 +1,11 @@
+{
+  "schema": "V4_F4_202112_DIRECT_STANDARD_FACTS_V1",
+  "target_ciks": 50,
+  "fact_rows": 0,
+  "ciks_with_facts": 0,
+  "role_counts": {},
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "new_corp_action_lookup_calls": 0
+}
