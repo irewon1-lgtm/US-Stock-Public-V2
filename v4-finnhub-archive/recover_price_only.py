@@ -44,7 +44,7 @@ v["finnhub_close"]=pd.to_numeric(v["snapshot_close"],errors="coerce")
 v=v[v.yahoo_close.gt(0)&v.finnhub_close.gt(0)].copy()
 v["close_rel_diff"]=(v.finnhub_close-v.yahoo_close).abs()/np.maximum(v.finnhub_close.abs(),v.yahoo_close.abs())
 if len(v)<40: raise RuntimeError(f"VALIDATION_TOO_SMALL {len(v)}")
-p95=float(v.close_rel_diff.quantile(.95)); med=float(v.close_rel_diff.median()); vmax=float(v.close_rel_diff.max())
+p95=float(v.close_rel_diff.quantile(.95)); med=float(v.close_rel_diff.median()); maxdiff=float(v.close_rel_diff.max()); vmax=float(v.close_rel_diff.max())
 if vmax>0.02: raise RuntimeError(f"PRICE_VALIDATION_FAIL_MAX max={vmax}")
 v[["ticker_at_snapshot","snapshot_date","yahoo_close","finnhub_close","close_rel_diff"]].to_csv(OUT/"price_validation.csv",index=False)
 
