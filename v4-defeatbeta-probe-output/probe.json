@@ -57,5 +57,103 @@
       "extra": null
     }
   ],
-  "error": "ticker/date column not found"
+  "rows": 843,
+  "tickers_found": [
+    "AE"
+  ],
+  "counts": {
+    "AE": 843
+  },
+  "sample": [
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-03",
+      "open": 30.6,
+      "close": 30.45,
+      "high": 30.6,
+      "low": 30.45,
+      "volume": 4300
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-04",
+      "open": 30.75,
+      "close": 30.34,
+      "high": 30.75,
+      "low": 30.34,
+      "volume": 4100
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-05",
+      "open": 30.79,
+      "close": 30.01,
+      "high": 30.79,
+      "low": 30.01,
+      "volume": 4400
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-06",
+      "open": 30.18,
+      "close": 30.05,
+      "high": 30.53,
+      "low": 30.05,
+      "volume": 4100
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-09",
+      "open": 30.36,
+      "close": 29.95,
+      "high": 30.36,
+      "low": 29.94,
+      "volume": 3200
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-10",
+      "open": 30.15,
+      "close": 30.75,
+      "high": 31.01,
+      "low": 29.92,
+      "volume": 14400
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-11",
+      "open": 30.89,
+      "close": 30.08,
+      "high": 30.89,
+      "low": 30.04,
+      "volume": 5700
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-12",
+      "open": 30.03,
+      "close": 30.48,
+      "high": 30.48,
+      "low": 29.43,
+      "volume": 20800
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-13",
+      "open": 30.24,
+      "close": 29.5,
+      "high": 30.45,
+      "low": 29.5,
+      "volume": 5300
+    },
+    {
+      "symbol": "AE",
+      "report_date": "2019-09-16",
+      "open": 29.8,
+      "close": 30.01,
+      "high": 30.78,
+      "low": 29.8,
+      "volume": 7800
+    }
+  ]
 }
