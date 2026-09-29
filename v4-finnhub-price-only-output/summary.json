@@ -1,0 +1,19 @@
+{
+  "schema": "V4_FINNHUB_SNAPSHOT_PRICE_ONLY_V1",
+  "target_tickers": 552,
+  "target_snapshots": 12,
+  "resolved_ticker_snapshot_rows": 3222,
+  "resolved_tickers": 469,
+  "price_fail_rows": 978,
+  "price_pass_rows": 2222,
+  "validation_rows": 60,
+  "validation_close_rel_diff_median": 0.0003639263068112682,
+  "validation_close_rel_diff_p95": 0.005774527742607778,
+  "validation_close_rel_diff_max": 0.01095637040731946,
+  "guaranteed_price_fail_cutoff": 4.945218147963403,
+  "guaranteed_price_pass_cutoff": 5.055388711273696,
+  "liquidity_inferred": false,
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false
+}
