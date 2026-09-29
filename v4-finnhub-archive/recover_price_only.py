@@ -27,7 +27,7 @@ for snap in T["snapshots"]:
     d["date"]=local.dt.tz_localize(None).dt.normalize()
     d["mins_et"]=local.dt.hour*60+local.dt.minute
     s=pd.Timestamp(snap)
-    d=d[(d["date"].eq(s))&(d["mins_et"]>=570)&(d["mins_et"]<=960)].copy()
+    d=d[(d["date"].eq(s))&(d["mins_et"]>=570)&(d["mins_et"]<960)].copy()
     if d.empty: continue
     d=d.sort_values(["ticker","timestamp"])
     z=d.groupby("ticker",as_index=False).agg(snapshot_close=("close","last"))
