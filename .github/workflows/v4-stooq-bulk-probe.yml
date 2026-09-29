@@ -1,4 +1,4 @@
-name: V4 Stooq Bulk Archive Probe
+name: V4 Stooq Bulk ZIP Probe
 on:
   push:
     paths: ['v4-stooq-bulk-probe-trigger.txt']
@@ -7,20 +7,17 @@ permissions: {contents: write}
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - run: pip install -q requests
-      - run: |
-          python v4-stooq/probe_bulk.py 2>&1 | tee v4-stooq-bulk-probe.log
-      - if: always()
-        run: tail -200 v4-stooq-bulk-probe.log || true
+      - run: python v4-stooq-bulk/probe.py
       - run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
-          git add v4-stooq-bulk-probe.log v4-stooq-bulk-probe-output/summary.json
-          git commit -m 'Add V4 Stooq bulk archive probe' || true
+          git add v4-stooq-bulk-probe-output/probe.json
+          git commit -m 'Add Stooq bulk ZIP probe' || true
           git pull --rebase origin main
           git push origin HEAD:main
