@@ -1,0 +1,92 @@
+[
+  {
+    "ticker": "ADMS",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "AE",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "AEGN",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "AERI",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "AGN",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "AGTC",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "AIMC",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "AINC",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "ALBO",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  },
+  {
+    "ticker": "ATVI",
+    "status": 200,
+    "bytes": 165,
+    "row_count": 0,
+    "sample": null,
+    "error": "",
+    "prefix": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1011,\"errorMessage\":\"Bad or No parameter fromdate : 09/01/2019\"}],\"developerMessage\":null}}"
+  }
+]
