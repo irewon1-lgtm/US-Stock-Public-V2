@@ -1,0 +1,21 @@
+name: V4 Yahoo Shares Outstanding Artifact
+on:
+  push:
+    paths: ['v4-yahoo-shares-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas pyarrow requests
+      - run: python v4-yahoo-shares/fetch.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-yahoo-shares
+          path: v4-yahoo-shares-output/
+          retention-days: 30
