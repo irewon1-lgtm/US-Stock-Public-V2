@@ -1,0 +1,17 @@
+{
+  "challenge": true,
+  "nonce": 32969,
+  "verify_status": 200,
+  "cookies": {
+    "auth": "AAAAAGq7OPwAAAAAaryKfKyrB8DF74DKq5QKHRZZrWyYQzfd"
+  },
+  "final_status": 200,
+  "final_len": 13,
+  "prefix": "Access denied",
+  "rows": 0,
+  "columns": [
+    "Access denied"
+  ],
+  "date_min": null,
+  "date_max": null
+}
