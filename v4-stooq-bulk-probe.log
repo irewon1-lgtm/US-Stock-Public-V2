@@ -1,0 +1,6 @@
+PAGE 200 https://stooq.com/db/h/ 796 COOKIES {}
+PAGE_PREFIX <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript an
+TRY https://stooq.com/db/h/db/d/?b=d_us_txt => 404 https://stooq.com/db/h/db/d/?b=d_us_txt text/html 271 None COOKIES {}
+FIRST b'<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-top:50px><p><a href=/'
+TRY http://stooq.com/db/h/db/d/?b=d_us_txt => 404 https://stooq.com/db/h/db/d/?b=d_us_txt text/html 271 None COOKIES {}
+FIRST b'<meta charset=utf-8><title>Stooq</title><center style=font-family:arial;margin-top:50px><p><a href=/'
