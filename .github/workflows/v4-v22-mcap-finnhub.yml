@@ -1,0 +1,28 @@
+name: V4 V22 MCap Finnhub Prices
+on:
+  push:
+    paths: ['v4-v22-mcap-finnhub-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q duckdb pandas
+      - run: python v4-finnhub-archive/recover_v22_mcap_prices.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-v22-mcap-finnhub
+          path: v4-v22-mcap-finnhub-output/
+          retention-days: 30
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-v22-mcap-finnhub-output/summary.json
+          git commit -m 'Add V22 mcap-only Finnhub summary' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
