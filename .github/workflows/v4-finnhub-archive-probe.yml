@@ -1,0 +1,23 @@
+name: V4 Finnhub Archive Probe
+on:
+  push:
+    paths: ['v4-finnhub-archive-probe-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q duckdb pandas
+      - run: python v4-finnhub-archive/probe.py
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-finnhub-archive-probe-output/probe.json
+          git commit -m 'Add V4 Finnhub archive probe' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
