@@ -11,7 +11,7 @@ try:
     result["schema"]=schema.to_dict("records")
     cols=[str(x) for x in schema["column_name"].tolist()]
     tcol=next((c for c in cols if c.lower() in {"ticker","symbol"}),None)
-    dcol=next((c for c in cols if c.lower() in {"date","datetime","timestamp"}),None)
+    dcol=next((c for c in cols if c.lower() in {"date","report_date","datetime","timestamp"}),None)
     if tcol and dcol:
         lit=",".join("'" + t.replace("'","''") + "'" for t in tickers)
         q=f"""SELECT * FROM read_parquet('{url}')
