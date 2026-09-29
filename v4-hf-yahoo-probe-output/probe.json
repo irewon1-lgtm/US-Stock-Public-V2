@@ -1,0 +1,185 @@
+[
+  {
+    "ticker": "AAPL",
+    "status": 200,
+    "bytes": 87957,
+    "url": "https://us.aws.cdn.hf.co/xet-bridge-us/6a9d440bca5a3978ce2c1937/e6c9e2ad293caf472941e2db3451080d3ef3c83ded6917532444449c6a339906?xip=OVX2PpWX6fU&user_id=public&X-Xet-Cas-Uid=public&response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27AAPL.parquet%3B+filename%3D%22AAPL.parquet%22%3B&Expires=1790656588&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNmE5ZDQ0MGJjYTVhMzk3OGNlMmMxOTM3L2U2YzllMmFkMjkzY2FmNDcyOTQxZTJkYjM0NTEwODBkM2VmM2M4M2RlZDY5MTc1MzI0NDQ0NDljNmEzMzk5MDZcXD94aXA9T1ZYMlBwV1g2ZlUmdXNlcl9pZD1wdWJsaWMmWC1YZXQtQ2FzLVVpZD1wdWJsaWMmcmVzcG9uc2UtY29udGVudC1kaXNwb3NpdGlvbj1hdHRhY2htZW50JTNCK2ZpbGVuYW1lJTJBJTNEVVRGLTglMjclMjdBQVBMLnBhcnF1ZXQlM0IrZmlsZW5hbWUlM0QlMjJBQVBMLnBhcnF1ZXQlMjIlM0IiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVwb2NoVGltZSI6MTc5MDY1NjU4OH19fV19&Signature=MEUCIQCrJzpMYRs31VWGIJ7zxeoa2Ug4RFBfwa-sobw-5b9a2QIgfvCyLqJNA7M2ZfFlY7R8bDYiFRy3hlNTin31reeI1zw_&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+    "columns": [
+      "date",
+      "open",
+      "high",
+      "low",
+      "close",
+      "adj_close",
+      "volume"
+    ],
+    "rows": 1759,
+    "min_date": "2019-09-26",
+    "max_date": "2026-09-25",
+    "2020-08-28": {
+      "date": "2020-08-28",
+      "open": 126.01249694824219,
+      "high": 126.44249725341797,
+      "low": 124.57749938964844,
+      "close": 124.80750274658203,
+      "adj_close": 120.95565795898438,
+      "volume": 187630000
+    },
+    "2020-03-31": {
+      "date": "2020-03-31",
+      "open": 63.900001525878906,
+      "high": 65.62249755859375,
+      "low": 63.0,
+      "close": 63.5724983215332,
+      "adj_close": 61.333587646484375,
+      "volume": 197002000
+    },
+    "2021-12-31": {
+      "date": "2021-12-31",
+      "open": 178.08999633789062,
+      "high": 179.22999572753906,
+      "low": 177.25999450683594,
+      "close": 177.57000732421875,
+      "adj_close": 173.4494171142578,
+      "volume": 64062300
+    },
+    "2022-09-30": {
+      "date": "2022-09-30",
+      "open": 141.27999877929688,
+      "high": 143.10000610351562,
+      "low": 138.0,
+      "close": 138.1999969482422,
+      "adj_close": 135.55160522460938,
+      "volume": 124925300
+    }
+  },
+  {
+    "ticker": "ADMS",
+    "status": 404,
+    "bytes": 15,
+    "url": "https://huggingface.co/datasets/AmirTrader/YahooFinance/resolve/main/data/daily/ADMS.parquet?download=true"
+  },
+  {
+    "ticker": "ATVI",
+    "status": 404,
+    "bytes": 15,
+    "url": "https://huggingface.co/datasets/AmirTrader/YahooFinance/resolve/main/data/daily/ATVI.parquet?download=true"
+  },
+  {
+    "ticker": "AE",
+    "status": 404,
+    "bytes": 15,
+    "url": "https://huggingface.co/datasets/AmirTrader/YahooFinance/resolve/main/data/daily/AE.parquet?download=true"
+  },
+  {
+    "ticker": "AERI",
+    "status": 404,
+    "bytes": 15,
+    "url": "https://huggingface.co/datasets/AmirTrader/YahooFinance/resolve/main/data/daily/AERI.parquet?download=true"
+  },
+  {
+    "ticker": "ALBO",
+    "status": 404,
+    "bytes": 15,
+    "url": "https://huggingface.co/datasets/AmirTrader/YahooFinance/resolve/main/data/daily/ALBO.parquet?download=true"
+  },
+  {
+    "ticker": "ACI",
+    "status": 200,
+    "bytes": 65692,
+    "url": "https://us.aws.cdn.hf.co/xet-bridge-us/6a9d440bca5a3978ce2c1937/3d76555412b62c99e430bf546d2af9f6d61e55832438abfc805d887d8cf924ec?X-Xet-Cas-Uid=public&xip=OVX2PpWX6fU&response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27ACI.parquet%3B+filename%3D%22ACI.parquet%22%3B&user_id=public&Expires=1790656588&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNmE5ZDQ0MGJjYTVhMzk3OGNlMmMxOTM3LzNkNzY1NTU0MTJiNjJjOTllNDMwYmY1NDZkMmFmOWY2ZDYxZTU1ODMyNDM4YWJmYzgwNWQ4ODdkOGNmOTI0ZWNcXD9YLVhldC1DYXMtVWlkPXB1YmxpYyZ4aXA9T1ZYMlBwV1g2ZlUmcmVzcG9uc2UtY29udGVudC1kaXNwb3NpdGlvbj1hdHRhY2htZW50JTNCK2ZpbGVuYW1lJTJBJTNEVVRGLTglMjclMjdBQ0kucGFycXVldCUzQitmaWxlbmFtZSUzRCUyMkFDSS5wYXJxdWV0JTIyJTNCJnVzZXJfaWQ9cHVibGljIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFcG9jaFRpbWUiOjE3OTA2NTY1ODh9fX1dfQ__&Signature=MEUCIDKV9sYee~eGOt~DDKWsVEXUk86pQiBy1f9S0ud5uHMXAiEAo7z4hNscwTFofp2gj26S0-f29zecv9wQcQIxWvn1JI0_&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+    "columns": [
+      "date",
+      "open",
+      "high",
+      "low",
+      "close",
+      "adj_close",
+      "volume"
+    ],
+    "rows": 1570,
+    "min_date": "2020-06-26",
+    "max_date": "2026-09-25",
+    "2020-08-28": {
+      "date": "2020-08-28",
+      "open": 14.65999984741211,
+      "high": 14.65999984741211,
+      "low": 14.300000190734863,
+      "close": 14.359999656677246,
+      "adj_close": 9.235539436340332,
+      "volume": 1592500
+    },
+    "2021-12-31": {
+      "date": "2021-12-31",
+      "open": 29.940000534057617,
+      "high": 30.700000762939453,
+      "low": 29.940000534057617,
+      "close": 30.190000534057617,
+      "adj_close": 19.942155838012695,
+      "volume": 1187200
+    },
+    "2022-09-30": {
+      "date": "2022-09-30",
+      "open": 25.3799991607666,
+      "high": 25.420000076293945,
+      "low": 24.729999542236328,
+      "close": 24.860000610351562,
+      "adj_close": 16.627859115600586,
+      "volume": 2668500
+    }
+  },
+  {
+    "ticker": "AAL",
+    "status": 200,
+    "bytes": 65789,
+    "url": "https://us.aws.cdn.hf.co/xet-bridge-us/6a9d440bca5a3978ce2c1937/0c483e92a94d4ac3d6119497a2d989553a6095f5971246dc21e641faea890b5c?user_id=public&xip=OVX2PpWX6fU&X-Xet-Cas-Uid=public&response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27AAL.parquet%3B+filename%3D%22AAL.parquet%22%3B&Expires=1790656588&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly91cy5hd3MuY2RuLmhmLmNvL3hldC1icmlkZ2UtdXMvNmE5ZDQ0MGJjYTVhMzk3OGNlMmMxOTM3LzBjNDgzZTkyYTk0ZDRhYzNkNjExOTQ5N2EyZDk4OTU1M2E2MDk1ZjU5NzEyNDZkYzIxZTY0MWZhZWE4OTBiNWNcXD91c2VyX2lkPXB1YmxpYyZ4aXA9T1ZYMlBwV1g2ZlUmWC1YZXQtQ2FzLVVpZD1wdWJsaWMmcmVzcG9uc2UtY29udGVudC1kaXNwb3NpdGlvbj1hdHRhY2htZW50JTNCK2ZpbGVuYW1lJTJBJTNEVVRGLTglMjclMjdBQUwucGFycXVldCUzQitmaWxlbmFtZSUzRCUyMkFBTC5wYXJxdWV0JTIyJTNCIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFcG9jaFRpbWUiOjE3OTA2NTY1ODh9fX1dfQ__&Signature=MEYCIQDaQ8uQkET09DoZ~FtNrtCTyP7dBeiN7eJd36KsFPQDmQIhAPy8fdI5uQM747O~GKtjgIam2CY9KJw3hHIqYIlkBDOD&Key-Pair-Id=01KXEF4KZ1B6FV465MAWR4M21F&Hash-Algorithm=SHA256",
+    "columns": [
+      "date",
+      "open",
+      "high",
+      "low",
+      "close",
+      "adj_close",
+      "volume"
+    ],
+    "rows": 1759,
+    "min_date": "2019-09-26",
+    "max_date": "2026-09-25",
+    "2020-08-28": {
+      "date": "2020-08-28",
+      "open": 13.59000015258789,
+      "high": 13.630000114440918,
+      "low": 13.229999542236328,
+      "close": 13.59000015258789,
+      "adj_close": 13.59000015258789,
+      "volume": 54516400
+    },
+    "2020-03-31": {
+      "date": "2020-03-31",
+      "open": 12.899999618530273,
+      "high": 12.960000038146973,
+      "low": 12.100000381469727,
+      "close": 12.1899995803833,
+      "adj_close": 12.1899995803833,
+      "volume": 44851400
+    },
+    "2021-12-31": {
+      "date": "2021-12-31",
+      "open": 18.06999969482422,
+      "high": 18.360000610351562,
+      "low": 17.93000030517578,
+      "close": 17.959999084472656,
+      "adj_close": 17.959999084472656,
+      "volume": 20657000
+    },
+    "2022-09-30": {
+      "date": "2022-09-30",
+      "open": 12.130000114440918,
+      "high": 12.399999618530273,
+      "low": 12.010000228881836,
+      "close": 12.039999961853027,
+      "adj_close": 12.039999961853027,
+      "volume": 30111400
+    }
+  }
+]
