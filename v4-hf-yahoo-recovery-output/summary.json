@@ -1,0 +1,18 @@
+{
+  "schema": "V4_HF_YAHOO_MIRROR_RECOVERY_V1",
+  "purpose": "Outcome-free price/liquidity recovery only for tickers already NO_DATA in Eulerpool/Yahoo flow.",
+  "mirror": "AmirTrader/YahooFinance on Hugging Face",
+  "target_tickers": 1302,
+  "ambiguous_ticker_reuse_skipped": 0,
+  "file_ok": 63,
+  "file_missing": 1239,
+  "errors": 0,
+  "feature_rows": 10610,
+  "price_known_rows": 197,
+  "liquidity_ok_rows": 168,
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "new_corp_action_lookup_calls": 0,
+  "note": "Mirror close/volume schema cross-checked against existing Yahoo rows (AAPL/AAL probe). Exact snapshot date required; no ticker remapping or corporate-action lookup performed."
+}
