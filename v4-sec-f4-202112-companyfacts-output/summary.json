@@ -1,0 +1,16 @@
+{
+  "schema": "V4_F4_202112_COMPANYFACTS_STANDARD_V1",
+  "target_ciks": 50,
+  "fact_rows": 3206,
+  "ciks_with_facts": 50,
+  "role_counts": {
+    "DILUTED": 1396,
+    "BASIC": 1387,
+    "ADJ": 419,
+    "COMBINED": 4
+  },
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "new_corp_action_lookup_calls": 0
+}
