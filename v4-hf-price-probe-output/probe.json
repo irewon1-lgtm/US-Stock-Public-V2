@@ -1,0 +1,62 @@
+[
+  {
+    "ticker": "ADMS",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "AE",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "AEGN",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "AERI",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "AGN",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "AGTC",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "AIMC",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "AINC",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "ALBO",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  },
+  {
+    "ticker": "ATVI",
+    "status": 404,
+    "bytes": 15,
+    "prefix": "Entry not found"
+  }
+]
