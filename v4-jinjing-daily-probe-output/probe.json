@@ -1,0 +1,214 @@
+{
+  "revision": "925b7866b77f8623e80751c859a659b7de9509ad",
+  "files": [
+    {
+      "url": "https://huggingface.co/datasets/cedwyh/jinjing-shared-data/resolve/925b7866b77f8623e80751c859a659b7de9509ad/us_unified.parquet?download=true",
+      "schema": [
+        {
+          "column_name": "date",
+          "column_type": "TIMESTAMP WITH TIME ZONE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "symbol",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "open",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "high",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "low",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "adj_close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "volume",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "market",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ],
+      "detected": {
+        "symbol": "symbol",
+        "date": "date",
+        "close": "close",
+        "volume": "volume"
+      },
+      "rows": 3905,
+      "tickers_found": [
+        "AAPL",
+        "HD",
+        "JPM",
+        "MSFT",
+        "XOM"
+      ]
+    },
+    {
+      "url": "https://huggingface.co/datasets/cedwyh/jinjing-shared-data/resolve/925b7866b77f8623e80751c859a659b7de9509ad/delisted_unified.parquet?download=true",
+      "schema": [
+        {
+          "column_name": "date",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "symbol",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "open",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "high",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "low",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "adj_close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "volume",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "market",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ],
+      "detected": {
+        "symbol": "symbol",
+        "date": "date",
+        "close": "close",
+        "volume": "volume"
+      },
+      "rows": 0,
+      "tickers_found": []
+    }
+  ],
+  "tickers_found_total": [
+    "AAPL",
+    "HD",
+    "JPM",
+    "MSFT",
+    "XOM"
+  ],
+  "counts": {
+    "AAPL": 781,
+    "HD": 781,
+    "JPM": 781,
+    "MSFT": 781,
+    "XOM": 781
+  },
+  "validation": {
+    "rows": 50,
+    "close_rel_diff_median": 0.03149777491230295,
+    "close_rel_diff_p95": 0.13387766081837144,
+    "mdv_rel_diff_median": 0.03149777361949715,
+    "mdv_rel_diff_p95": 0.1368554459770655
+  },
+  "sample_missing_present": {
+    "ADMS": 0,
+    "AEGN": 0,
+    "AERI": 0,
+    "AGN": 0,
+    "AGTC": 0,
+    "AIMC": 0,
+    "AINC": 0,
+    "ALBO": 0,
+    "ATVI": 0,
+    "AE": 0
+  }
+}
