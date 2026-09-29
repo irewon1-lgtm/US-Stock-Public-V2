@@ -1,0 +1,24 @@
+name: V4 Stooq Bulk Archive Probe
+on:
+  push:
+    paths: ['v4-stooq-bulk-probe-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q requests
+      - run: python v4-stooq/probe_bulk.py > v4-stooq-bulk-probe.log 2>&1
+      - run: tail -200 v4-stooq-bulk-probe.log
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-stooq-bulk-probe.log v4-stooq-bulk-probe-output/summary.json
+          git commit -m 'Add V4 Stooq bulk archive probe' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
