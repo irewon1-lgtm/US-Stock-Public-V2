@@ -1,5 +1,5 @@
-import io,zipfile,requests,re
-from lxml import etree,html
+import io,zipfile,requests
+from lxml import etree
 UA="V4-Full-Rigor BCPC rendered-row probe research@example.com";H={"User-Agent":UA}
 CIK=9326
 for acc in ["0001628280-19-013298","0001628280-20-001968","0001628280-20-006067","0001628280-20-014967","0001628280-21-002578","0001628280-21-008430"]:
@@ -7,13 +7,12 @@ for acc in ["0001628280-19-013298","0001628280-20-001968","0001628280-20-006067"
  r=requests.get(u,headers=H,timeout=60);print("\nACC",acc,r.status_code);r.raise_for_status();z=zipfile.ZipFile(io.BytesIO(r.content))
  for n in z.namelist():
   if not n.lower().endswith((".htm",".html")):continue
-  try:rt=html.fromstring(z.read(n))
+  try:rt=etree.fromstring(z.read(n),parser=etree.XMLParser(recover=True,huge_tree=True))
   except:continue
-  els=rt.xpath("//*[local-name()='nonfraction' or local-name()='nonFraction']")
-  for el in els:
+  for el in rt.xpath("//*[local-name()='nonFraction']"):
    name=el.get("name") or ""
    if name.endswith(":PaymentsToAcquireOtherProductiveAssets"):
-    trs=el.xpath("ancestor::tr[1]")
-    row=" ".join((trs[0] if trs else el.getparent()).itertext()) if (trs or el.getparent() is not None) else ""
-    row=" ".join(row.split())
-    print("ROW",n,el.get("contextref") or el.get("contextRef"),"|",row[:2000])
+    trs=el.xpath("ancestor::*[local-name()='tr'][1]")
+    node=trs[0] if trs else el.getparent()
+    row=" ".join("".join(node.itertext()).split()) if node is not None else ""
+    print("ROW",n,el.get("contextRef") or "","|",row[:2500])
