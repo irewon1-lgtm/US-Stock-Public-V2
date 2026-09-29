@@ -1,4 +1,4 @@
-name: V4 SEC Cover Share Incremental
+name: V4 SEC Cover Share Incremental Price-Available
 on:
   push:
     paths:
@@ -13,18 +13,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
-      - run: pip install -q requests
-      - run: python v4-sec-cover/recover_dei_cover_facts_incremental.py
-      - uses: actions/upload-artifact@v4
         with:
-          name: v4-sec-cover-incremental
-          path: v4-sec-cover-incremental-output/
-          retention-days: 30
-      - run: |
+          python-version: '3.12'
+      - run: pip install -q requests
+      - name: Fetch SEC DEI cover shares and acceptance times
+        run: python v4-sec-cover/recover_dei_cover_facts_incremental.py
+      - name: Commit outcome-free SEC supplement
+        run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
-          git add v4-sec-cover-incremental-output/
-          git commit -m 'Add incremental V4 SEC cover shares' || true
+          git add v4-sec-cover-incremental-output/dei_cover_share_facts.csv
+          git add v4-sec-cover-incremental-output/sec_cover_fetch_audit.csv
+          git add v4-sec-cover-incremental-output/summary.json
+          git commit -m 'Add V4 incremental SEC cover-share supplement' || true
           git pull --rebase origin main
           git push origin HEAD:main
