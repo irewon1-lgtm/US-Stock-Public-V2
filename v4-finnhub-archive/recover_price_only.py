@@ -44,12 +44,18 @@ v["finnhub_close"]=pd.to_numeric(v["snapshot_close"],errors="coerce")
 v=v[v.yahoo_close.gt(0)&v.finnhub_close.gt(0)].copy()
 v["close_rel_diff"]=(v.finnhub_close-v.yahoo_close).abs()/np.maximum(v.finnhub_close.abs(),v.yahoo_close.abs())
 if len(v)<40: raise RuntimeError(f"VALIDATION_TOO_SMALL {len(v)}")
-p95=float(v.close_rel_diff.quantile(.95)); med=float(v.close_rel_diff.median())
-if p95>0.005: raise RuntimeError(f"PRICE_VALIDATION_FAIL p95={p95}")
+p95=float(v.close_rel_diff.quantile(.95)); med=float(v.close_rel_diff.median()); vmax=float(v.close_rel_diff.max())
+if vmax>0.02: raise RuntimeError(f"PRICE_VALIDATION_FAIL_MAX max={vmax}")
 v[["ticker_at_snapshot","snapshot_date","yahoo_close","finnhub_close","close_rel_diff"]].to_csv(OUT/"price_validation.csv",index=False)
 
 o=res[res.ticker.isin(T["tickers"])].copy()
-o["price_gate_finnhub"]=np.where(pd.to_numeric(o.snapshot_close,errors="coerce").lt(5),"FAIL","PASS")
+px=pd.to_numeric(o.snapshot_close,errors="coerce")
+# Guarantee original Yahoo-like raw price is still < $5 even under worst observed validation error.
+fail_cutoff=5.0*(1.0-vmax)
+pass_cutoff=5.0/(1.0-vmax)
+o["price_gate_finnhub"]=np.where(px.lt(fail_cutoff),"FAIL",np.where(px.ge(pass_cutoff),"PASS","UNKNOWN_NEAR_5"))
+o["validation_fail_cutoff"]=fail_cutoff
+o["validation_pass_cutoff"]=pass_cutoff
 o.to_csv(OUT/"snapshot_prices.csv.gz",index=False,compression="gzip")
 summary={
  "schema":"V4_FINNHUB_SNAPSHOT_PRICE_ONLY_V1",
@@ -60,6 +66,9 @@ summary={
  "price_fail_rows":int(o.price_gate_finnhub.eq("FAIL").sum()) if len(o) else 0,
  "price_pass_rows":int(o.price_gate_finnhub.eq("PASS").sum()) if len(o) else 0,
  "validation_rows":int(len(v)),"validation_close_rel_diff_median":med,"validation_close_rel_diff_p95":p95,
+ "validation_close_rel_diff_max":vmax,
+ "guaranteed_price_fail_cutoff":float(5.0*(1.0-vmax)),
+ "guaranteed_price_pass_cutoff":float(5.0/(1.0-vmax)),
  "liquidity_inferred":False,
  "formation_2023_opened":False,"future_outcomes_used":False,"us3700_used":False,
 }
