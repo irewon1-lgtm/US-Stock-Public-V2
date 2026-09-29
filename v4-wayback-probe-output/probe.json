@@ -1,0 +1,215 @@
+[
+  {
+    "ticker": "ADMS",
+    "kind": "old_real",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "ADMS",
+    "kind": "old_ichart",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "ADMS",
+    "kind": "download_v7",
+    "status": 503,
+    "bytes": 11832,
+    "prefix": "<html><head><meta charset=\"UTF-8\"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head>\n<body style=\"padding:30px 0;\">\n<div style=\"float:left;width:260px;text-align:center;\">\n<img xsrc=\"logo_ia.jpg\" src=\"data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAKsAAACmCAAAAACAHSAbAAAOuklEQVR42t2d2bmsqhKAIQcyIRQyIQ+SIAOeiYAIyIAYePHrW1WgOCC6etp9bi2n3SL8lMUMbvbYynSQ6JXUccI7s6NktZJcKqVje4SejkYJIZWemn9GC2HpWku3CsYbeN64hP/MsBslVSx3g1oRKSmlgj/pjqxHWM"
+  },
+  {
+    "ticker": "ADMS",
+    "kind": "chart_v8",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "ADMS",
+    "kind": "history_html",
+    "status": 503,
+    "bytes": 11832,
+    "prefix": "<html><head><meta charset=\"UTF-8\"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head>\n<body style=\"padding:30px 0;\">\n<div style=\"float:left;width:260px;text-align:center;\">\n<img xsrc=\"logo_ia.jpg\" src=\"data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAKsAAACmCAAAAACAHSAbAAAOuklEQVR42t2d2bmsqhKAIQcyIRQyIQ+SIAOeiYAIyIAYePHrW1WgOCC6etp9bi2n3SL8lMUMbvbYynSQ6JXUccI7s6NktZJcKqVje4SejkYJIZWemn9GC2HpWku3CsYbeN64hP/MsBslVSx3g1oRKSmlgj/pjqxHWM"
+  },
+  {
+    "ticker": "AERI",
+    "kind": "old_real",
+    "error": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=45)\"))"
+  },
+  {
+    "ticker": "AERI",
+    "kind": "old_ichart",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "AERI",
+    "kind": "download_v7",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "AERI",
+    "kind": "chart_v8",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=query1.finance.yahoo.com%2Fv8%2Ffinance%2Fchart%2FAERI%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7c8e480>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  },
+  {
+    "ticker": "AERI",
+    "kind": "history_html",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=finance.yahoo.com%2Fquote%2FAERI%2Fhistory%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7c8d5e0>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  },
+  {
+    "ticker": "AGN",
+    "kind": "old_real",
+    "error": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=45)\"))"
+  },
+  {
+    "ticker": "AGN",
+    "kind": "old_ichart",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "AGN",
+    "kind": "download_v7",
+    "error": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=45)\"))"
+  },
+  {
+    "ticker": "AGN",
+    "kind": "chart_v8",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=query1.finance.yahoo.com%2Fv8%2Ffinance%2Fchart%2FAGN%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7cc47a0>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  },
+  {
+    "ticker": "AGN",
+    "kind": "history_html",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=finance.yahoo.com%2Fquote%2FAGN%2Fhistory%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7c8f650>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  },
+  {
+    "ticker": "ATVI",
+    "kind": "old_real",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=real-chart.finance.yahoo.com%2Ftable.csv%3Fs%3DATVI&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7c8e6f0>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  },
+  {
+    "ticker": "ATVI",
+    "kind": "old_ichart",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=ichart.finance.yahoo.com%2Ftable.csv%3Fs%3DATVI&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7c8f0e0>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  },
+  {
+    "ticker": "ATVI",
+    "kind": "download_v7",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "ATVI",
+    "kind": "chart_v8",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=query1.finance.yahoo.com%2Fv8%2Ffinance%2Fchart%2FATVI%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7c8fec0>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  },
+  {
+    "ticker": "ATVI",
+    "kind": "history_html",
+    "status": 200,
+    "bytes": 3150,
+    "snapshots": 20,
+    "first": [
+      [
+        "20200612143458",
+        "https://finance.yahoo.com/quote/ATVI/history/",
+        "200",
+        "text/html",
+        "144144"
+      ],
+      [
+        "20201111225847",
+        "https://finance.yahoo.com/quote/ATVI/history",
+        "200",
+        "text/html",
+        "138759"
+      ],
+      [
+        "20210830104001",
+        "https://finance.yahoo.com/quote/ATVI/history",
+        "200",
+        "text/html",
+        "165179"
+      ]
+    ],
+    "last": [
+      [
+        "20210223175941",
+        "https://finance.yahoo.com/quote/ATVI/history?ltr=1",
+        "200",
+        "text/html",
+        "156836"
+      ],
+      [
+        "20220704225253",
+        "https://finance.yahoo.com/quote/ATVI/history?ltr=1",
+        "200",
+        "text/html",
+        "176661"
+      ],
+      [
+        "20230128093842",
+        "https://finance.yahoo.com/quote/ATVI/history?ltr=1",
+        "200",
+        "text/html",
+        "858611"
+      ]
+    ]
+  },
+  {
+    "ticker": "AIMC",
+    "kind": "old_real",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "AIMC",
+    "kind": "old_ichart",
+    "status": 200,
+    "bytes": 3,
+    "snapshots": 0,
+    "first": [],
+    "last": []
+  },
+  {
+    "ticker": "AIMC",
+    "kind": "download_v7",
+    "error": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Read timed out. (read timeout=45)\"))"
+  },
+  {
+    "ticker": "AIMC",
+    "kind": "chart_v8",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=query1.finance.yahoo.com%2Fv8%2Ffinance%2Fchart%2FAIMC%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7cc5a30>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  },
+  {
+    "ticker": "AIMC",
+    "kind": "history_html",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='web.archive.org', port=443): Max retries exceeded with url: /cdx/search/cdx?url=finance.yahoo.com%2Fquote%2FAIMC%2Fhistory%2A&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Clength&filter=statuscode%3A200&limit=20&from=2019&to=2023 (Caused by ConnectTimeoutError(<HTTPSConnection(host='web.archive.org', port=443) at 0x7f73c7c8e660>, 'Connection to web.archive.org timed out. (connect timeout=45)'))\"))"
+  }
+]
