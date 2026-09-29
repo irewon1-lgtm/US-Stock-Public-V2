@@ -1,0 +1,354 @@
+{
+  "files": [
+    {
+      "url": "https://huggingface.co/datasets/paperswithbacktest/Stocks-Daily-Price/resolve/main/data/train-00000-of-00004.parquet?download=true",
+      "schema": [
+        {
+          "column_name": "symbol",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "date",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "open",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "high",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "low",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "volume",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "adj_close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ],
+      "detected": {
+        "symbol": "symbol",
+        "date": "date",
+        "close": "close",
+        "volume": "volume"
+      },
+      "rows": 843,
+      "tickers_found": [
+        "AAPL"
+      ]
+    },
+    {
+      "url": "https://huggingface.co/datasets/paperswithbacktest/Stocks-Daily-Price/resolve/main/data/train-00001-of-00004.parquet?download=true",
+      "schema": [
+        {
+          "column_name": "symbol",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "date",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "open",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "high",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "low",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "volume",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "adj_close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ],
+      "detected": {
+        "symbol": "symbol",
+        "date": "date",
+        "close": "close",
+        "volume": "volume"
+      },
+      "rows": 1686,
+      "tickers_found": [
+        "HD",
+        "JPM"
+      ]
+    },
+    {
+      "url": "https://huggingface.co/datasets/paperswithbacktest/Stocks-Daily-Price/resolve/main/data/train-00002-of-00004.parquet?download=true",
+      "schema": [
+        {
+          "column_name": "symbol",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "date",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "open",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "high",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "low",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "volume",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "adj_close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ],
+      "detected": {
+        "symbol": "symbol",
+        "date": "date",
+        "close": "close",
+        "volume": "volume"
+      },
+      "rows": 843,
+      "tickers_found": [
+        "MSFT"
+      ]
+    },
+    {
+      "url": "https://huggingface.co/datasets/paperswithbacktest/Stocks-Daily-Price/resolve/main/data/train-00003-of-00004.parquet?download=true",
+      "schema": [
+        {
+          "column_name": "symbol",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "date",
+          "column_type": "VARCHAR",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "open",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "high",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "low",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "volume",
+          "column_type": "BIGINT",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        },
+        {
+          "column_name": "adj_close",
+          "column_type": "DOUBLE",
+          "null": "YES",
+          "key": null,
+          "default": null,
+          "extra": null
+        }
+      ],
+      "detected": {
+        "symbol": "symbol",
+        "date": "date",
+        "close": "close",
+        "volume": "volume"
+      },
+      "rows": 843,
+      "tickers_found": [
+        "XOM"
+      ]
+    }
+  ],
+  "tickers_found_total": [
+    "AAPL",
+    "HD",
+    "JPM",
+    "MSFT",
+    "XOM"
+  ],
+  "counts": {
+    "AAPL": 843,
+    "HD": 843,
+    "JPM": 843,
+    "MSFT": 843,
+    "XOM": 843
+  },
+  "sample_missing_present": {
+    "ADMS": 0,
+    "AEGN": 0,
+    "AERI": 0,
+    "AGN": 0,
+    "AGTC": 0,
+    "AIMC": 0,
+    "AINC": 0,
+    "ALBO": 0,
+    "ATVI": 0,
+    "AE": 0
+  },
+  "validation": {
+    "rows": 60,
+    "close_rel_diff_median": 0.0,
+    "close_rel_diff_p95": 1.4022882643247588e-16,
+    "mdv_rel_diff_median": 0.0,
+    "mdv_rel_diff_p95": 1.58030056116127e-16
+  }
+}
