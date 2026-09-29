@@ -1,0 +1,28 @@
+name: V4 Market Cap Inline Standard Shares
+on:
+  push:
+    paths: ['v4-mcap-inline-shares-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas requests lxml
+      - run: python v4-sec-cover/recover_mcap_inline_standard_shares.py --shard ${{ matrix.shard }} --nshards 4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-mcap-inline-shares-${{ matrix.shard }}
+          path: |
+            v4-sec-mcap-inline-shares-output/inline_standard_shares_*.csv.gz
+            v4-sec-mcap-inline-shares-output/audit_*.csv
+            v4-sec-mcap-inline-shares-output/summary_*.json
+          retention-days: 30
