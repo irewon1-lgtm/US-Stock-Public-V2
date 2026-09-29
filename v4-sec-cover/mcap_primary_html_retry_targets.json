@@ -1,0 +1,24 @@
+{
+  "schema": "V4_MCAP_PRIMARY_HTML_RETRY_TARGETS_V1",
+  "purpose": "Only current V12 mcap-UNKNOWN rows that already have accepted as-traded price but lack exact standard outstanding shares.",
+  "ciks": [
+    1838672,
+    1708301,
+    1827075,
+    1843762,
+    1417398,
+    1868778,
+    1006269,
+    1822711,
+    1725579,
+    1575051,
+    1633651,
+    813828,
+    1837686,
+    1823575
+  ],
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "new_corp_action_lookup_calls": 0
+}
