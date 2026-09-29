@@ -7,6 +7,7 @@ r=requests.get(url,timeout=120,headers={"User-Agent":"V4 split-adjustment resear
 r.raise_for_status()
 (OUT/"stock_split_events.parquet").write_bytes(r.content)
 d=pd.read_parquet(OUT/"stock_split_events.parquet")
+d.to_csv(OUT/"stock_split_events.csv",index=False)
 summary={"rows":int(len(d)),"columns":[str(x) for x in d.columns]}
 for c in d.columns:
     lc=str(c).lower()
