@@ -1,0 +1,10 @@
+{
+  "schema": "V4_PWB_DAILY_RECOVERY_V1",
+  "target_tickers": 504,
+  "found_tickers": 60,
+  "rows": 34795,
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "validation_reference": "probe matched frozen Yahoo close+60d MDV exactly on 60 rows"
+}
