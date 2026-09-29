@@ -1,0 +1,23 @@
+name: V4 SEC Custom XBRL Probe
+on:
+  push:
+    paths: ['v4-sec-custom-xbrl-probe-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q requests
+      - run: python v4-sec-cover/probe_custom_xbrl.py > v4-sec-custom-xbrl-probe.log 2>&1
+      - run: cat v4-sec-custom-xbrl-probe.log
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-sec-custom-xbrl-probe.log
+          git commit -m 'Add SEC custom XBRL probe log' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
