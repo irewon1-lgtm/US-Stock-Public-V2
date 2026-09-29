@@ -1,0 +1,6 @@
+SUB 200
+PICK ('10-Q', '2022-10-20', '0000006201-22-000086', 'aal-20220930.htm')
+GET https://www.sec.gov/Archives/edgar/data/6201/000000620122000086/index.json 200 application/json 8272
+{"directory":{"item":[{"last-modified": "2022-10-20 07:01:41","name":"0000006201-22-000086-index-headers.html","type":"text.gif","size":""},{"last-modified": "2022-10-20 07:01:41","name":"0000006201-22-000086-index.html","type":"text.gif","size":""},{"last-modified": "2022-10-20 07:01:41","name":"0000006201-22-000086.txt","type":"text.gif","size":""},{"last-modified": "2022-10-20 07:01:41","name":"0000006201-22-000086-xbrl.zip","type":"compressed.gif","size":"498679"},{"last-modified": "2022-10-
+GET https://www.sec.gov/Archives/edgar/data/6201/000000620122000086/aal-20220930.htm 200 text/html 3367555
+<?xml version="1.0" ?><!--XBRL Document Created with Wdesk from Workiva--><!--Copyright 2022 Workiva--><!--r:0dd4f1d4-8d8c-4f49-8c51-0aeffebc5b90,g:090fc6f4-c0a4-4ba9-aca6-c99a31e9fb05,d:6015502a286c482ab43dbf17ea91ebb9--><html xmlns:us-gaap="http://fasb.org/us-gaap/2022" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns="http://www.w3.org/1999/xhtml" xmlns:dei="http://xbrl.sec.gov/dei/2022" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:aal="http://www.aa.com/20220930" xmlns:ixt-sec
