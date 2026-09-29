@@ -1,0 +1,31 @@
+name: V4 Finnhub Snapshot Price Only
+on:
+  push:
+    paths: ['v4-finnhub-price-only-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q duckdb pandas numpy
+      - run: python v4-finnhub-archive/recover_price_only.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-finnhub-price-only
+          path: |
+            v4-finnhub-price-only-output/snapshot_prices.csv.gz
+            v4-finnhub-price-only-output/price_validation.csv
+            v4-finnhub-price-only-output/summary.json
+          retention-days: 30
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-finnhub-price-only-output/price_validation.csv v4-finnhub-price-only-output/summary.json
+          git commit -m 'Add V4 Finnhub snapshot price-only recovery summary' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
