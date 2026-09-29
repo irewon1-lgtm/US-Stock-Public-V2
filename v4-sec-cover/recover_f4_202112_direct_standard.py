@@ -8,7 +8,7 @@ ROOT=Path('.')
 TARGET=json.loads((ROOT/'v4-sec-cover/f4_202112_direct_standard_targets.json').read_text())
 OUT=ROOT/'v4-sec-f4-202112-direct-output'; OUT.mkdir(exist_ok=True)
 CUTOFF=pd.Timestamp('2021-12-31T23:59:59Z')
-START=pd.Timestamp('2019-01-01')
+START=pd.Timestamp('2019-01-01T00:00:00Z')
 FORMS={'10-Q','10-K','10-Q/A','10-K/A'}
 QMAP={
  'us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding':'DILUTED',
