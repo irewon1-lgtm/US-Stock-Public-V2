@@ -11,8 +11,10 @@ TARGETS=json.loads((ROOT/"v4-sec-cover/current_visible_cfo_revenue_targets.json"
 MASKS=json.loads((ROOT/"v4-sec-cover/current_f34_missing_masks.json").read_text())
 SNAPS=list(MASKS["snaps"])
 CIK_MASKS={int(k):(int(v[0]),int(v[1])) for k,v in MASKS["cik_masks"].items()}
-CAP_CIKS=set(int(x) for x in TARGETS["capex_ciks"])
-SHARE_CIKS=set(int(x) for x in TARGETS["share_ciks"])
+CFO_CIKS=set(int(x) for x in TARGETS["cfo_ciks"])
+REV_CIKS=set(int(x) for x in TARGETS["revenue_ciks"])
+CAP_CIKS=set()
+SHARE_CIKS=set()
 ALL_CIKS=set(int(x) for x in TARGETS["union_ciks"])
 OUT=ROOT/"v4-sec-visible-cfo-revenue-output";OUT.mkdir(parents=True,exist_ok=True)
 
