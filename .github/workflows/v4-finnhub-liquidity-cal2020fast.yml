@@ -1,0 +1,28 @@
+name: V4 Finnhub Liquidity Calibration 2020 Fast
+on:
+  push:
+    paths: ['v4-finnhub-liquidity-cal2020fast-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        snapshot: ['2020-03-31','2020-06-30','2020-09-30','2020-12-31']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q duckdb pandas numpy
+      - run: python v4-finnhub-archive/calibrate_liquidity_2020_fast.py --snapshot ${{ matrix.snapshot }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-finnhub-liquidity-cal2020fast-${{ matrix.snapshot }}
+          path: |
+            v4-finnhub-liquidity-cal2020fast-output/features_*.csv.gz
+            v4-finnhub-liquidity-cal2020fast-output/validation_*.csv
+            v4-finnhub-liquidity-cal2020fast-output/summary_*.json
+          retention-days: 30
