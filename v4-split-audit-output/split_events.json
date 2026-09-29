@@ -1,0 +1,468 @@
+{
+  "schema": [
+    {
+      "column_name": "symbol",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "report_date",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "split_factor",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    }
+  ],
+  "rows": [
+    {
+      "symbol": "BERY",
+      "report_date": "2024-11-05",
+      "split_factor": "1089:1000"
+    },
+    {
+      "symbol": "CDMO",
+      "report_date": "2009-10-19",
+      "split_factor": "1:5"
+    },
+    {
+      "symbol": "CDMO",
+      "report_date": "2017-07-10",
+      "split_factor": "1:7"
+    },
+    {
+      "symbol": "COKE",
+      "report_date": "2025-05-27",
+      "split_factor": "10:1"
+    },
+    {
+      "symbol": "DKS",
+      "report_date": "2004-04-06",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "DKS",
+      "report_date": "2007-10-22",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "DVAX",
+      "report_date": "2014-11-10",
+      "split_factor": "1:10"
+    },
+    {
+      "symbol": "EA",
+      "report_date": "2000-09-11",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "EA",
+      "report_date": "2003-11-18",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "ENLC",
+      "report_date": "2006-12-18",
+      "split_factor": "3:1"
+    },
+    {
+      "symbol": "F",
+      "report_date": "1994-07-06",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "F",
+      "report_date": "1998-04-08",
+      "split_factor": "10000:6641"
+    },
+    {
+      "symbol": "F",
+      "report_date": "2000-06-29",
+      "split_factor": "10000:9607"
+    },
+    {
+      "symbol": "F",
+      "report_date": "2000-08-03",
+      "split_factor": "1748175:1000000"
+    },
+    {
+      "symbol": "GRYP",
+      "report_date": "2022-11-08",
+      "split_factor": "1:20"
+    },
+    {
+      "symbol": "GRYP",
+      "report_date": "2024-02-09",
+      "split_factor": "1:20"
+    },
+    {
+      "symbol": "GRYP",
+      "report_date": "2025-09-03",
+      "split_factor": "1:5"
+    },
+    {
+      "symbol": "HBI",
+      "report_date": "2015-03-04",
+      "split_factor": "4:1"
+    },
+    {
+      "symbol": "HOLX",
+      "report_date": "1996-03-26",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "HOLX",
+      "report_date": "2005-12-01",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "HOLX",
+      "report_date": "2008-04-03",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "HSY",
+      "report_date": "1996-09-16",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "HSY",
+      "report_date": "2004-06-16",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "KPLT",
+      "report_date": "2023-07-28",
+      "split_factor": "1:25"
+    },
+    {
+      "symbol": "LCID",
+      "report_date": "2025-09-02",
+      "split_factor": "1:10"
+    },
+    {
+      "symbol": "MOV",
+      "report_date": "1997-05-02",
+      "split_factor": "5:4"
+    },
+    {
+      "symbol": "MOV",
+      "report_date": "1997-09-30",
+      "split_factor": "3:2"
+    },
+    {
+      "symbol": "MOV",
+      "report_date": "2004-06-28",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "MRNS",
+      "report_date": "2020-09-23",
+      "split_factor": "1:4"
+    },
+    {
+      "symbol": "NURO",
+      "report_date": "2011-09-02",
+      "split_factor": "1:6"
+    },
+    {
+      "symbol": "NURO",
+      "report_date": "2013-02-19",
+      "split_factor": "1:6"
+    },
+    {
+      "symbol": "NURO",
+      "report_date": "2015-12-02",
+      "split_factor": "1:4"
+    },
+    {
+      "symbol": "NURO",
+      "report_date": "2017-05-12",
+      "split_factor": "1:8"
+    },
+    {
+      "symbol": "NURO",
+      "report_date": "2019-11-19",
+      "split_factor": "1:10"
+    },
+    {
+      "symbol": "NURO",
+      "report_date": "2023-11-22",
+      "split_factor": "1:8"
+    },
+    {
+      "symbol": "ONCT",
+      "report_date": "2016-12-06",
+      "split_factor": "1:10"
+    },
+    {
+      "symbol": "ONCT",
+      "report_date": "2019-06-10",
+      "split_factor": "1:7"
+    },
+    {
+      "symbol": "ONCT",
+      "report_date": "2024-01-08",
+      "split_factor": "1:20"
+    },
+    {
+      "symbol": "ORGN",
+      "report_date": "2026-03-20",
+      "split_factor": "1:30"
+    },
+    {
+      "symbol": "RDUS",
+      "report_date": "2003-08-15",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "RDUS",
+      "report_date": "2004-03-26",
+      "split_factor": "3:2"
+    },
+    {
+      "symbol": "SHYF",
+      "report_date": "2006-12-18",
+      "split_factor": "3:2"
+    },
+    {
+      "symbol": "SHYF",
+      "report_date": "2007-06-29",
+      "split_factor": "3:2"
+    },
+    {
+      "symbol": "TGI",
+      "report_date": "2011-07-15",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "1995-07-12",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "1997-03-07",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "1998-03-06",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "1998-07-14",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "1999-03-05",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2000-03-03",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2001-03-02",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2002-03-01",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2003-02-28",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2004-02-27",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2005-03-09",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2006-03-08",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2007-03-07",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2008-03-06",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2009-03-06",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2013-03-01",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2014-02-28",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2015-03-06",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2016-03-04",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2017-03-03",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2018-03-05",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2021-03-04",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2022-03-04",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2023-03-03",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2024-03-05",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2025-03-05",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "TR",
+      "report_date": "2026-03-05",
+      "split_factor": "103:100"
+    },
+    {
+      "symbol": "VICR",
+      "report_date": "1995-09-19",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "VSH",
+      "report_date": "1995-03-13",
+      "split_factor": "105:100"
+    },
+    {
+      "symbol": "VSH",
+      "report_date": "1995-06-19",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "VSH",
+      "report_date": "1996-05-24",
+      "split_factor": "105:100"
+    },
+    {
+      "symbol": "VSH",
+      "report_date": "1997-05-28",
+      "split_factor": "105:100"
+    },
+    {
+      "symbol": "VSH",
+      "report_date": "1998-05-28",
+      "split_factor": "105:100"
+    },
+    {
+      "symbol": "VSH",
+      "report_date": "1999-06-23",
+      "split_factor": "5:4"
+    },
+    {
+      "symbol": "VSH",
+      "report_date": "2000-06-12",
+      "split_factor": "3:2"
+    },
+    {
+      "symbol": "WOLF",
+      "report_date": "1995-08-16",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "WOLF",
+      "report_date": "1999-08-02",
+      "split_factor": "2:1"
+    },
+    {
+      "symbol": "WOLF",
+      "report_date": "2000-12-11",
+      "split_factor": "2:1"
+    }
+  ],
+  "tickers_with_events": [
+    "BERY",
+    "CDMO",
+    "COKE",
+    "DKS",
+    "DVAX",
+    "EA",
+    "ENLC",
+    "F",
+    "GRYP",
+    "HBI",
+    "HOLX",
+    "HSY",
+    "KPLT",
+    "LCID",
+    "MOV",
+    "MRNS",
+    "NURO",
+    "ONCT",
+    "ORGN",
+    "RDUS",
+    "SHYF",
+    "TGI",
+    "TR",
+    "VICR",
+    "VSH",
+    "WOLF"
+  ]
+}
