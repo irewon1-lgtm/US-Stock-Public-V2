@@ -1,0 +1,28 @@
+name: V4 V22 MCap Exact Shares
+on:
+  push:
+    paths: ['v4-v22-mcap-sec-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas requests
+      - run: python v4-sec-cover/recover_v22_mcap_only_shares.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-v22-mcap-sec
+          path: v4-v22-mcap-sec-output/
+          retention-days: 30
+      - run: |
+          git config user.name 'v4-free-runner'
+          git config user.email 'actions@users.noreply.github.com'
+          git add v4-v22-mcap-sec-output/summary.json
+          git commit -m 'Add V22 mcap-only SEC summary' || true
+          git pull --rebase origin main
+          git push origin HEAD:main
