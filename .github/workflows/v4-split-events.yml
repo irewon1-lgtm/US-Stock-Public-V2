@@ -1,0 +1,21 @@
+name: V4 Split Events Artifact
+on:
+  push:
+    paths: ['v4-split-events-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas pyarrow requests
+      - run: python v4-split-events/fetch.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-split-events
+          path: v4-split-events-output/
+          retention-days: 30
