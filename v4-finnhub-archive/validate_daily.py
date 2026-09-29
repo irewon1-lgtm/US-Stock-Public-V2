@@ -24,10 +24,16 @@ d=pd.concat(parts,ignore_index=True)
 d["timestamp"]=pd.to_datetime(d["timestamp"],utc=True)
 local=d["timestamp"].dt.tz_convert("America/New_York")
 mins=local.dt.hour*60+local.dt.minute
-d=d[(mins>=570)&(mins<=960)].copy()  # include 16:00 ET closing-auction bar
-d["date"]=local[d.index].dt.tz_localize(None).dt.normalize()
+d["date"]=local.dt.tz_localize(None).dt.normalize()
+d["mins_et"]=mins
 d=d.sort_values(["ticker","timestamp"])
-daily=d.groupby(["ticker","date"],as_index=False).agg(close=("close","last"),volume=("volume","sum"))
+# Official daily close: last bar at or before 16:00 ET, no pre/after-hours price contamination.
+rth=d[(d["mins_et"]>=570)&(d["mins_et"]<=960)].copy()
+close_daily=rth.groupby(["ticker","date"],as_index=False).agg(close=("close","last"))
+# Volume diagnostic: sum the full extended session carried by the archive for that local trading date.
+full=d[(d["mins_et"]>=240)&(d["mins_et"]<=1200)].copy()
+vol_daily=full.groupby(["ticker","date"],as_index=False).agg(volume=("volume","sum"))
+daily=close_daily.merge(vol_daily,on=["ticker","date"],how="inner")
 daily["dollar_volume"]=daily["close"]*daily["volume"]
 
 # Frozen Yahoo-known eligibility inputs.
@@ -66,7 +72,7 @@ summary={
  "mdv_rel_diff_p95":float(v.mdv_rel_diff.quantile(.95)),
  "pass_close_p95_le_0_005":bool(v.close_rel_diff.quantile(.95)<=0.005),
  "pass_mdv_p95_le_0_03":bool(v.mdv_rel_diff.quantile(.95)<=0.03),
- "session_rule":"US regular session 09:30<=ET<=16:00 including closing-auction bar; daily close=last minute close; daily volume=sum minute volume",
+ "session_rule":"daily close=last bar 09:30-16:00 ET; daily volume=sum archive bars 04:00-20:00 ET for diagnostic alignment with Yahoo daily volume",
  "formation_2023_opened":False,"future_outcomes_used":False,"us3700_used":False
 }
 v.to_csv(OUT/"validation.csv",index=False)
