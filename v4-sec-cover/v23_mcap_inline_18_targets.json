@@ -1,0 +1,28 @@
+{
+  "schema": "V4_V23_MCAP_INLINE_18_TARGETS_V1",
+  "purpose": "Resolve V23 mcap-only CIKs still lacking exact CompanyFacts shares, exact standard XBRL only.",
+  "ciks": [
+    37996,
+    72573,
+    98677,
+    103730,
+    317540,
+    717954,
+    751978,
+    813828,
+    880117,
+    1006269,
+    1089063,
+    1552275,
+    1621434,
+    1633651,
+    1708301,
+    1725579,
+    1837686,
+    1868778
+  ],
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "new_corp_action_lookup_calls": 0
+}
