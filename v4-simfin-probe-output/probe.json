@@ -1,0 +1,10 @@
+{
+  "income_q": {
+    "status": "ERROR",
+    "error": "HTTPError('401 Client Error:  for url: https://prod.simfin.com/api/bulk-download/s3?dataset=income&variant=quarterly&market=us')"
+  },
+  "cash_q": {
+    "status": "ERROR",
+    "error": "HTTPError('401 Client Error:  for url: https://prod.simfin.com/api/bulk-download/s3?dataset=cashflow&variant=quarterly&market=us')"
+  }
+}
