@@ -1,0 +1,122 @@
+[
+  {
+    "ticker": "ADMS",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "AE",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "AEGN",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "AERI",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "AGN",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "AGTC",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "AIMC",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "AINC",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "ALBO",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  },
+  {
+    "ticker": "ATVI",
+    "status": 404,
+    "rows": 0,
+    "symbol": null,
+    "exchangeName": null,
+    "currency": null,
+    "error": {
+      "code": "Not Found",
+      "description": "No data found, symbol may be delisted"
+    }
+  }
+]
