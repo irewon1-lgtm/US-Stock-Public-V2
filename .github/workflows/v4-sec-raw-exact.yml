@@ -1,0 +1,24 @@
+name: V4 SEC Raw Exact Current Missing
+on:
+  push:
+    paths: ['v4-sec-raw-exact-trigger.txt']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix: {shard: [0,1,2,3]}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q pandas requests lxml
+      - run: python v4-sec-cover/recover_raw_exact_current.py --shard ${{ matrix.shard }} --nshards 4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v4-sec-raw-exact-${{ matrix.shard }}
+          path: v4-sec-raw-exact-output/
+          retention-days: 30
