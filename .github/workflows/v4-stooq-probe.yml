@@ -17,7 +17,7 @@ jobs:
       - run: |
           git config user.name 'v4-free-runner'
           git config user.email 'actions@users.noreply.github.com'
-          git add v4-stooq-probe-output/probe.json
+          git add v4-stooq-probe-output/
           git commit -m 'Add V4 Stooq price probe' || true
           git pull --rebase origin main
           git push origin HEAD:main
