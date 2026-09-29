@@ -1,0 +1,28 @@
+{
+  "schema": "V4_DEFEATBETA_UNKNOWN_PRICE_RECOVERY_V1",
+  "source": "public Hugging Face defeatbeta/yahoo-finance-data stock_prices.parquet",
+  "target_unknown_rows": 10605,
+  "query_tickers": 1370,
+  "source_tickers_found": 316,
+  "source_price_rows": 190067,
+  "validation_rows": 96,
+  "validation_price_rel_diff_median": 2.6845825629150373e-08,
+  "validation_price_rel_diff_p95": 1.8303526662262812e-07,
+  "validation_mdv_rel_diff_median": 1.616118150950973e-08,
+  "validation_mdv_rel_diff_p95": 9.11748285065997e-07,
+  "recovered_known_rows": 2085,
+  "recovered_pass_rows": 723,
+  "recovered_price_fail_rows": 195,
+  "recovered_liquidity_fail_rows": 1167,
+  "remaining_unresolved_rows": 8520,
+  "formation_2023_opened": false,
+  "future_outcomes_used": false,
+  "us3700_used": false,
+  "new_corp_action_lookup_calls": 0,
+  "existing_corp_action_exclusions": [
+    "AAWW",
+    "ABMD",
+    "STMP"
+  ],
+  "ticker_reuse_policy": "ambiguous ticker reuse remains UNKNOWN"
+}
