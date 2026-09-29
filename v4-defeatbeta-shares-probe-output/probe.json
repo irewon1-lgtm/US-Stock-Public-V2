@@ -1,0 +1,59 @@
+{
+  "schema": [
+    {
+      "column_name": "symbol",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "report_date",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "shares_outstanding",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    }
+  ],
+  "rows": 677,
+  "symbols_found": [
+    "AAPL",
+    "AMZN",
+    "EA",
+    "F",
+    "HD",
+    "HI",
+    "INFA",
+    "JPM",
+    "KO",
+    "MSFT",
+    "NVDA",
+    "VMEO",
+    "XOM"
+  ],
+  "counts": {
+    "AAPL": 72,
+    "AMZN": 59,
+    "EA": 60,
+    "F": 54,
+    "HD": 74,
+    "HI": 55,
+    "INFA": 15,
+    "JPM": 36,
+    "KO": 70,
+    "MSFT": 52,
+    "NVDA": 74,
+    "VMEO": 16,
+    "XOM": 40
+  }
+}
