@@ -61,6 +61,7 @@ def main():
     for s,xs in by_sector.items():
         for i,r in enumerate(xs):srank[r["ticker"]]=i+1
     cols=["snapshot_generated_at","rank_model","overall_rank","overall_percentile","sector_rank","sector_count","sector_percentile","quantitative_score","ticker","company","sector","sector_ko","industry","exchange","cik","numeric_count","resolved_count","na_basis_count","hold_count","is_9of9_numeric","is_8plus_numeric","last_attempt_at","last_successful_refresh_at","oldest_metric_updated_at","latest_metric_updated_at","oldest_metric_age_hours","stale_metric_count_48h","data_quality_flag"]
+    cols += ["refresh_held","refresh_hold_reason","refresh_hold_attempted_at","refresh_hold_first_held_at","refresh_hold_regressed_metrics"]
     for _,alias in METRICS:cols += [f"{alias}_value",f"{alias}_status",f"{alias}_source",f"{alias}_updated_at"]
     out=Path(a.out);out.parent.mkdir(parents=True,exist_ok=True)
     with out.open("w",encoding="utf-8-sig",newline="") as fh:
@@ -71,11 +72,14 @@ def main():
             stale=sum(1 for k,_ in METRICS if ts((ms.get(k) or {}).get("updatedAt")) is None or (snap-ts((ms.get(k) or {}).get("updatedAt"))).total_seconds()>172800)
             na=sum(1 for k,_ in METRICS if (ms.get(k) or {}).get("status")=="NA_BASIS");hold=sum(1 for k,_ in METRICS if (ms.get(k) or {}).get("status")=="HOLD")
             nr=int(r.get("numericCount") or 0);sr=srank[r["ticker"]];sc=scount.get(str(r.get("sector") or ""),0)
-            quality="HOLD_PRESENT" if hold else "STALE_METRIC_PRESENT" if stale else "COMPLETE_9OF9" if nr==9 else "RESOLVED_8OF9" if nr>=8 else "BELOW_8OF9"
+            refresh_hold = r.get("refreshHold") or {}
+            quality="REFRESH_HELD_PREVIOUS_VALUES" if refresh_hold else "HOLD_PRESENT" if hold else "STALE_METRIC_PRESENT" if stale else "COMPLETE_9OF9" if nr==9 else "RESOLVED_8OF9" if nr>=8 else "BELOW_8OF9"
             row={"snapshot_generated_at":snapshot,"rank_model":"APP_UI_DEFAULT_V1_15_15_10_10_10_10_10_10_10","overall_rank":overall[r["ticker"]],"overall_percentile":round(100*(1-(overall[r["ticker"]]-1)/3699),4),"sector_rank":sr,"sector_count":sc,"sector_percentile":round(100*(1-(sr-1)/max(1,sc-1)),4) if sc else "","quantitative_score":r["_score"],"ticker":r.get("ticker"),"company":r.get("company"),"sector":r.get("sector"),"sector_ko":SECTOR_KO.get(str(r.get("sector") or ""),"기타"),"industry":r.get("industry"),"exchange":r.get("exchange"),"cik":r.get("cik"),"numeric_count":nr,"resolved_count":r.get("resolvedCount"),"na_basis_count":na,"hold_count":hold,"is_9of9_numeric":1 if nr==9 else 0,"is_8plus_numeric":1 if nr>=8 else 0,"last_attempt_at":r.get("lastAttemptAt"),"last_successful_refresh_at":r.get("lastSuccessfulRefreshAt"),"oldest_metric_updated_at":oldest.isoformat().replace("+00:00","Z") if oldest else "","latest_metric_updated_at":latest.isoformat().replace("+00:00","Z") if latest else "","oldest_metric_age_hours":round((snap-oldest).total_seconds()/3600,3) if oldest else "","stale_metric_count_48h":stale,"data_quality_flag":quality}
+            row.update({"refresh_held":1 if refresh_hold else 0,"refresh_hold_reason":refresh_hold.get("reason",""),"refresh_hold_attempted_at":refresh_hold.get("attemptedAt",""),"refresh_hold_first_held_at":refresh_hold.get("firstHeldAt",""),"refresh_hold_regressed_metrics":json.dumps(refresh_hold.get("regressedMetrics") or [],ensure_ascii=False,separators=(",",":")) if refresh_hold else ""})
             for k,alias in METRICS:
                 c=ms.get(k) or {};row[f"{alias}_value"]=c.get("value") if c.get("status")=="NUMERIC" else "";row[f"{alias}_status"]=c.get("status") or "";row[f"{alias}_source"]=c.get("source") or "";row[f"{alias}_updated_at"]=c.get("updatedAt") or ""
             w.writerow(row)
     print(json.dumps({"ok":True,"rows":len(ranked),"columns":len(cols),"snapshot":snapshot,"file":str(out)},separators=(",",":")))
 
 if __name__=="__main__":main()
+

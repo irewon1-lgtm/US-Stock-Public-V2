@@ -5,7 +5,9 @@ import argparse
 import copy
 import hashlib
 import json
+import os
 import sys
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -32,6 +34,12 @@ IDENTITY_KEYS = [
     "ticker", "company", "category", "sector", "industry",
     "cik", "exchange"
 ]
+
+LOG_LOCK = threading.Lock()
+
+def log_json(value):
+    with LOG_LOCK:
+        print(json.dumps(value, ensure_ascii=False, separators=(",", ":")), flush=True)
 
 def norm_ticker(value):
     return str(value or "").strip().upper().replace(".", "-").replace("/", "-")
@@ -173,6 +181,7 @@ def summarize(state):
     successes = [r.get("lastSuccessfulRefreshAt") for r in rows if r.get("lastSuccessfulRefreshAt")]
     return {
         "recordCount": len(rows),
+        "heldRecordCount": sum(bool(r.get("refreshHold")) for r in rows),
         "metricCount": 9,
         "totalMetricCells": len(rows) * 9,
         "numericMetrics": sum(m.get("status") == "NUMERIC" for r in rows for m in r["metrics"].values()),
@@ -185,6 +194,68 @@ def summarize(state):
         "latestSuccessfulRefreshAt": max(successes) if successes else None,
         "byMetric": by_metric,
     }
+
+def merge_refresh(previous, fresh, day, attempt_at, source_by_key):
+    """Commit a ticker atomically, or retain its last verified record with a visible hold."""
+    fresh_metrics = fresh.get("metrics") or {}
+    merged_metrics = {}
+    fresh_count = 0
+    for key in METRIC_KEYS:
+        raw_new = fresh_metrics.get(key) or {}
+        if metric_is_fresh(raw_new, day):
+            merged_metrics[key] = compact_metric(raw_new, source_by_key[key], attempt_at)
+            fresh_count += 1
+        else:
+            merged_metrics[key] = copy.deepcopy(previous["metrics"][key])
+
+    candidate_numeric = sum(c.get("status") == "NUMERIC" for c in merged_metrics.values())
+    previous_numeric = sum(c.get("status") == "NUMERIC" for c in previous["metrics"].values())
+    prior_hold = previous.get("refreshHold") or {}
+    # A fetch failure must not erase a known rejected N/A observation merely
+    # because the retained old value still happens to be numeric.
+    unresolved = {
+        m["key"]: copy.deepcopy(m)
+        for m in prior_hold.get("regressedMetrics") or []
+        if not metric_is_fresh(fresh_metrics.get(m["key"]), day)
+    }
+    regressions = dict(unresolved)
+    for key in METRIC_KEYS:
+        if previous["metrics"][key].get("status") == "NUMERIC" and merged_metrics[key].get("status") != "NUMERIC":
+            raw = fresh_metrics.get(key) or {}
+            regressions[key] = {
+                "key": key,
+                "previousStatus": "NUMERIC",
+                "observedStatus": merged_metrics[key]["status"],
+                "observedValue": merged_metrics[key]["value"],
+                "source": source_by_key[key],
+                "reason": raw.get("reason") or "최신 관측에서 숫자 지표가 확인되지 않음",
+                "observedAt": attempt_at,
+            }
+    if previous_numeric >= 8 and (candidate_numeric < 8 or unresolved):
+        out = copy.deepcopy(previous)
+        out["lastAttemptAt"] = attempt_at
+        out["refreshHold"] = {
+            "reason": "COVERAGE_BELOW_8_OF_9" if candidate_numeric < 8 else "PREVIOUS_COVERAGE_HOLD_UNRESOLVED",
+            "firstHeldAt": prior_hold.get("firstHeldAt") or attempt_at,
+            "attemptedAt": attempt_at,
+            "candidateNumericCount": candidate_numeric,
+            "minimumNumericCount": 8,
+            "regressedMetrics": [regressions[k] for k in METRIC_KEYS if k in regressions],
+            "collectionErrors": list(fresh.get("collectionErrors") or []),
+        }
+        return out
+
+    out = {**previous}
+    out.update({k: fresh.get(k) for k in IDENTITY_KEYS if fresh.get(k) is not None})
+    out["ticker"] = norm_ticker(previous["ticker"])
+    out["metrics"] = merged_metrics
+    out["numericCount"] = candidate_numeric
+    out["resolvedCount"] = sum(c.get("status") in {"NUMERIC", "NA_BASIS"} for c in merged_metrics.values())
+    out["lastAttemptAt"] = attempt_at
+    if fresh_count:
+        out["lastSuccessfulRefreshAt"] = attempt_at
+    out.pop("refreshHold", None)
+    return out
 
 def main():
     ap = argparse.ArgumentParser()
@@ -240,33 +311,9 @@ def main():
         identity = {k: previous.get(k) for k in IDENTITY_KEYS if previous.get(k) is not None}
         identity["ticker"] = ticker
         fresh = collect_ticker(identity, day, previous)
-        attempt_at = utc_now()
-        merged_metrics = {}
-        fresh_count = 0
-
-        for key in METRIC_KEYS:
-            raw_new = (fresh.get("metrics") or {}).get(key) or {}
-            old_cell = previous["metrics"][key]
-
-            if metric_is_fresh(raw_new, day):
-                merged_metrics[key] = compact_metric(
-                    raw_new,
-                    source_by_key[key],
-                    attempt_at,
-                )
-                fresh_count += 1
-            else:
-                merged_metrics[key] = copy.deepcopy(old_cell)
-
-        out = {**previous}
-        out.update({k: fresh.get(k) for k in IDENTITY_KEYS if fresh.get(k) is not None})
-        out["ticker"] = ticker
-        out["metrics"] = merged_metrics
-        out["numericCount"] = sum(m.get("status") == "NUMERIC" for m in merged_metrics.values())
-        out["resolvedCount"] = sum(m.get("status") in {"NUMERIC", "NA_BASIS"} for m in merged_metrics.values())
-        out["lastAttemptAt"] = attempt_at
-        if fresh_count:
-            out["lastSuccessfulRefreshAt"] = attempt_at
+        out = merge_refresh(previous, fresh, day, utc_now(), source_by_key)
+        if out.get("refreshHold"):
+            log_json({"event": "PUBLIC_V2_REFRESH_HELD", "ticker": ticker, **out["refreshHold"]})
         return ticker, out
 
     with ThreadPoolExecutor(max_workers=workers) as ex:
@@ -280,14 +327,19 @@ def main():
                 fatal.append({"ticker": ticker, "error": type(e).__name__ + ":" + str(e)[:180]})
                 prev = copy.deepcopy(state_map[ticker])
                 prev["lastAttemptAt"] = utc_now()
+                if prev.get("refreshHold"):
+                    prev["refreshHold"]["attemptedAt"] = prev["lastAttemptAt"]
+                    prev["refreshHold"]["collectionErrors"] = [fatal[-1]["error"]]
                 updated[ticker] = prev
 
             if i % 100 == 0:
-                print(json.dumps({"processed": i, "selected": count, "fatal": len(fatal)}, separators=(",", ":")), flush=True)
+                log_json({"processed": i, "selected": count, "fatal": len(fatal)})
 
     universe_order = [norm_ticker(t) for t in universe["tickers"]]
     state["records"] = [updated.get(ticker, state_map[ticker]) for ticker in universe_order]
     state["generatedAt"] = utc_now()
+    if os.environ.get("GITHUB_SHA"):
+        state["sourceCommit"] = os.environ["GITHUB_SHA"]
     state["recordCount"] = 3700
     state["metricCount"] = 9
     state["lastBatch"] = {
@@ -296,6 +348,7 @@ def main():
         "selectedCount": count,
         "workers": workers,
         "fatalRecordCount": len(fatal),
+        "heldInBatchCount": sum(bool(r.get("refreshHold")) for r in updated.values()),
         "selectedTickersSha256": hashlib.sha256(
             "\n".join(norm_ticker(r["ticker"]) for r in selected).encode()
         ).hexdigest(),
@@ -316,6 +369,13 @@ def main():
         "startedAt": started_at,
         "finishedAt": state["generatedAt"],
         "fatalRecordCount": len(fatal),
+        "heldInBatchCount": sum(bool(r.get("refreshHold")) for r in updated.values()),
+        "sourceCommit": state.get("sourceCommit"),
+        "heldRecordCount": state["summary"]["heldRecordCount"],
+        "heldRecords": [
+            {"ticker": r["ticker"], "lastSuccessfulRefreshAt": r.get("lastSuccessfulRefreshAt"), **r["refreshHold"]}
+            for r in state["records"] if r.get("refreshHold")
+        ],
         "records9of9Numeric": state["summary"]["records9of9Numeric"],
         "records8plusNumeric": state["summary"]["records8plusNumeric"],
         "oldestAttemptAt": state["summary"]["oldestAttemptAt"],

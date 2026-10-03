@@ -1,6 +1,18 @@
 name: Public V2 9-metric refresh
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh.yml'
+      - 'scripts/**'
+      - 'server/public_site_fundamentals.py'
+      - 'tests/test_refresh_hold.py'
+      - 'tests/test-held-ui.mjs'
+      - 'web/**'
+      - 'engine/rank-filter-engine.mjs'
+      - 'config/metrics-v2.json'
+
   schedule:
     # KST 00:10 / 06:10 / 12:10 / 18:10
     - cron: '10 3,9,15,21 * * *'
@@ -37,6 +49,9 @@ jobs:
         run: |
           set -euo pipefail
           python -m py_compile scripts/refresh-batch.py scripts/validate-state.py scripts/build-analysis-csv.py server/public_site_fundamentals.py
+          python -m unittest discover -s tests -p 'test_refresh_hold.py' -v
+          node --check web/app.js
+          node --test tests/test-held-ui.mjs
           python scripts/validate-state.py data/state-v2.json data/universe-3700.json config/metrics-v2.json
 
       - name: Configure Pages
@@ -129,3 +144,4 @@ jobs:
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
